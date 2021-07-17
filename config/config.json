@@ -1,0 +1,11 @@
+{
+  "telegram": {
+    "token": "1709972597:AAGadK_mJ4fu6vsAANDL_Tt1dN8HDRC1J58"
+  },
+  "database": {
+    "host": "192.168.56.1",
+    "user": "testuser",
+    "user_pass": "2442",
+    "db_name": "testdb"
+  }
+}

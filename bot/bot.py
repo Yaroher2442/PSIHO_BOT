@@ -1,12 +1,11 @@
 from telebot import types
 import telebot
 import json
+from config.conf import Configurator
 
-with open('config.json')  as conf_file:
-    token = json.load(conf_file)['telegram_token']
+conf = Configurator()
 
-print(token)
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(conf.tg_conf.token)
 
 
 @bot.message_handler(commands=['start'])
