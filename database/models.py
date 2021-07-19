@@ -60,5 +60,14 @@ class TextAnswers(Model):
         database = pg_db
 
 
+class AdminUser(Model):
+    name = CharField()
+    password = CharField()
+    token = CharField()
+
+    class Meta:
+        database = pg_db
+
+
 if __name__ == '__main__':
     pg_db.create_tables([Statuses])
