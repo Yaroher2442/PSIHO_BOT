@@ -10,12 +10,55 @@ pg_db = PostgresqlDatabase(host=conf.db_conf.host,
                            password=conf.db_conf.user_pass,
                            )
 
-db = PostgresqlDatabase('people.db')
+
+class Statuses(Model):
+    status = IntegerField()
+
+    class Meta:
+        database = pg_db
 
 
-# class Client(Model):
-#     name = CharField()
-#     birthday = DateField()
+class TG_Client(Model):
+    tg_id = IntegerField()
+    status = ForeignKeyField(Statuses)
 
-    # class Meta:
-    #     database = db
+    class Meta:
+        database = pg_db
+
+
+class Menu(Model):
+    descr = CharField()
+    status = ForeignKeyField(Statuses)
+
+    class Meta:
+        database = pg_db
+
+
+class MenuButton(Model):
+    menu_obj = ForeignKeyField(Menu)
+    text = CharField()
+    next_menu = ForeignKeyField(Menu)
+
+    class Meta:
+        database = pg_db
+
+
+class ButtonAnswers(Model):
+    menu_button_obj = ForeignKeyField(MenuButton)
+    text = CharField()
+
+    class Meta:
+        database = pg_db
+
+
+class TextAnswers(Model):
+    question = CharField()
+    answer = CharField()
+    use_same_texts = BooleanField()
+
+    class Meta:
+        database = pg_db
+
+
+if __name__ == '__main__':
+    pg_db.create_tables([Statuses])
