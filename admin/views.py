@@ -7,12 +7,21 @@ from database.db_worker import AdminDB
 class BaseView(MethodView):
     def __init__(self):
         self.db = AdminDB()
-    def get_check_token(self,request):
-        return request.cookies.get('auth_token')
+
+    def check_token(self, request):
+        req_token = request.cookies.get('auth_token')
+        if req_token:
+            return self.db.verify_token(req_token)
+        else:
+            return False
+
 
 class Register(BaseView):
     def __init__(self):
         BaseView.__init__(self)
+
+    def get(self):
+        pass
 
     def post(self):
         print(request.form.get('name'))
@@ -26,12 +35,14 @@ class Login(BaseView):
     def __init__(self):
         BaseView.__init__(self)
 
+    def get(self):
+        pass
+
     def post(self):
-        token=self.db.login_user(request.form.get('name'), request.form.get('password'))
-        print(token)
+        token = self.db.login_user(request.form.get('name'), request.form.get('password'))
         if token:
             res = make_response("Setting a cookie")
-            res.set_cookie('auth_token',token, max_age=60 * 60 * 24)
+            res.set_cookie('auth_token', token, max_age=60 * 60 * 24)
             return res
         else:
             return 'User not logined'
@@ -42,7 +53,7 @@ class Index(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        if self.get_check_token(request):
+        if self.check_token(request):
             return 'Привет как ты?'
         else:
-            return 'asfasf'
+            return 'no token'

@@ -2,7 +2,6 @@ from peewee import *
 from config.conf import Configurator
 
 conf = Configurator()
-
 pg_db = PostgresqlDatabase(host=conf.db_conf.host,
                            port=conf.db_conf.port,
                            database=conf.db_conf.db_name,

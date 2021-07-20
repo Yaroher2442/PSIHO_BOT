@@ -5,6 +5,8 @@ from fuzzywuzzy import fuzz
 import hashlib
 import os
 import binascii
+
+
 class BaseDb:
     def __init__(self):
         self.database = pg_db
@@ -79,14 +81,14 @@ class AdminDB(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
 
-    def hash_password(self,password):
+    def hash_password(self, password):
         salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
         pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),
                                       salt, 100000)
         pwdhash = binascii.hexlify(pwdhash)
         return (salt + pwdhash).decode('ascii')
 
-    def verify_password(self,stored_password, provided_password):
+    def verify_password(self, stored_password, provided_password):
         salt = stored_password[:64]
         stored_password = stored_password[64:]
         pwdhash = hashlib.pbkdf2_hmac('sha512',
@@ -98,27 +100,41 @@ class AdminDB(BaseDb):
 
     def registry_user(self, name, passwrd):
         try:
-            new_user = AdminUser.create(name=name, password=self.hash_password(passwrd), token="")
-            print(new_user)
-            return True
+            try:
+                AdminUser.get(name=name)
+                return False
+            except:
+                new_user = AdminUser.create(name=name, password=self.hash_password(passwrd), token="")
+                print(new_user)
+                return True
         except Exception as e:
-            print(e)
             return False
 
     def login_user(self, name, passwrd):
         try:
-            user=AdminUser.get(name=name)
+            user = AdminUser.get(name=name)
         except:
-            print("User not found ")
+            print("User not found bby name")
             return False
         if self.verify_password(user.password, passwrd):
-            user.token=str(uuid.uuid4())
+            user.token = str(uuid.uuid4())
+            user.save()
             return user.token
         else:
             return False
+
+    def verify_token(self, req_token):
+        try:
+            user = AdminUser.get(token=req_token)
+            return True
+        except:
+            print("User not found by token")
+            return False
+
     def set_new_menu(self):
         pass
 
 
 if __name__ == '__main__':
-    BaseDb().create_db()
+    # BaseDb().create_db()
+    AdminDB().test()

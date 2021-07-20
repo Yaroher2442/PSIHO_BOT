@@ -20,7 +20,7 @@ class TG_config:
 class DB_config:
     def __init__(self, **kwargs):
         self.host = None
-        self.port=None
+        self.port = None
         self.user = None
         self.user_pass = None
         self.db_name = None
@@ -30,4 +30,4 @@ class DB_config:
 
 if __name__ == '__main__':
     conf = Configurator()
-    print(conf.tg_conf.token)
+    print(conf.tg_conf)
