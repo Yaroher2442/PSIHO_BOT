@@ -10,16 +10,9 @@ pg_db = PostgresqlDatabase(host=conf.db_conf.host,
                            )
 
 
-class Statuses(Model):
-    status = IntegerField()
-
-    class Meta:
-        database = pg_db
-
-
-class TG_Client(Model):
+class TgClient(Model):
     tg_id = IntegerField()
-    status = ForeignKeyField(Statuses)
+    status = IntegerField()
 
     class Meta:
         database = pg_db
@@ -27,24 +20,16 @@ class TG_Client(Model):
 
 class Menu(Model):
     descr = CharField()
-    status = ForeignKeyField(Statuses)
 
     class Meta:
         database = pg_db
 
 
 class MenuButton(Model):
-    menu_obj = ForeignKeyField(Menu)
+    menu_obj = ForeignKeyField(Menu, on_delete="CASCADE")
     text = CharField()
-    next_menu = ForeignKeyField(Menu)
-
-    class Meta:
-        database = pg_db
-
-
-class ButtonAnswers(Model):
-    menu_button_obj = ForeignKeyField(MenuButton)
-    text = CharField()
+    next_menu = IntegerField()
+    answer = CharField()
 
     class Meta:
         database = pg_db
@@ -69,4 +54,5 @@ class AdminUser(Model):
 
 
 if __name__ == '__main__':
-    pg_db.create_tables([Statuses])
+    print(Menu.set_menu("qwrqwr"))
+    print(Menu.select()[-1].descr)

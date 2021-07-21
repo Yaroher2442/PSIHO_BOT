@@ -1,17 +1,17 @@
 from flask.views import MethodView
 from flask import Response, request, jsonify, send_from_directory, make_response
 import uuid
-from database.db_worker import AdminDB
+from database.DB_interface import ApiDB
 
 
 class BaseView(MethodView):
     def __init__(self):
-        self.db = AdminDB()
+        self.db = ApiDB()
 
     def check_token(self, request):
         req_token = request.cookies.get('auth_token')
         if req_token:
-            return self.db.verify_token(req_token)
+            return self.db.auth.verify_token(req_token)
         else:
             return False
 
@@ -25,7 +25,7 @@ class Register(BaseView):
 
     def post(self):
         print(request.form.get('name'))
-        if self.db.registry_user(request.form.get('name'), request.form.get('password')):
+        if self.db.auth.registry_user(request.form.get('name'), request.form.get('password')):
             return 'User create'
         else:
             return 'User not be created'
@@ -39,7 +39,7 @@ class Login(BaseView):
         pass
 
     def post(self):
-        token = self.db.login_user(request.form.get('name'), request.form.get('password'))
+        token = self.db.auth.login_user(request.form.get('name'), request.form.get('password'))
         if token:
             res = make_response("Setting a cookie")
             res.set_cookie('auth_token', token, max_age=60 * 60 * 24)

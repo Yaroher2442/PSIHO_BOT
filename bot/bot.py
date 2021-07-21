@@ -1,16 +1,32 @@
+import threading
+
 from telebot import types
 import telebot
 import json
 from config.conf import Configurator
+from database.Bot_DB_Logic import BotDBLogic
 
 conf = Configurator()
 
-bot = telebot.TeleBot(conf.tg_conf.token)
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    print(type(message.from_user.id))
-    button_psycho = types.KeyboardButton(text="Психосоматика")
+class TGBot(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.db = BotDBLogic()
+        self.bot = telebot.TeleBot(conf.tg_conf.token)
+
+        @self.bot.message_handler(commands=['start'])
+        def init(message):
+            print(message.from_user.id)
+
+        @self.bot.message_handler()
+        def init(message):
+            print(self.db.create_answr_meaasge(message))
+            print(message.from_user.id, 'qwrqwrqwr')
+
+    def run(self):
+        self.bot.infinity_polling(True)
+
 
 # @bot.message_handler()
 # def start(message):
@@ -31,4 +47,8 @@ def start(message):
 #
 
 if __name__ == '__main__':
-    bot.infinity_polling(True)
+    bot_worker = TGBot()
+    bot_worker.setDaemon(True)
+    bot_worker.start()
+    bot_worker.join()
+    # bot.infinity_polling(True)
