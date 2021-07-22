@@ -27,6 +27,7 @@ class TgClient(Model):
 
 class Menu(Model):
     descr = CharField()
+    status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
     class Meta:
         database = pg_db
@@ -44,18 +45,7 @@ class TextAnswers(Model):
 
 class MenuButton(Model):
     menu_id = ForeignKeyField(Menu, on_delete="CASCADE")
-    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     text = CharField()
-    answer = ForeignKeyField(TextAnswers)
-
-    class Meta:
-        database = pg_db
-
-
-class Block(Model):
-    status_id = ForeignKeyField(Statuses)
-    menu_id = ForeignKeyField(Menu, null=True)
-    answer_id = ForeignKeyField(TextAnswers)
 
     class Meta:
         database = pg_db

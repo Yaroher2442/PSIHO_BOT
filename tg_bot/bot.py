@@ -4,6 +4,7 @@ import telebot
 from config.conf import Configurator
 from tg_bot.BotLogic import BotUseLogic
 from tg_bot.BotLogic import Answer
+
 conf = Configurator()
 
 
@@ -20,7 +21,8 @@ class TGBot(threading.Thread):
 
         @self.bot.message_handler()
         def init(message):
-            pass
+            answr = Answer(message)
+            self.bot.send_message(message.from_user.id, answr.returns_answr, answr.reply_markup)
 
     def run(self):
         self.bot.infinity_polling(True)

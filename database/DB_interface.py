@@ -12,7 +12,6 @@ class BaseDb:
                        TgClient,
                        Menu,
                        MenuButton,
-                       Block,
                        TextAnswers,
                        AdminUser]
 
@@ -140,42 +139,6 @@ class MenuButtonApi(BaseDb):
 
     def get_all_buttons(self, menu_id):
         return MenuButton.select().where(MenuButton.id == menu_id)
-
-
-class BlockApi(BaseDb):
-    def __init__(self):
-        BaseDb.__init__(self)
-
-    def set_new(self, status_id: int, menu_id: int, answer_id: int):
-        try:
-            new_tg_client = TgClient.create(status_id=status_id, menu_id=menu_id, answer_id=answer_id)
-            return new_tg_client.id
-        except:
-            return False
-
-    def set_status_id(self, block_id: int, status_id: int):
-        try:
-            query = Block.update({Block.status_id: status_id}).where(Block.id == block_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def set_menu_id(self, block_id: int, menu_id: int):
-        try:
-            query = Block.update({Block.menu_id: menu_id}).where(Block.id == block_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def set_answer_id(self, block_id: int, answer_id: int):
-        try:
-            query = Block.update({Block.answer_id: answer_id}).where(Block.id == block_id)
-            query.execute()
-            return True
-        except:
-            return False
 
 
 class TextAnswersApi(BaseDb):
