@@ -10,9 +10,16 @@ pg_db = PostgresqlDatabase(host=conf.db_conf.host,
                            )
 
 
+class Statuses(Model):
+    descr = CharField()
+
+    class Meta:
+        database = pg_db
+
+
 class TgClient(Model):
     tg_id = IntegerField()
-    status = IntegerField()
+    status = ForeignKeyField(Statuses)
 
     class Meta:
         database = pg_db
@@ -25,20 +32,30 @@ class Menu(Model):
         database = pg_db
 
 
-class MenuButton(Model):
-    menu_obj = ForeignKeyField(Menu, on_delete="CASCADE")
-    text = CharField()
-    next_menu = IntegerField()
+class TextAnswers(Model):
+    question = CharField()
     answer = CharField()
+    use_same_texts = BooleanField()
+    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
     class Meta:
         database = pg_db
 
 
-class TextAnswers(Model):
-    question = CharField()
-    answer = CharField()
-    use_same_texts = BooleanField()
+class MenuButton(Model):
+    menu_id = ForeignKeyField(Menu, on_delete="CASCADE")
+    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
+    text = CharField()
+    answer = ForeignKeyField(TextAnswers)
+
+    class Meta:
+        database = pg_db
+
+
+class Block(Model):
+    status_id = ForeignKeyField(Statuses)
+    menu_id = ForeignKeyField(Menu, null=True)
+    answer_id = ForeignKeyField(TextAnswers)
 
     class Meta:
         database = pg_db

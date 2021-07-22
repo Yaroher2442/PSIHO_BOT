@@ -8,9 +8,11 @@ import uuid
 class BaseDb:
     def __init__(self):
         self.database = pg_db
-        self.tables = [TgClient,
+        self.tables = [Statuses,
+                       TgClient,
                        Menu,
                        MenuButton,
+                       Block,
                        TextAnswers,
                        AdminUser]
 
@@ -140,14 +142,50 @@ class MenuButtonApi(BaseDb):
         return MenuButton.select().where(MenuButton.id == menu_id)
 
 
+class BlockApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+
+    def set_new(self, status_id: int, menu_id: int, answer_id: int):
+        try:
+            new_tg_client = TgClient.create(status_id=status_id, menu_id=menu_id, answer_id=answer_id)
+            return new_tg_client.id
+        except:
+            return False
+
+    def set_status_id(self, block_id: int, status_id: int):
+        try:
+            query = Block.update({Block.status_id: status_id}).where(Block.id == block_id)
+            query.execute()
+            return True
+        except:
+            return False
+
+    def set_menu_id(self, block_id: int, menu_id: int):
+        try:
+            query = Block.update({Block.menu_id: menu_id}).where(Block.id == block_id)
+            query.execute()
+            return True
+        except:
+            return False
+
+    def set_answer_id(self, block_id: int, answer_id: int):
+        try:
+            query = Block.update({Block.answer_id: answer_id}).where(Block.id == block_id)
+            query.execute()
+            return True
+        except:
+            return False
+
+
 class TextAnswersApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
 
-    def set_new(self, question="", answer="", use_same_texts=False):
+    def set_new(self, question="", answer="", use_same_texts=False, change_state_to=0):
         try:
             new_menu_text = MenuButton.create(question=question, answer=answer,
-                                              use_same_texts=use_same_texts)
+                                              use_same_texts=use_same_texts, change_state_to=change_state_to)
             return new_menu_text.id
         except:
             return False
@@ -177,11 +215,29 @@ class TextAnswersApi(BaseDb):
         except:
             return False
 
+    def update_to_status(self, text_anwer_id: int, to_status: int):
+        try:
+            query = TextAnswers.update({TextAnswers.change_state_to: to_status}).where(
+                TextAnswers.id == text_anwer_id)
+            query.execute()
+            return True
+        except:
+            return False
+
+    def get_to_status(self, text_ansers_id: int):
+        try:
+            return TextAnswers.get(id=text_ansers_id).to_status
+        except:
+            return False
+
     def get_by_id(self, text_ansers_id):
         return TextAnswers.get(id=text_ansers_id)
 
     def get_by_text(self, text):
-        return TextAnswers.get(question=text)
+        try:
+            return TextAnswers.get(question=text)
+        except:
+            return False
 
     def get_all(self):
         return TextAnswers.select()
@@ -206,6 +262,13 @@ class TgClientAPI(BaseDb):
         except:
             return False
 
+    def get_user(self, tg_id):
+        try:
+            client = TgClient.get(tg_id=tg_id)
+            return client
+        except:
+            return False
+
     def get_status(self, tg_id):
         return TgClient.get(tg_id=tg_id).status
 
@@ -221,6 +284,9 @@ class ApiDB(BaseDb):
 
 
 if __name__ == '__main__':
+    pass
     # ApiDB()
     BaseDb().create_db()
+
+    # ApiDB().TextAnswers.set_new(question='/start',answer='Привет я психобот')
     # BaseDb().create_db()
