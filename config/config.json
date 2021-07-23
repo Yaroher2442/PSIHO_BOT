@@ -7,5 +7,9 @@
     "user": "testuser",
     "user_pass": "2442",
     "db_name": "testdb"
+  },
+  "logging": {
+    "when": "H",
+    "interval": 1
   }
 }
