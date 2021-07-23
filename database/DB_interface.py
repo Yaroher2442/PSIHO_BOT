@@ -79,9 +79,9 @@ class MenuApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
 
-    def set_new(self, menu_description=""):
+    def set_new(self, menu_description="", status=None):
         try:
-            new_menu = Menu.create(descr=menu_description)
+            new_menu = Menu.create(descr=menu_description, status=status)
             return new_menu.id
         except:
             return False

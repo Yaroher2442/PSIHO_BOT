@@ -14,15 +14,10 @@ class TGBot(threading.Thread):
         self.db = BotUseLogic()
         self.bot = telebot.TeleBot(conf.tg_conf.token)
 
-        @self.bot.message_handler(commands=['start'])
-        def init(message):
-            answr = Answer(message)
-            self.bot.send_message(message.from_user.id, answr.returns_answr, answr.reply_markup)
-
         @self.bot.message_handler()
         def init(message):
             answr = Answer(message)
-            self.bot.send_message(message.from_user.id, answr.returns_answr, answr.reply_markup)
+            self.bot.send_message(message.from_user.id, answr.returns_answr, reply_markup=answr.reply_markup)
 
     def run(self):
         self.bot.infinity_polling(True)

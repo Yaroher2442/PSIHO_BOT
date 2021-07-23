@@ -1,5 +1,6 @@
 from flask.views import MethodView
-from flask import Response, request, jsonify, send_from_directory, make_response
+from flask import Response, request, jsonify, send_from_directory, \
+    make_response, render_template, redirect
 import uuid
 from database.DB_interface import ApiDB
 
@@ -8,6 +9,11 @@ class BaseView(MethodView):
     def __init__(self):
         self.db = ApiDB()
 
+    def set_notification(self, message):
+        pass
+    def render_with_notifications(self, template):
+        pass
+    
     def check_token(self, request):
         req_token = request.cookies.get('auth_token')
         if req_token:
@@ -21,14 +27,13 @@ class Register(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        pass
+        return render_template('helpers/register.html')
 
     def post(self):
-        print(request.form.get('name'))
         if self.db.auth.registry_user(request.form.get('name'), request.form.get('password')):
-            return 'User create'
+            return redirect('/')
         else:
-            return 'User not be created'
+            return render_template()
 
 
 class Login(BaseView):
@@ -39,13 +44,13 @@ class Login(BaseView):
         pass
 
     def post(self):
-        token = self.db.auth.login_user(request.form.get('name'), request.form.get('password'))
+        token = self.db.auth.login_user(request.form.get('username'), request.form.get('password'))
         if token:
             res = make_response("Setting a cookie")
             res.set_cookie('auth_token', token, max_age=60 * 60 * 24)
             return res
         else:
-            return 'User not logined'
+            return redirect('/')
 
 
 class Index(BaseView):
@@ -54,6 +59,6 @@ class Index(BaseView):
 
     def get(self):
         if self.check_token(request):
-            return 'Привет как ты?'
+            return render_template('workplace.html')
         else:
-            return 'no token'
+            return render_template('index.html')

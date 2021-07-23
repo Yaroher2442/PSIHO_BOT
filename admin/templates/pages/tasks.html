@@ -1,0 +1,225 @@
+<div class="d-flex flex-column m-1 justify-content-between ">
+    <div class="d-flex flex-row  justify-content-center"><h5>Tasks in work</h5></div>
+    <div class="d-flex flex-column m-1 overflow-auto" style="max-height: 500px;">
+        {% for d in data %}
+        {% if d.flag == True %}
+        <div class="d-flex flex-row">
+            <div class="list-group w-100">
+                <div class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-1">
+                                <a type="button" class="btn btn-light w-30">
+                                    <svg style="fill:{{d.colour}};" xmlns="http://www.w3.org/2000/svg" width="16"
+                                         height="16"
+                                         fill="currentColor"
+                                         class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                    </svg>
+                                    {{d.item.status}}
+                                </a>
+                                {{d.item.name}}
+                            </h6>
+                            <h7 class="mb-1">Case name: {{d.item.case.name}} in funel {{d.item.case.funnel.name}}</h7>
+                            <h7 class="mb-1">Client name: {{d.item.case.client.name}}</h7>
+
+                        </div>
+                        <div class="d-flex flex-column">
+                            <small>Create: {{d.item.create_time}}</small>
+                            <small>Change: {{d.item.change_time}}</small>
+                            <div class="mt-2 d-flex justify-content-around">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
+                                        data-target="#ModalChange{{d.item.id}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"></path>
+                                    </svg>
+                                </button>
+                                <a type="button" class="btn btn-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-1 text-truncate">{{d.item.descr}}</div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="d-flex flex-row  justify-content-center"><h5>Canceled and Stoped Task</h5></div>
+    <div class="d-flex flex-column m-1 overflow-auto">
+        {% for d in data %}
+        {% if d.flag == False %}
+        <div class="d-flex flex-row">
+            <div class="list-group w-100">
+                <div class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-1">
+                                <a type="button" class="btn btn-light w-25">
+                                    <svg style="fill:{{d.colour}};" xmlns="http://www.w3.org/2000/svg" width="16"
+                                         height="16"
+                                         fill="currentColor"
+                                         class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    {{d.item.status}}
+                                </a>
+                                {{d.item.name}}
+                            </h6>
+                            <h7 class="mb-1">Case name: {{d.item.case.name}} in funel {{d.item.case.funnel.name}}</h7>
+                            <h7 class="mb-1">Client name: {{d.item.case.client.name}}</h7>
+
+                        </div>
+                        <div class="d-flex flex-column">
+                            <small>Create: {{d.item.create_time}}</small>
+                            <small>Change: {{d.item.change_time}}</small>
+                            <div class="mt-2 d-flex justify-content-around">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
+                                        data-target="#ModalChange{{d.item.id}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"></path>
+                                    </svg>
+                                </button>
+                                <a type="button" class="btn btn-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-1 text-truncate">{{d.item.descr}}</div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!--<script>-->
+<!--    $('#search_btn').on('click',(e)=>{-->
+<!--        var inp=document.getElementById('search_input').value-->
+<!--        console.log(inp.length)-->
+<!--        if(inp.length == 0 || inp.length>10){$('#main').load("/page/tasks")}-->
+<!--        if(inp.length >= 4 && !(inp.length>10)){-->
+<!--            console.log(inp);-->
+<!--            $('#main').load("/page/tasks", {"s_data":inp})-->
+<!--        }-->
+<!--});-->
+<!--</script>-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">ADD TASK FORM</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="form_add_task" method="POST" class="needs-validation" action="/add/task">
+                <div class="modal-body">
+                    <label>Chose case name</label>
+                    {{form.case}}
+                    <label>Name to task</label>
+                    {{form.name}}
+                    <label>Add some descriptions</label>
+                    {{form.descr}}
+                    <label>Status</label>
+                    {{form.status}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#exampleModalCenter").on("hidden.bs.modal", function (){
+            var $form = $("#form_add_task");
+            console.log($form.serialize())
+            $.post(
+                    $form.attr('action'),
+                    $form.serialize()
+                );
+            setTimeout(function (){
+                console.log('cases!')
+                $("#main").load( "/page/tasks" );
+            }, 200);
+        })
+
+</script>
+
+
+<!--Modal change-->
+{% for d in data %}
+<div class="modal fade" id="ModalChange{{d.item.id}}" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalChangeLongTitle{{d.item.id}}">{{d.item.name}} Client change</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="form_change{{d.item.id}}" method="POST" class="needs-validation"
+                  action="/change/task/{{d.item.id}}">
+                <div class="modal-body">
+                    <label>Name</label>
+                    <input class="form-control" placeholder="name" value="{{d.item.name}}" disabled>
+                    <label>Email</label>
+                    <input class="form-control" placeholder="name" value="{{d.item.email}}" disabled>
+                    <label>New descr</label>
+                    <input name="descr" class="form-control" placeholder="name" value="{{d.item.descr}}">
+                    <label>New Status</label>
+                    <select name="status" class="form-control">
+                        <option selected value="{{d.item.status}}" disabled>{{d.item.status}}</option>
+                        <option value="Created">Created</option>
+                        <option value="Done">Done</option>
+                        <option value="Wait">Wait</option>
+                        <option value="Stop">Stop</option>
+                        <option value="Canceled">Canceled</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#ModalChange{{d.item.id}}").on("hidden.bs.modal", function (){
+            var $form = $("#form_change{{d.item.id}}");
+            console.log($form.serialize())
+            $.post(
+                    $form.attr('action'),
+                    $form.serialize()
+                );
+            setTimeout(function (){
+                console.log('cases!')
+                $("#main").load( "/page/tasks" );
+            }, 200);
+        })
+
+
+</script>
+{% endfor %}
