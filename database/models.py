@@ -53,6 +53,7 @@ class MenuButton(Model):
 
 class AdminUser(Model):
     name = CharField()
+    email = CharField()
     password = CharField()
     token = CharField()
 

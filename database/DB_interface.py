@@ -41,13 +41,13 @@ class Auth(BaseDb):
         pwdhash = binascii.hexlify(pwdhash).decode('ascii')
         return pwdhash == stored_password
 
-    def registry_user(self, name, passwrd):
+    def registry_user(self, name, passwrd, email):
         try:
             try:
                 AdminUser.get(name=name)
                 return False
             except:
-                new_user = AdminUser.create(name=name, password=self.hash_password(passwrd), token="")
+                new_user = AdminUser.create(name=name, password=self.hash_password(passwrd), email=email, token="")
                 print(new_user)
                 return True
         except Exception as e:

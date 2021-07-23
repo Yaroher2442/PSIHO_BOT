@@ -6,7 +6,8 @@ from admin.views import *
 
 class FL_CLI:
     conf = Configurator()
-    app = Flask(__name__, static_folder="admin")
+    app = Flask(__name__, static_url_path=''
+                , static_folder="static")
     CORS(app)
 
     def __init__(self):
