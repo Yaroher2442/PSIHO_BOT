@@ -41,7 +41,7 @@ class Auth(BaseDb):
         pwdhash = binascii.hexlify(pwdhash).decode('ascii')
         return pwdhash == stored_password
 
-    def registry_user(self, name, passwrd, email):
+    def registry_user(self, name, email, passwrd ):
         try:
             try:
                 AdminUser.get(name=name)
@@ -53,9 +53,9 @@ class Auth(BaseDb):
         except Exception as e:
             return False
 
-    def login_user(self, name, passwrd):
+    def login_user(self, email, passwrd):
         try:
-            user = AdminUser.get(name=name)
+            user = AdminUser.get(email=email)
         except:
             print("User not found bby name")
             return False
@@ -69,6 +69,7 @@ class Auth(BaseDb):
     def verify_token(self, req_token):
         try:
             user = AdminUser.get(token=req_token)
+            print(user)
             return True
         except:
             print("User not found by token")
@@ -210,21 +211,6 @@ class TgClientAPI(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
 
-    def set_new(self, tg_id: int, status=0):
-        try:
-            new_tg_client = TgClient.create(tg_id=tg_id, status=status)
-            return new_tg_client.id
-        except:
-            return False
-
-    def set_status(self, tg_id: int, status: int):
-        try:
-            query = TgClient.update({TgClient.status: status}).where(TgClient.tg_id == tg_id)
-            query.execute()
-            return True
-        except:
-            return False
-
     def get_user(self, tg_id):
         try:
             client = TgClient.get(tg_id=tg_id)
@@ -232,8 +218,11 @@ class TgClientAPI(BaseDb):
         except:
             return False
 
-    def get_status(self, tg_id):
-        return TgClient.get(tg_id=tg_id).status
+    def get_all(self):
+        try:
+            return TgClient.select()
+        except Exception as e:
+            print(e)
 
 
 class ApiDB(BaseDb):

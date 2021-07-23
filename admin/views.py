@@ -4,17 +4,7 @@ from flask import Response, request, jsonify, send_from_directory, \
 import uuid
 import copy
 from database.DB_interface import ApiDB
-
-
-class Store():
-    def __init__(self):
-        self.notices = []
-
-    def __getattr__(self, name):
-        return getattr(self, name)
-
-
-store = Store()
+from admin.helpers import *
 
 
 class BaseView(MethodView):
@@ -22,12 +12,11 @@ class BaseView(MethodView):
         self.db = ApiDB()
         self.store = store
 
-    def set_notices(self, message):
-        self.store.__getattr__("notices").append(message)
+    def set_notices(self, type, message):
+        self.store.__getattr__("notices").append(Notice(type, message))
 
     def render_with_notices(self, template):
         curent_notifys = copy.copy(self.store.__getattr__("notices"))
-        print(curent_notifys)
         self.store.__getattr__("notices").clear()
         return render_template(template, notifys=curent_notifys)
 
@@ -44,7 +33,6 @@ class Register(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        print(g.__getattr__("notices"))
         return render_template('register.html')
 
     def post(self):
@@ -63,15 +51,24 @@ class Login(BaseView):
         return self.render_with_notices('login.html')
 
     def post(self):
-        token = self.db.auth.login_user(request.form.get('username'), request.form.get('password'))
+        token = self.db.auth.login_user(request.form.get('email'), request.form.get('password'))
         if token:
-            res = make_response("Setting a cookie")
+            res = make_response(redirect('/index'))
             res.set_cookie('auth_token', token, max_age=60 * 60 * 24)
-            return redirect('/')
+            return res
         else:
-            self.set_notices('User not found')
+            self.set_notices(Notice.danger, 'User not found')
             return redirect('/login')
 
+
+class Logout(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        res = make_response(redirect('/login'))
+        res.set_cookie('auth_token', "token", max_age=60 * 60 * 24)
+        return res
 
 class Index(BaseView):
     def __init__(self):
@@ -79,6 +76,7 @@ class Index(BaseView):
 
     def get(self):
         if self.check_token(request):
-            return render_template('workplace.html')
-        else:
+            print('qwrqwr')
             return render_template('index.html')
+        else:
+            return redirect('/login')

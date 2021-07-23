@@ -14,9 +14,10 @@ class FL_CLI:
         self.register_api()
 
     def register_api(self):
-        self.app.add_url_rule('/', view_func=Index.as_view('index'))
+        self.app.add_url_rule('/index', view_func=Index.as_view('index'))
         self.app.add_url_rule('/register', view_func=Register.as_view('register'))
         self.app.add_url_rule('/login', view_func=Login.as_view('login'))
+        self.app.add_url_rule('/logout', view_func=Logout.as_view('logout'))
 
     def run(self):
         self.app.run()
