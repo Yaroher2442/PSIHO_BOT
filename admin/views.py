@@ -13,11 +13,11 @@ class BaseView(MethodView):
         self.store = store
 
     def set_notices(self, type, message):
-        self.store.__getattr__("notices").append(Notice(type, message))
+        self.store.notices.append(Notice(type, message))
 
     def render_with_notices(self, template):
-        curent_notifys = copy.copy(self.store.__getattr__("notices"))
-        self.store.__getattr__("notices").clear()
+        curent_notifys = copy.copy(self.store.notices)
+        self.store.notices.clear()
         return render_template(template, notifys=curent_notifys)
 
     def check_token(self, request):
@@ -46,6 +46,7 @@ class Register(BaseView):
 class Login(BaseView):
     def __init__(self):
         BaseView.__init__(self)
+        print(self)
 
     def get(self):
         return self.render_with_notices('login.html')
@@ -69,6 +70,7 @@ class Logout(BaseView):
         res = make_response(redirect('/login'))
         res.set_cookie('auth_token', "token", max_age=60 * 60 * 24)
         return res
+
 
 class Index(BaseView):
     def __init__(self):

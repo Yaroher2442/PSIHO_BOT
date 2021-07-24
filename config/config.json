@@ -1,4 +1,5 @@
 {
+  "debug": true,
   "telegram": {
     "token": "1709972597:AAGadK_mJ4fu6vsAANDL_Tt1dN8HDRC1J58"
   },
@@ -8,8 +9,13 @@
     "user_pass": "2442",
     "db_name": "testdb"
   },
-  "logging": {
+  "logger": {
     "when": "H",
     "interval": 1
+  },
+  "server":
+  {
+    "host": null,
+    "port": null
   }
 }
