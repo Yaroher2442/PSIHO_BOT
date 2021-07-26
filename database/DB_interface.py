@@ -1,23 +1,57 @@
-from database.models import *
 import hashlib
 import os
 import binascii
 import uuid
+from database import models
+
+
+def create_db():
+    tables = [models.Statuses,
+              models.TgClient,
+              models.Menu,
+              models.MenuButton,
+              models.TextAnswers,
+              models.AdminUser]
+    with models.pg_db as db:
+        db.create_tables(tables)
 
 
 class BaseDb:
     def __init__(self):
-        self.database = pg_db
-        self.tables = [Statuses,
-                       TgClient,
-                       Menu,
-                       MenuButton,
-                       TextAnswers,
-                       AdminUser]
+        self.database = models.pg_db
+        self.table = None
 
-    def create_db(self):
-        with self.database:
-            self.database.create_tables(self.tables)
+    def set_row(self, **kwargs):
+        try:
+            new_row = self.table.create(**kwargs)
+            return new_row
+        except:
+            return False
+
+    def update(self, id, **kwargs):
+        try:
+            up_dict = {}
+            for k, v in kwargs.items():
+                up_dict.update({getattr(self.table, k): v})
+            query = self.table.update(up_dict).where(self.table.id == id)
+            query.execute()
+        except Exception as e:
+            print(e)
+            return False
+
+    def get_by_element(self, col_name, value):
+        try:
+            return self.table.select().where(getattr(self.table, col_name) == value)
+        except Exception as e:
+            print(e)
+            return False
+
+    def get_by_id(self, id):
+        try:
+            return self.table.get(id=id)
+        except Exception as e:
+            print(e)
+            return False
 
 
 class Auth(BaseDb):
@@ -41,13 +75,14 @@ class Auth(BaseDb):
         pwdhash = binascii.hexlify(pwdhash).decode('ascii')
         return pwdhash == stored_password
 
-    def registry_user(self, name, email, passwrd ):
+    def registry_user(self, name, email, passwrd):
         try:
             try:
-                AdminUser.get(name=name)
+                models.AdminUser.get(name=name)
                 return False
             except:
-                new_user = AdminUser.create(name=name, password=self.hash_password(passwrd), email=email, token="")
+                new_user = models.AdminUser.create(name=name, password=self.hash_password(passwrd), email=email,
+                                                   token="")
                 print(new_user)
                 return True
         except Exception as e:
@@ -55,7 +90,7 @@ class Auth(BaseDb):
 
     def login_user(self, email, passwrd):
         try:
-            user = AdminUser.get(email=email)
+            user = models.AdminUser.get(email=email)
         except:
             print("User not found bby name")
             return False
@@ -68,7 +103,7 @@ class Auth(BaseDb):
 
     def verify_token(self, req_token):
         try:
-            user = AdminUser.get(token=req_token)
+            user = models.AdminUser.get(token=req_token)
             print(user)
             return True
         except:
@@ -76,169 +111,40 @@ class Auth(BaseDb):
             return False
 
 
+class StatusesApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+        self.table = models.Statuses
+
+
 class MenuApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
-
-    def set_new(self, menu_description="", status=None):
-        try:
-            new_menu = Menu.create(descr=menu_description, status=status)
-            return new_menu.id
-        except:
-            return False
-
-    def update_text(self, menu_id, text):
-        try:
-            query = Menu.update({Menu.descr: text}).where(Menu.id == menu_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def get_by_id(self, menu_id):
-        return Menu.get(id=menu_id)
+        self.table = models.Menu
 
 
 class MenuButtonApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
-
-    def set_new(self, text="", next_menu_id=0, btn_answer=""):
-        try:
-            new_menu_button = MenuButton.create(text=text, next_menu=next_menu_id,
-                                                answer=btn_answer)
-            return new_menu_button.id
-        except:
-            return False
-
-    def update_text(self, menu_button_id: int, text: str):
-        try:
-            query = MenuButton.update({MenuButton.text: text}).where(MenuButton.id == menu_button_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def update_answer(self, menu_button_id: int, btn_answer: str):
-        try:
-            query = MenuButton.update({MenuButton.answer: btn_answer}).where(MenuButton.id == menu_button_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def update_next_menu(self, menu_button_id: int, next_menu_id: int):
-        try:
-            query = MenuButton.update({MenuButton.next_menu: next_menu_id}).where(MenuButton.id == menu_button_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def get_by_id(self, menu_button_id):
-        return MenuButton.get(id=menu_button_id)
-
-    def get_all_buttons(self, menu_id):
-        return MenuButton.select().where(MenuButton.id == menu_id)
+        self.table = models.MenuButton
 
 
 class TextAnswersApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
-
-    def set_new(self, question="", answer="", use_same_texts=False, change_state_to=0):
-        try:
-            new_menu_text = MenuButton.create(question=question, answer=answer,
-                                              use_same_texts=use_same_texts, change_state_to=change_state_to)
-            return new_menu_text.id
-        except:
-            return False
-
-    def update_question(self, text_anwer_id: int, question: str):
-        try:
-            query = TextAnswers.update({TextAnswers.question: question}).where(TextAnswers.id == text_anwer_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def update_answer(self, text_anwer_id: int, answer: str):
-        try:
-            query = TextAnswers.update({TextAnswers.answer: answer}).where(TextAnswers.id == text_anwer_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def update_use_same(self, text_anwer_id: int, use_same_texts: bool):
-        try:
-            query = TextAnswers.update({TextAnswers.use_same_texts: use_same_texts}).where(
-                TextAnswers.id == text_anwer_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def update_to_status(self, text_anwer_id: int, to_status: int):
-        try:
-            query = TextAnswers.update({TextAnswers.change_state_to: to_status}).where(
-                TextAnswers.id == text_anwer_id)
-            query.execute()
-            return True
-        except:
-            return False
-
-    def get_to_status(self, text_ansers_id: int):
-        try:
-            return TextAnswers.get(id=text_ansers_id).to_status
-        except:
-            return False
-
-    def get_by_id(self, text_ansers_id):
-        return TextAnswers.get(id=text_ansers_id)
-
-    def get_by_text(self, text):
-        try:
-            return TextAnswers.get(question=text)
-        except:
-            return False
-
-    def get_all(self):
-        return TextAnswers.select()
+        self.table = models.TextAnswers
 
 
-class TgClientAPI(BaseDb):
+class DBInterface:
     def __init__(self):
-        BaseDb.__init__(self)
-
-    def get_user(self, tg_id):
-        try:
-            client = TgClient.get(tg_id=tg_id)
-            return client
-        except:
-            return False
-
-    def get_all(self):
-        try:
-            return TgClient.select()
-        except Exception as e:
-            print(e)
-
-
-class ApiDB(BaseDb):
-    def __init__(self):
-        BaseDb.__init__(self)
         self.auth = Auth()
         self.Menu = MenuApi()
+        self.Statuses = StatusesApi()
         self.MenuButton = MenuButtonApi()
         self.TextAnswers = TextAnswersApi()
-        self.TgClient = TgClientAPI()
 
 
 if __name__ == '__main__':
-    pass
-    # ApiDB()
-    BaseDb().create_db()
+    create_db()
 
-    # ApiDB().TextAnswers.set_new(question='/start',answer='Привет я психобот')
-    # BaseDb().create_db()
+    db = DBInterface()

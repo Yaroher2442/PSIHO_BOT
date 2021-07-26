@@ -30,12 +30,12 @@ class Answer:
     def on_message(self):
         self.validate_user()
         if self.user_obj:
-            try:
+            if self.text_answr_obj:
                 self.returns_answr = self.text_answr_obj.answer
-
-            except Exception as e:
-                self.returns_answr=""
-                print("without text", e)
+                if self.new_status:
+                    self.update_user_status()
+            else:
+                self.returns_answr = "Не понял тебя попробуй ещё раз"
             self.generate_menu()
             # if self.button_pressed and self.new_status:
             #     pass
@@ -63,6 +63,14 @@ class Answer:
             except Exception as e:
                 print(e)
 
+    def update_user_status(self):
+        try:
+            self.user_obj.status = self.new_status
+            self.user_obj.save()
+        except Exception as e:
+            print(e)
+            return False
+
     def get_current_menu(self):
         try:
             self.current_menu = Menu.get(Menu.status == self.user_status)
@@ -83,9 +91,10 @@ class Answer:
                 self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.button_pressed.text)
             else:
                 try:
-                    self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text)
+                    self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
+                                                          TextAnswers.on_status == self.user_status)
                 except:
-                    for answer in TextAnswers.select():
+                    for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
                         if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
                             self.text_answr_obj = answer
         except Exception as e:

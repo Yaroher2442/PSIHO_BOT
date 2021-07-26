@@ -20,6 +20,7 @@ class TGBot(threading.Thread):
             self.bot.send_message(message.from_user.id, answr.returns_answr, reply_markup=answr.reply_markup)
 
     def run(self):
+        print("Bot started ....")
         self.bot.infinity_polling(True)
 
 

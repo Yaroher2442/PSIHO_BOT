@@ -34,6 +34,7 @@ class Menu(Model):
 
 
 class TextAnswers(Model):
+    on_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     question = CharField()
     answer = CharField()
     use_same_texts = BooleanField()

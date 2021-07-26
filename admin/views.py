@@ -3,13 +3,13 @@ from flask import Response, request, jsonify, send_from_directory, \
     make_response, render_template, redirect, g
 import uuid
 import copy
-from database.DB_interface import ApiDB
+from database.DB_interface import DBInterface
 from admin.helpers import *
 
 
 class BaseView(MethodView):
     def __init__(self):
-        self.db = ApiDB()
+        self.db = DBInterface()
         self.store = store
 
     def set_notices(self, type, message):
@@ -78,7 +78,17 @@ class Index(BaseView):
 
     def get(self):
         if self.check_token(request):
-            print('qwrqwr')
             return render_template('index.html')
         else:
             return redirect('/login')
+
+class Bots(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        if self.check_token(request):
+            return render_template('bots.html')
+        else:
+            return redirect('/login')
+
