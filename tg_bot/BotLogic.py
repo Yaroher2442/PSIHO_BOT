@@ -1,10 +1,11 @@
 from fuzzywuzzy import fuzz
 from telebot import types
 from database.models import *
-
-
+from config.loger import AppLogger
+import json
 class Answer:
-    def __init__(self, message):
+    def __init__(self, message, logger:AppLogger):
+        self.logger = logger
         self.message = message
 
         self.returns_answr = ""
@@ -25,7 +26,7 @@ class Answer:
 
         self.self_initial()
         self.on_message()
-        print(self.__dict__)
+        self.logger.info(self.__dict__)
 
     def on_message(self):
         self.validate_user()
@@ -37,10 +38,6 @@ class Answer:
             else:
                 self.returns_answr = "Не понял тебя попробуй ещё раз"
             self.generate_menu()
-            # if self.button_pressed and self.new_status:
-            #     pass
-            # elif self.button_pressed and not self.new_status:
-            #     pass
         else:
             self.returns_answr = "Techical error vlidate_user"
 
@@ -56,26 +53,25 @@ class Answer:
             self.user_obj = TgClient.get(tg_id=self.user_id)
             self.user_status = self.user_obj.status
         except Exception as e:
-            print(e)
             try:
                 self.user_obj = TgClient.create(tg_id=self.message.from_user.id, status=1)
                 self.user_status = self.user_obj.status
             except Exception as e:
-                print(e)
+                self.logger.error(e)
 
     def update_user_status(self):
         try:
             self.user_obj.status = self.new_status
             self.user_obj.save()
         except Exception as e:
-            print(e)
+            self.logger.error(e)
             return False
 
     def get_current_menu(self):
         try:
             self.current_menu = Menu.get(Menu.status == self.user_status)
         except Exception as e:
-            print(e)
+            self.logger.error(e)
 
     def check_msg_is_button(self):
         try:
@@ -83,7 +79,7 @@ class Answer:
             if self.message.text in [btn.text for btn in btns]:
                 self.button_pressed = MenuButton.get(MenuButton.text == self.message.text)
         except Exception as e:
-            print(e)
+            self.logger.error(e)
 
     def get_txt_answr_obj(self):
         try:
@@ -98,7 +94,7 @@ class Answer:
                         if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
                             self.text_answr_obj = answer
         except Exception as e:
-            print(e)
+            self.logger.error(e)
             return False
 
     def new_status_state(self):
@@ -108,7 +104,7 @@ class Answer:
                 self.new_menu = Menu.get(status=self.new_status)
                 self.new_btns = MenuButton.select().where(MenuButton.menu_id == self.new_menu.id)
         except Exception as e:
-            print(e)
+            self.logger.error(e)
 
     def generate_menu(self):
         if self.new_menu:
@@ -116,24 +112,3 @@ class Answer:
             for btn in self.new_btns:
                 keyboard.add(types.KeyboardButton(text=btn.text))
             self.reply_markup = keyboard
-
-
-class BotUseLogic:
-    def __init__(self):
-        self.db = pg_db
-
-    def answr_text(self, message):
-        pass
-
-    def get_menu(self, message):
-        pass
-
-    def start_command(self, message):
-        try:
-            client = TgClient.get(id=message.from_user.id)
-        except:
-            return False
-
-
-if __name__ == '__main__':
-    pass

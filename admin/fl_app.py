@@ -1,16 +1,14 @@
 from flask import Flask
 from flask_cors import CORS
-from config.conf import Configurator
 from admin.views import *
 
 
-class FL_CLI:
-    conf = Configurator()
+class AdminApp:
     app = Flask(__name__, static_url_path=''
                 , static_folder="static")
     CORS(app)
 
-    def __init__(self):
+    def __init__(self, conf):
         self.register_api()
 
         @self.app.errorhandler(404)
@@ -33,6 +31,3 @@ class FL_CLI:
     def run(self):
         self.app.run()
 
-
-if __name__ == '__main__':
-    FL_CLI().run()

@@ -6,12 +6,10 @@ import copy
 from database.DB_interface import DBInterface
 from admin.helpers import *
 
-
 class BaseView(MethodView):
     def __init__(self):
         self.db = DBInterface()
         self.store = store
-
     def set_notices(self, type, message):
         self.store.notices.append(Notice(type, message))
 

@@ -1,10 +1,10 @@
 import json
 import os
 
-
 class Configurator():
     def __init__(self):
-        with open('../config/config.json') as conf_file:
+        self.base_path=os.getcwd()
+        with open(os.path.join(self.base_path, "config", "config.json")) as conf_file:
             self.json_conf = dict(json.load(conf_file))
         self.tg_conf = TG_config(**self.json_conf['telegram'])
         self.db_conf = DB_config(**self.json_conf['database'])
@@ -39,4 +39,3 @@ class LOG_config:
 
 if __name__ == '__main__':
     conf = Configurator()
-    print(conf.tg_conf)
