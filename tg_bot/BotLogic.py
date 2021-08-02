@@ -38,7 +38,7 @@ class Answer:
                 if self.new_status:
                     self.update_user_status()
             else:
-                self.returns_answr = "Не понял тебя попробуй ещё раз"
+                self.returns_answr = "Извините, не могу определить ваш запрос. Пожалуйста, попробуйте ещё раз"
             self.generate_menu()
         else:
             self.returns_answr = "Techical error vlidate_user"
