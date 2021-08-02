@@ -3,6 +3,7 @@ from telebot import types
 from database.models import *
 from config.loger import AppLogger
 import json
+import builtins
 
 
 class Answer:
@@ -37,6 +38,7 @@ class Answer:
                 self.returns_answr = self.text_answr_obj.answer
                 if self.new_status:
                     self.update_user_status()
+                self.placeholders()
             else:
                 self.returns_answr = "Извините, не могу определить ваш запрос. Пожалуйста, попробуйте ещё раз"
             self.generate_menu()
@@ -49,6 +51,9 @@ class Answer:
         self.check_msg_is_button()
         self.get_txt_answr_obj()
         self.new_status_state()
+
+    def placeholders(self):
+        pass
 
     def validate_user(self):
         try:
@@ -95,9 +100,16 @@ class Answer:
                     self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
                                                           TextAnswers.on_status == self.user_status or TextAnswers.on_status == None)
                 except:
-                    for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
-                        if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
-                            self.text_answr_obj = answer
+
+                    texts_match = [(ans, fuzz.WRatio(ans.question, self.message.text)) for ans in
+                                   TextAnswers.select().where(TextAnswers.on_status == self.user_status)]
+                    max = builtins.max([i[1] for i in texts_match])
+                    for t in texts_match:
+                        if t[1] == max:
+                            self.text_answr_obj = t[0]
+                    # for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
+                    #     if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
+                    #         self.text_answr_obj = answer
         except Exception as e:
             self.logger.error(e)
             return False
