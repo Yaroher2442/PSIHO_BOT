@@ -65,6 +65,14 @@ class AdminUser(Model):
         database = pg_db
 
 
+class AnswersStatistic(Model):
+    tg_user_id = ForeignKeyField(TgClient, on_delete="CASCADE", null=True)
+    datetime = DateTimeField()
+    question = CharField()
+    answer = CharField()
+
+
+
 if __name__ == '__main__':
     print(Menu.set_menu("qwrqwr"))
     print(Menu.select()[-1].descr)

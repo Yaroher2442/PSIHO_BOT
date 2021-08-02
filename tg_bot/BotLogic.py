@@ -11,6 +11,9 @@ class Answer:
         self.logger = logger
         self.message = message
 
+        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, question=self.message.text,
+                                          datetime=self.message.date)
+
         self.returns_answr = ""
         self.reply_markup = None
 
@@ -41,6 +44,8 @@ class Answer:
                 self.placeholders()
             else:
                 self.returns_answr = "Извините, не могу определить ваш запрос. Пожалуйста, попробуйте ещё раз"
+            self.statistic.answer = self.returns_answr
+            self.statistic.save()
             self.generate_menu()
         else:
             self.returns_answr = "Techical error vlidate_user"
@@ -103,13 +108,6 @@ class Answer:
                         self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
                                                               TextAnswers.on_status == self.user_status)
                 except:
-
-                    # texts_match = [(ans, fuzz.WRatio(ans.question, self.message.text)) for ans in
-                    #                TextAnswers.select().where(TextAnswers.on_status == self.user_status)]
-                    # max = builtins.max([i[1] for i in texts_match])
-                    # for t in texts_match:
-                    #     if t[1] == max:
-                    #         self.text_answr_obj = t[0]
                     for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
                         if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
                             self.text_answr_obj = answer
