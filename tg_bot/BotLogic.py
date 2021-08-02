@@ -45,10 +45,14 @@ class Answer:
                 self.placeholders()
             else:
                 self.returns_answr = "Извините, не могу определить ваш запрос. Пожалуйста, попробуйте ещё раз"
-            self.statistic.save()
+            self.get_statistic()
             self.generate_menu()
         else:
             self.returns_answr = "Techical error vlidate_user"
+
+    def get_statistic(self):
+        if self.statistic.question and self.statistic.answer:
+            self.statistic.save()
 
     def self_initial(self):
         self.validate_user()
