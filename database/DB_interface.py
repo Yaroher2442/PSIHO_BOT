@@ -15,6 +15,9 @@ def create_db():
     with models.pg_db as db:
         db.create_tables(tables)
 
+def create_one_table(table_name):
+    with models.pg_db as db:
+        db.create_tables([table_name])
 
 class BaseDb:
     def __init__(self):
