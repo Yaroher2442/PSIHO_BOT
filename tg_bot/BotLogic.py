@@ -97,8 +97,11 @@ class Answer:
                 self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.button_pressed.text)
             else:
                 try:
-                    self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
-                                                          TextAnswers.on_status == self.user_status or TextAnswers.on_status == None)
+                    if '/' in self.message.text:
+                        self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text)
+                    else:
+                        self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
+                                                              TextAnswers.on_status == self.user_status)
                 except:
 
                     # texts_match = [(ans, fuzz.WRatio(ans.question, self.message.text)) for ans in
