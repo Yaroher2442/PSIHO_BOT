@@ -90,7 +90,7 @@ class Answer:
             else:
                 try:
                     self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
-                                                          TextAnswers.on_status == self.user_status or not TextAnswers.on_status)
+                                                          TextAnswers.on_status == self.user_status or TextAnswers.on_status == None)
                 except:
                     for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
                         if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
