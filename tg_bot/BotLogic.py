@@ -12,8 +12,7 @@ class Answer:
         self.logger = logger
         self.message = message
 
-        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, question=self.message.text,
-                                          datetime=datetime.fromtimestamp(self.message.date))
+
 
         self.returns_answr = ""
         self.reply_markup = None
@@ -30,6 +29,9 @@ class Answer:
         self.new_status = None
         self.new_menu = None
         self.new_btns = None
+
+        self.statistic = AnswersStatistic(tg_user_id=self.user_obj.id, question=self.message.text,
+                                          datetime=datetime.fromtimestamp(self.message.date))
 
         self.self_initial()
         self.on_message()
