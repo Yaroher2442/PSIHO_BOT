@@ -12,8 +12,6 @@ class Answer:
         self.logger = logger
         self.message = message
 
-
-
         self.returns_answr = ""
         self.reply_markup = None
 
@@ -30,7 +28,7 @@ class Answer:
         self.new_menu = None
         self.new_btns = None
 
-        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, question=self.message.text,
+        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id,
                                           datetime=datetime.fromtimestamp(self.message.date))
 
         self.self_initial()
@@ -47,7 +45,6 @@ class Answer:
                 self.placeholders()
             else:
                 self.returns_answr = "Извините, не могу определить ваш запрос. Пожалуйста, попробуйте ещё раз"
-            self.statistic.answer = self.returns_answr
             self.statistic.save()
             self.generate_menu()
         else:
@@ -111,9 +108,11 @@ class Answer:
                         self.text_answr_obj = TextAnswers.get(TextAnswers.question == self.message.text,
                                                               TextAnswers.on_status == self.user_status)
                 except:
+                    self.statistic.question = self.message.text
                     for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
                         if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
                             self.text_answr_obj = answer
+                    self.statistic.answer = self.text_answr_obj.answer
         except Exception as e:
             self.logger.error(e)
             return False
