@@ -66,7 +66,7 @@ class AdminUser(Model):
 
 
 class AnswersStatistic(Model):
-    tg_user_id = ForeignKeyField(TgClient, on_delete="CASCADE", null=True)
+    tg_user_id = IntegerField()
     datetime = DateTimeField()
     question = CharField()
     answer = CharField()

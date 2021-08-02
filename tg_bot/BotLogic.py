@@ -30,7 +30,7 @@ class Answer:
         self.new_menu = None
         self.new_btns = None
 
-        self.statistic = AnswersStatistic(tg_user_id=self.user_obj.id, question=self.message.text,
+        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, question=self.message.text,
                                           datetime=datetime.fromtimestamp(self.message.date))
 
         self.self_initial()
