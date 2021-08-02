@@ -56,7 +56,10 @@ class Answer:
             self.user_status = self.user_obj.status
         except Exception as e:
             try:
-                self.user_obj = TgClient.create(tg_id=self.message.from_user.id, status=1)
+                self.user_obj = TgClient.create(tg_id=self.message.from_user.id, status=1,
+                                                first_name=self.message.from_user.first_name,
+                                                last_name=self.message.from_user.last_name,
+                                                username=self.message.from_user.username)
                 self.user_status = self.user_obj.status
             except Exception as e:
                 self.logger.error(e)

@@ -20,6 +20,9 @@ class Statuses(Model):
 class TgClient(Model):
     tg_id = IntegerField()
     status = ForeignKeyField(Statuses)
+    first_name = CharField()
+    last_name = CharField()
+    username = CharField()
 
     class Meta:
         database = pg_db
