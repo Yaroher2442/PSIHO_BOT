@@ -112,7 +112,7 @@ class Answer:
         if self.new_menu:
             splitter = lambda lst, sz: [lst[i:i + sz] for i in range(0, len(lst), sz)]
             keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            for btn in splitter(self.new_menu, 2):
+            for btn in splitter(self.new_btns, 2):
                 row = []
                 for r in btn:
                     row.append(types.KeyboardButton(text=r.text))
