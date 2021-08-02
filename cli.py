@@ -1,10 +1,9 @@
-import os
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp
 from config.conf import Configurator
-import coloredlogs
 
 if __name__ == '__main__':
+
     conf = Configurator()
     threads = []
     workers = [TGBot(conf)]
