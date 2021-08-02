@@ -101,15 +101,15 @@ class Answer:
                                                           TextAnswers.on_status == self.user_status or TextAnswers.on_status == None)
                 except:
 
-                    texts_match = [(ans, fuzz.WRatio(ans.question, self.message.text)) for ans in
-                                   TextAnswers.select().where(TextAnswers.on_status == self.user_status)]
-                    max = builtins.max([i[1] for i in texts_match])
-                    for t in texts_match:
-                        if t[1] == max:
-                            self.text_answr_obj = t[0]
-                    # for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
-                    #     if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
-                    #         self.text_answr_obj = answer
+                    # texts_match = [(ans, fuzz.WRatio(ans.question, self.message.text)) for ans in
+                    #                TextAnswers.select().where(TextAnswers.on_status == self.user_status)]
+                    # max = builtins.max([i[1] for i in texts_match])
+                    # for t in texts_match:
+                    #     if t[1] == max:
+                    #         self.text_answr_obj = t[0]
+                    for answer in TextAnswers.select().where(TextAnswers.on_status == self.user_status):
+                        if answer.use_same_texts and fuzz.WRatio(answer.question, self.message.text) > 80:
+                            self.text_answr_obj = answer
         except Exception as e:
             self.logger.error(e)
             return False
