@@ -71,6 +71,9 @@ class AnswersStatistic(Model):
     question = CharField()
     answer = CharField()
 
+    class Meta:
+        database = pg_db
+
 
 
 if __name__ == '__main__':
