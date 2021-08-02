@@ -13,7 +13,7 @@ class TGBot(threading.Thread):
         @self.bot.message_handler()
         def init(message):
             answr = Answer(message, self.logger)
-            self.bot.send_message(message.from_user.id, answr.returns_answr, reply_markup=answr.reply_markup)
+            self.bot.send_message(message.from_user.id, '"'+answr.returns_answr+'"', reply_markup=answr.reply_markup)
 
     def run(self):
         self.logger.debug("Bot started")
