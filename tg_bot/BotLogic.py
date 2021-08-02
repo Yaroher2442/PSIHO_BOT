@@ -3,8 +3,10 @@ from telebot import types
 from database.models import *
 from config.loger import AppLogger
 import json
+
+
 class Answer:
-    def __init__(self, message, logger:AppLogger):
+    def __init__(self, message, logger: AppLogger):
         self.logger = logger
         self.message = message
 
@@ -108,7 +110,11 @@ class Answer:
 
     def generate_menu(self):
         if self.new_menu:
+            splitter = lambda lst, sz: [lst[i:i + sz] for i in range(0, len(lst), sz)]
             keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            for btn in self.new_btns:
-                keyboard.add(types.KeyboardButton(text=btn.text))
+            for btn in splitter(self.new_menu, 2):
+                row = []
+                for r in btn:
+                    row.append(types.KeyboardButton(text=r.text))
+                keyboard.row(*row)
             self.reply_markup = keyboard
