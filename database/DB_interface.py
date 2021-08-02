@@ -146,5 +146,4 @@ class DBInterface:
 
 if __name__ == '__main__':
     create_db()
-
-    db = DBInterface()
+    # db = DBInterface()
