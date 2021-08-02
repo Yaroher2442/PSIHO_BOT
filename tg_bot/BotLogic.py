@@ -4,6 +4,7 @@ from database.models import *
 from config.loger import AppLogger
 import json
 import builtins
+from datetime import datetime
 
 
 class Answer:
@@ -12,7 +13,7 @@ class Answer:
         self.message = message
 
         self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, question=self.message.text,
-                                          datetime=self.message.date)
+                                          datetime=datetime.fromtimestamp(self.message.date))
 
         self.returns_answr = ""
         self.reply_markup = None
