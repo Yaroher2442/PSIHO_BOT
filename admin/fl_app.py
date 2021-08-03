@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from admin.views import *
+from config.loger import AppLogger
 
 
 class AdminApp:
@@ -10,6 +11,7 @@ class AdminApp:
 
     def __init__(self, conf):
         self.register_api()
+        self.logger = AppLogger("admin", conf)
 
         @self.app.errorhandler(404)
         def page_not_found(e):
@@ -30,4 +32,3 @@ class AdminApp:
 
     def run(self):
         self.app.run()
-

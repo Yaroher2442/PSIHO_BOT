@@ -1,16 +1,47 @@
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp
 from config.conf import Configurator
+from config.loger import AppLogger
+from database.migration import makemigrations
+import os
+
+conf = Configurator()
+app_logger = AppLogger("app", conf)
+
+
+def change_dir(dir):
+    def actual_decorator(func):
+        def wrapper(*args, **kwargs):
+            retval = os.getcwd()
+            app_logger.debug("Current working directory %s" % os.getcwd())
+            os.chdir(os.path.join(retval, dir))
+            ret = func(*args, **kwargs)
+            app_logger.debug("Directory changed successfully %s" % os.getcwd())
+            os.chdir(retval)
+            app_logger.debug("Current working directory %s" % os.getcwd())
+            return ret
+
+        return wrapper
+
+    return actual_decorator
+
+
+@change_dir(dir='database')
+def migrate():
+    return makemigrations(logger=app_logger)
+
 
 if __name__ == '__main__':
-
-    conf = Configurator()
-    threads = []
-    workers = [TGBot(conf)]
-    for wrkr in workers:
-        wrkr.setDaemon(True)
-        wrkr.start()
-        threads.append(wrkr)
-
-    for th in threads:
-        th.join()
+    if migrate():
+        threads = []
+        workers = [TGBot(conf)]
+        for wrkr in workers:
+            wrkr.setDaemon(True)
+            wrkr.start()
+            app_logger.info(f"Thread {wrkr} start")
+            threads.append(wrkr)
+        for th in threads:
+            th.join()
+    else:
+        app_logger.critical("Migrations not set, exit")
+        exit(-1)

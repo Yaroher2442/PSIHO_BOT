@@ -12,6 +12,7 @@ pg_db = PostgresqlDatabase(host=conf.db_conf.host,
 
 class Statuses(Model):
     descr = CharField()
+    action = CharField(null=True)
 
     class Meta:
         database = pg_db
@@ -37,11 +38,15 @@ class Menu(Model):
 
 
 class TextAnswers(Model):
-    on_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     question = CharField()
+
+    class Meta:
+        database = pg_db
+
+
+class TextAnswerStortage(Model):
+    q_id = ForeignKeyField(TextAnswers, on_delete="CASCADE")
     answer = CharField()
-    use_same_texts = BooleanField()
-    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
     class Meta:
         database = pg_db
@@ -50,6 +55,32 @@ class TextAnswers(Model):
 class MenuButton(Model):
     menu_id = ForeignKeyField(Menu, on_delete="CASCADE")
     text = CharField()
+    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
+    set_action = CharField(null=True)
+
+    class Meta:
+        database = pg_db
+
+
+class BtnAnswerStortage(Model):
+    q_id = ForeignKeyField(MenuButton, on_delete="CASCADE")
+    answer = CharField()
+
+    class Meta:
+        database = pg_db
+
+
+class Commands(Model):
+    text = CharField()
+    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
+
+    class Meta:
+        database = pg_db
+
+
+class CommandsAnswerStortage(Model):
+    q_id = ForeignKeyField(Commands, on_delete="CASCADE")
+    answer = CharField()
 
     class Meta:
         database = pg_db
@@ -73,7 +104,6 @@ class AnswersStatistic(Model):
 
     class Meta:
         database = pg_db
-
 
 
 if __name__ == '__main__':

@@ -6,10 +6,12 @@ import copy
 from database.DB_interface import DBInterface
 from admin.helpers import *
 
+
 class BaseView(MethodView):
     def __init__(self):
         self.db = DBInterface()
         self.store = store
+
     def set_notices(self, type, message):
         self.store.notices.append(Notice(type, message))
 
@@ -80,6 +82,7 @@ class Index(BaseView):
         else:
             return redirect('/login')
 
+
 class Bots(BaseView):
     def __init__(self):
         BaseView.__init__(self)
@@ -89,4 +92,3 @@ class Bots(BaseView):
             return render_template('bots.html')
         else:
             return redirect('/login')
-
