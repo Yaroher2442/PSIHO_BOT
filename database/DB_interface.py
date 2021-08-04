@@ -5,20 +5,6 @@ import uuid
 from database import models
 
 
-def create_db():
-    tables = [models.Statuses,
-              models.TgClient,
-              models.Menu,
-              models.MenuButton,
-              models.TextAnswers,
-              models.AdminUser]
-    with models.pg_db as db:
-        db.create_tables(tables)
-
-def create_one_table(table_name):
-    with models.pg_db as db:
-        db.create_tables([table_name])
-
 class BaseDb:
     def __init__(self):
         self.database = models.pg_db
@@ -52,6 +38,13 @@ class BaseDb:
     def get_by_id(self, id):
         try:
             return self.table.get(id=id)
+        except Exception as e:
+            print(e)
+            return False
+
+    def get_all(self):
+        try:
+            return self.table.select()
         except Exception as e:
             print(e)
             return False
@@ -138,6 +131,12 @@ class TextAnswersApi(BaseDb):
         self.table = models.TextAnswers
 
 
+class CommandsApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+        self.table = models.Commands
+
+
 class DBInterface:
     def __init__(self):
         self.auth = Auth()
@@ -145,8 +144,4 @@ class DBInterface:
         self.Statuses = StatusesApi()
         self.MenuButton = MenuButtonApi()
         self.TextAnswers = TextAnswersApi()
-
-
-if __name__ == '__main__':
-    create_db()
-    # db = DBInterface()
+        self.Commands = CommandsApi()

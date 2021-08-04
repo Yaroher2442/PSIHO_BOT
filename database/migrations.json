@@ -11,9 +11,6 @@
     "models.Commands",
     "models.AdminUser",
     "models.AnswersStatistic",
-    "models.Commands",
-    "models.BtnAnswerStortage",
-    "models.TextAnswerStortage",
-    "models.CommandsAnswerStortage"
+    "models.Commands"
   ]
 }

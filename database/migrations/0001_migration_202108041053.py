@@ -30,9 +30,18 @@ class AnswersStatistic(peewee.Model):
 @snapshot.append
 class Statuses(peewee.Model):
     descr = CharField(max_length=255)
-    action = CharField(max_length=255)
+    action = CharField(max_length=255, null=True)
     class Meta:
         table_name = "statuses"
+
+
+@snapshot.append
+class Commands(peewee.Model):
+    text = CharField(max_length=255)
+    answer = CharField(max_length=255)
+    to_status = snapshot.ForeignKeyField(index=True, model='statuses', null=True, on_delete='CASCADE')
+    class Meta:
+        table_name = "commands"
 
 
 @snapshot.append
@@ -47,49 +56,19 @@ class Menu(peewee.Model):
 class MenuButton(peewee.Model):
     menu_id = snapshot.ForeignKeyField(index=True, model='menu', on_delete='CASCADE')
     text = CharField(max_length=255)
+    answer = CharField(max_length=255)
     to_status = snapshot.ForeignKeyField(index=True, model='statuses', null=True, on_delete='CASCADE')
-    set_action = CharField(max_length=255)
+    set_action = CharField(max_length=255, null=True)
     class Meta:
         table_name = "menubutton"
 
 
 @snapshot.append
-class BtnAnswerStortage(peewee.Model):
-    q_id = snapshot.ForeignKeyField(index=True, model='menubutton', on_delete='CASCADE')
-    answer = CharField(max_length=255)
-    class Meta:
-        table_name = "btnanswerstortage"
-
-
-@snapshot.append
-class Commands(peewee.Model):
-    text = CharField(max_length=255)
-    to_status = snapshot.ForeignKeyField(index=True, model='statuses', null=True, on_delete='CASCADE')
-    class Meta:
-        table_name = "commands"
-
-
-@snapshot.append
-class CommandsAnswerStortage(peewee.Model):
-    q_id = snapshot.ForeignKeyField(index=True, model='commands', on_delete='CASCADE')
-    answer = CharField(max_length=255)
-    class Meta:
-        table_name = "commandsanswerstortage"
-
-
-@snapshot.append
 class TextAnswers(peewee.Model):
     question = CharField(max_length=255)
-    class Meta:
-        table_name = "textanswers"
-
-
-@snapshot.append
-class TextAnswerStortage(peewee.Model):
-    q_id = snapshot.ForeignKeyField(index=True, model='textanswers', on_delete='CASCADE')
     answer = CharField(max_length=255)
     class Meta:
-        table_name = "textanswerstortage"
+        table_name = "textanswers"
 
 
 @snapshot.append

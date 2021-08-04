@@ -55,7 +55,7 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="index.html">
+            <a class="c-sidebar-nav-link" href="/buttons">
                 <svg class="c-sidebar-nav-icon">
                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
                 </svg>
@@ -168,46 +168,32 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="btn-group">
-                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addBotModal">Добавить
-                                    бота</a>
+                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addMenuModal">Добавить
+                                    меню</a>
                             </div>
+
                             <hr/>
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Название</th>
                                     <th>Описание</th>
-                                    <th>API Ключ</th>
-                                    <th>Статус</th>
+                                    <th>Статус отображения</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {%for item in menus%}
                                 <tr>
-                                    <td>Samppa Nori</td>
-                                    <td>2012/01/01</td>
-                                    <td>Member</td>
-                                    <td>12312323123123123123</td>
-                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.descr}}</td>
+                                    <td>{{item.status}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Estavan Lykos</td>
-                                    <td>2012/02/01</td>
-                                    <td>Staff</td>
-                                    <td>12312323123123123123</td>
-                                    <td><span class="badge badge-success">Active</span></td>
-                                </tr>
-
+                                {%endfor%}
                                 </tbody>
+                                {% for notify in notifys %}
+                                <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
+                                {% endfor %}
                             </table>
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -220,31 +206,23 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="addBotModal" tabindex="-1" role="dialog" aria-labelledby="addBotModal" aria-hidden="true">
+<div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addBotModal">Добавить бота</h5>
+                <h5 class="modal-title" id="addMenuModal">Добавить бота</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addBotForm">
+                <form id="addMenuForm" method="post" action="/add_menu">
                     <div class="form-group">
-                        <label class="col-form-label" for="name">Название бота</label>
-                        <input class="form-control" id="name" type="text" name="name" placeholder="Название бота">
+                        <label class="col-form-label" for="description">Описание меню</label>
+                        <input class="form-control" id="description" type="text" name="descr" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label" for="description">Описание бота</label>
-                        <input class="form-control" id="description" type="text" name="description" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="apikey">API Ключ</label>
-                        <input class="form-control" id="apikey" type="text" name="apikey" placeholder="API Key">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit" name="signup" value="Добавить">Добавить</button>
+                        <button class="btn btn-primary" type="submit">Добавить</button>
                     </div>
                 </form>
             </div>
@@ -270,6 +248,7 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
 
 
 </script>

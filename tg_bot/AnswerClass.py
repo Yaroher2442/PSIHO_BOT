@@ -6,7 +6,7 @@ import telebot
 import json
 import builtins
 from datetime import datetime
-
+import re
 
 class Answer:
     def __init__(self, message, logger: AppLogger):
@@ -21,8 +21,7 @@ class Answer:
         self.button = None
 
         self.new_status = None
-        self.returns_answr_id = None
-        self.returns_answr = []
+        self.returns_answr = None
         self.reply_markup = None
 
         self.mode = 'text'
@@ -41,7 +40,6 @@ class Answer:
             self.set_action()
             self.mode = "button"
         self.rerender()
-        self.collect_()
 
     def validate_user(self):
         try:
@@ -65,7 +63,7 @@ class Answer:
             try:
                 self.command = Commands.get(Commands.text == self.message.text)
                 self.new_status = self.command.to_status
-                self.returns_answr_id = self.command.id
+                self.returns_answr = self.command.answer
                 return True
             except Exception as e:
                 self.logger.debug("Can't found command")
@@ -79,7 +77,7 @@ class Answer:
                                          MenuButton.menu_id == Menu.get(Menu.status == self.user_obj.status).id)
             self.new_status = self.button.to_status
             self.action = self.button.set_action
-            self.returns_answr_id = self.button.id
+            self.returns_answr = self.button.answer
             return True
         except Exception as e:
             self.logger.debug(" button False")
@@ -101,7 +99,7 @@ class Answer:
         try:
             for answr in TextAnswers.select():
                 if fuzz.WRatio(answr.question, self.message.text) > 80:
-                    self.returns_answr_id = answr.id
+                    self.returns_answr = answr.answer
         except Exception as e:
             return None
 
@@ -120,16 +118,18 @@ class Answer:
             self.logger.debug("Can't found new menu render")
             return False
 
-    def collect_(self):
-        if self.returns_answr_id:
-            modes = {'text': TextAnswerStortage, 'button': BtnAnswerStortage, 'command': CommandsAnswerStortage}
-            self.returns_answr = [msg.answer for msg in
-                                  modes[self.mode].select().where(modes[self.mode].q_id == self.returns_answr_id)]
-        else:
-            self.returns_answr = ["Пожалуйста, попробуйте ещё раз","Извините, не могу определить ваш запрос."]
+    def str_processor(self) -> list:
+        try:
+            if self.returns_answr:
+                return [i for i in self.returns_answr.split('#message') if i]
+            else:
+                return ["Извините, не смог понять вас", "Попробуйте ещё раз"]
+        except:
+            return ["Извините, не смог понять вас", "Попробуйте ещё раз"]
+
 
     def send_message(self, bot: telebot.telebot):
-        for msg in reversed(self.returns_answr):
+        for msg in self.str_processor():
             bot.send_message(self.message.from_user.id,
                              text=msg,
                              reply_markup=self.reply_markup,

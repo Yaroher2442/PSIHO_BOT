@@ -1,0 +1,1621 @@
+2021-08-03 14:37:59,828 - app - INFO - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:38:00,562 - app - INFO - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:38:00,562 - app - INFO - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:38:12,498 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:38:13,230 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:38:13,230 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:41:25,776 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:41:26,520 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:41:26,520 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:41:26,521 - app - INFO - Threads to start [<TGBot(Thread-1, initial)>]
+2021-08-03 14:41:26,521 - app - INFO - Thread <TGBot(Thread-1, started daemon 140617400612608)> start
+2021-08-03 14:42:22,111 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:42:22,840 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:42:22,841 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:42:22,842 - app - INFO - Thread <TGBot(Thread-1, started daemon 140265762416384)> start
+2021-08-03 14:42:41,290 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:42:42,063 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:42:42,063 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:42:42,064 - app - INFO - Thread <TGBot(Thread-1, started daemon 140349733336832)> start
+2021-08-03 14:44:30,460 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:44:54,132 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:44:54,204 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Statuses'], returncode=1)
+2021-08-03 14:44:54,280 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TgClient'], returncode=1)
+2021-08-03 14:44:54,355 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Menu'], returncode=1)
+2021-08-03 14:44:54,428 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TextAnswers'], returncode=1)
+2021-08-03 14:44:54,499 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.MenuButton'], returncode=1)
+2021-08-03 14:44:54,572 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Comands'], returncode=1)
+2021-08-03 14:44:54,643 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AdminUser'], returncode=1)
+2021-08-03 14:44:54,715 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AnswersStatistic'], returncode=1)
+2021-08-03 14:44:54,793 - app - INFO - No changes found.
+
+2021-08-03 14:44:54,875 - app - INFO - There is nothing to migrate
+
+2021-08-03 14:44:54,875 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:44:54,875 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:44:54,877 - app - INFO - Thread <TGBot(Thread-1, started daemon 140014676317952)> start
+2021-08-03 14:45:42,111 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:45:42,182 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Statuses'], returncode=1)
+2021-08-03 14:45:42,255 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TgClient'], returncode=1)
+2021-08-03 14:45:42,329 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Menu'], returncode=1)
+2021-08-03 14:45:42,402 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TextAnswers'], returncode=1)
+2021-08-03 14:45:42,473 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.MenuButton'], returncode=1)
+2021-08-03 14:45:42,544 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Comands'], returncode=1)
+2021-08-03 14:45:42,615 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AdminUser'], returncode=1)
+2021-08-03 14:45:42,685 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AnswersStatistic'], returncode=1)
+2021-08-03 14:45:42,764 - app - INFO - MigrationsNo changes found.
+
+2021-08-03 14:45:42,847 - app - INFO - MigrationsThere is nothing to migrate
+
+2021-08-03 14:45:42,848 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:45:42,848 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:45:42,849 - app - INFO - Thread <TGBot(Thread-1, started daemon 140674980927232)> start
+2021-08-03 14:45:52,933 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:45:53,004 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Statuses'], returncode=1)
+2021-08-03 14:45:53,077 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TgClient'], returncode=1)
+2021-08-03 14:45:53,149 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Menu'], returncode=1)
+2021-08-03 14:45:53,219 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.TextAnswers'], returncode=1)
+2021-08-03 14:45:53,293 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.MenuButton'], returncode=1)
+2021-08-03 14:45:53,368 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.Comands'], returncode=1)
+2021-08-03 14:45:53,440 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AdminUser'], returncode=1)
+2021-08-03 14:45:53,510 - app - INFO - CompletedProcess(args=['pem', 'add', 'models.AnswersStatistic'], returncode=1)
+2021-08-03 14:45:53,586 - app - INFO - Migrations: No changes found.
+
+2021-08-03 14:45:53,668 - app - INFO - Migrations: There is nothing to migrate
+
+2021-08-03 14:45:53,668 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:45:53,668 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:45:53,669 - app - INFO - Thread <TGBot(Thread-1, started daemon 139721460152064)> start
+2021-08-03 14:46:51,419 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:46:56,345 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:46:56,415 - app - INFO - None
+2021-08-03 14:46:56,488 - app - INFO - None
+2021-08-03 14:46:56,562 - app - INFO - None
+2021-08-03 14:46:56,636 - app - INFO - None
+2021-08-03 14:46:56,707 - app - INFO - None
+2021-08-03 14:46:56,779 - app - INFO - None
+2021-08-03 14:46:56,852 - app - INFO - None
+2021-08-03 14:46:56,928 - app - INFO - None
+2021-08-03 14:46:57,006 - app - INFO - Migrations | No changes found.
+
+2021-08-03 14:46:57,089 - app - INFO - Migrations |There is nothing to migrate
+
+2021-08-03 14:46:57,090 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:46:57,090 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:46:57,091 - app - INFO - Thread <TGBot(Thread-1, started daemon 140628637775616)> start
+2021-08-03 14:47:19,945 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:47:20,603 - app - INFO - Migrations | No changes found.
+
+2021-08-03 14:47:20,685 - app - INFO - Migrations |There is nothing to migrate
+
+2021-08-03 14:47:20,686 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:47:20,686 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:47:20,687 - app - INFO - Thread <TGBot(Thread-1, started daemon 140069566093056)> start
+2021-08-03 14:48:27,933 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:48:28,008 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:48:28,084 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:48:28,154 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:48:28,225 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:48:28,299 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:48:28,372 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:48:28,443 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:48:28,513 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:48:28,587 - app - INFO - Migrations | No changes found.
+
+2021-08-03 14:48:28,669 - app - INFO - Migrations |There is nothing to migrate
+
+2021-08-03 14:48:28,669 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:48:28,669 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:48:28,670 - app - INFO - Thread <TGBot(Thread-1, started daemon 139643383875328)> start
+2021-08-03 14:48:50,952 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:48:51,024 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:48:51,098 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:48:51,170 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:48:51,243 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:48:51,314 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:48:51,386 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:48:51,459 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:48:51,531 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:48:51,608 - app - INFO - Migrations | No changes found.
+2021-08-03 14:48:51,691 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:48:51,691 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:48:51,691 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:48:51,692 - app - INFO - Thread <TGBot(Thread-1, started daemon 139959822444288)> start
+2021-08-03 14:51:08,391 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:51:08,464 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:51:08,541 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:51:08,614 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:51:08,685 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:51:08,758 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:51:08,830 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:51:08,917 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:51:08,991 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:51:09,069 - app - INFO - Migrations | No changes found.
+2021-08-03 14:51:09,151 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:51:09,151 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:51:09,151 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:51:09,152 - app - INFO - Thread <TGBot(Thread-1, started daemon 139721983170304)> start
+2021-08-03 14:52:24,512 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:52:24,582 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:52:24,653 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:52:24,725 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:52:24,799 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:52:24,870 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:52:24,942 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:52:25,013 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:52:25,086 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:52:25,162 - app - INFO - Migrations | No changes found.
+2021-08-03 14:52:25,243 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:52:25,243 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:52:25,243 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:53:18,713 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:53:18,782 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:53:18,854 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:53:18,927 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:53:18,997 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:53:19,068 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:53:19,142 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:53:19,215 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:53:19,285 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:53:19,361 - app - INFO - Migrations | No changes found.
+2021-08-03 14:53:19,445 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:53:19,445 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:53:19,445 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:53:19,446 - app - INFO - Thread <TGBot(Thread-1, started daemon 139856676120320)> start
+2021-08-03 14:53:49,957 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:53:50,029 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:53:50,104 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:53:50,178 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:53:50,252 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:53:50,327 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:53:50,406 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:53:50,481 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:53:50,552 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:53:50,630 - app - INFO - Migrations | No changes found.
+2021-08-03 14:53:50,716 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:53:50,716 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:53:50,716 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:53:50,718 - app - INFO - Thread <TGBot(Thread-1, started daemon 139634419955456)> start
+2021-08-03 14:54:05,530 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:54:05,606 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:54:05,679 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:54:05,749 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:54:05,821 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:54:05,891 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:54:05,968 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:54:06,039 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:54:06,109 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:54:06,183 - app - INFO - Migrations | No changes found.
+2021-08-03 14:54:06,265 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:54:06,265 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:54:06,265 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:54:06,266 - app - INFO - Thread <TGBot(Thread-1, started daemon 140278008243968)> start
+2021-08-03 14:55:01,274 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:55:01,346 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:55:01,425 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:55:01,497 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:55:01,569 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:55:01,642 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:55:01,715 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:55:01,786 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:55:01,858 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:55:01,934 - app - INFO - Migrations | No changes found.
+2021-08-03 14:55:02,017 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 14:55:02,018 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:55:02,018 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:55:02,019 - app - INFO - Thread <TGBot(Thread-1, started daemon 139825067845376)> start
+2021-08-03 14:59:53,043 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:59:53,123 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 14:59:53,198 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 14:59:53,273 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 14:59:53,347 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 14:59:53,423 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 14:59:53,501 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 14:59:53,578 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 14:59:53,652 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 14:59:53,734 - app - INFO - Migrations | Migration `0006_migration_202108031459` has been created.
+2021-08-03 14:59:53,827 - app - INFO - Migrations |[X] 0006_migration_202108031459
+2021-08-03 14:59:53,828 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 14:59:53,828 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 14:59:53,830 - app - INFO - Thread <TGBot(Thread-6, started daemon 140255280666368)> start
+2021-08-03 15:03:05,803 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:03:05,874 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:03:05,947 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:03:06,022 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:03:06,094 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:03:06,166 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:03:06,240 - app - INFO - Migrations | models.Comands already in the watch list
+2021-08-03 15:03:06,312 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:03:06,384 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:03:06,464 - app - INFO - Migrations | Migration `0007_migration_202108031503` has been created.
+2021-08-03 15:03:06,558 - app - INFO - Migrations |[X] 0007_migration_202108031503
+2021-08-03 15:03:06,558 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:03:06,558 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:03:06,559 - app - INFO - Thread <TGBot(Thread-1, started daemon 140011113453312)> start
+2021-08-03 15:07:16,630 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:07:16,700 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:07:16,774 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:07:16,847 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:07:16,917 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:07:16,990 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:07:17,139 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:07:17,213 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:07:17,288 - app - ERROR - Migrations | Command '['pem', 'watch']' returned non-zero exit status 1.
+2021-08-03 15:07:17,288 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:07:17,288 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:07:17,288 - app - CRITICAL - Migrations not set, exit
+2021-08-03 15:08:07,382 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:08:07,453 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:08:07,527 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:08:07,600 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:08:07,671 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:08:07,742 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:08:07,818 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:08:07,890 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:08:07,960 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:08:08,041 - app - INFO - Migrations | Migration `0008_migration_202108031508` has been created.
+2021-08-03 15:08:08,180 - app - INFO - Migrations |[X] 0008_migration_202108031508
+2021-08-03 15:08:08,181 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:08:08,181 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:08:08,184 - app - INFO - Thread <TGBot(Thread-1, started daemon 140524806784768)> start
+2021-08-03 15:18:55,378 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:18:55,452 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:18:55,526 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:18:55,598 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:18:55,669 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:18:55,740 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:18:55,814 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:18:55,884 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:18:55,955 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:18:56,034 - app - INFO - Migrations | No changes found.
+2021-08-03 15:18:56,117 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 15:18:56,117 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:18:56,117 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:18:56,118 - app - INFO - Thread <TGBot(Thread-1, started daemon 140167373940480)> start
+2021-08-03 15:24:32,767 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:24:32,836 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:24:32,909 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:24:32,987 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:24:33,062 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:24:33,133 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:24:33,209 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:24:33,283 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:24:33,356 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:24:33,432 - app - INFO - Migrations | No changes found.
+2021-08-03 15:24:33,516 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 15:24:33,516 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:24:33,516 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:24:33,517 - app - INFO - Thread <TGBot(Thread-1, started daemon 140515209451264)> start
+2021-08-03 15:25:56,136 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:25:56,207 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:25:56,280 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:25:56,351 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:25:56,422 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:25:56,493 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:25:56,566 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:25:56,637 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:25:56,709 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:25:56,789 - app - INFO - Migrations | No changes found.
+2021-08-03 15:25:56,873 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 15:25:56,873 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:25:56,873 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:25:56,874 - app - INFO - Thread <TGBot(Thread-1, started daemon 140183496288000)> start
+2021-08-03 15:27:05,061 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:27:05,132 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:27:05,204 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:27:05,277 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:27:05,349 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:27:05,421 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:27:05,495 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:27:05,565 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:27:05,637 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:27:05,713 - app - INFO - Migrations | No changes found.
+2021-08-03 15:27:05,795 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 15:27:05,796 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:27:05,796 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:27:05,798 - app - INFO - Thread <TGBot(Thread-1, started daemon 139813130860288)> start
+2021-08-03 15:57:34,195 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:57:34,267 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 15:57:34,341 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 15:57:34,413 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 15:57:34,486 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 15:57:34,557 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 15:57:34,631 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 15:57:34,704 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 15:57:34,778 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 15:57:34,854 - app - INFO - Migrations | No changes found.
+2021-08-03 15:57:34,937 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 15:57:34,938 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 15:57:34,938 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 15:57:34,939 - app - INFO - Thread <TGBot(Thread-1, started daemon 140328652760832)> start
+2021-08-03 16:07:57,230 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:07:57,306 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:07:57,380 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:07:57,453 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:07:57,527 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:07:57,599 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:07:57,672 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:07:57,744 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:07:57,819 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:07:57,896 - app - INFO - Migrations | No changes found.
+2021-08-03 16:07:57,981 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:07:57,981 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:07:57,981 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:07:57,982 - app - INFO - Thread <TGBot(Thread-1, started daemon 139793266636544)> start
+2021-08-03 16:09:52,414 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:09:52,486 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:09:52,558 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:09:52,630 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:09:52,704 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:09:52,779 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:09:52,857 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:09:52,930 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:09:53,005 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:09:53,085 - app - INFO - Migrations | No changes found.
+2021-08-03 16:09:53,172 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:09:53,172 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:09:53,172 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:09:53,173 - app - INFO - Thread <TGBot(Thread-1, started daemon 140212938606336)> start
+2021-08-03 16:10:26,498 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:10:26,568 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:10:26,644 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:10:26,720 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:10:26,795 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:10:26,867 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:10:26,941 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:10:27,015 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:10:27,088 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:10:27,166 - app - INFO - Migrations | No changes found.
+2021-08-03 16:10:27,250 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:10:27,250 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:10:27,250 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:10:27,252 - app - INFO - Thread <TGBot(Thread-1, started daemon 140348491069184)> start
+2021-08-03 16:10:51,438 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:10:51,510 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:10:51,584 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:10:51,657 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:10:51,731 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:10:51,806 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:10:51,881 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:10:51,953 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:10:52,024 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:10:52,100 - app - INFO - Migrations | No changes found.
+2021-08-03 16:10:52,185 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:10:52,185 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:10:52,185 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:10:52,186 - app - INFO - Thread <TGBot(Thread-1, started daemon 140223493170944)> start
+2021-08-03 16:14:20,209 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:14:20,281 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:14:20,355 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:14:20,427 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:14:20,500 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:14:20,572 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:14:20,647 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:14:20,746 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:14:20,864 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:14:20,948 - app - INFO - Migrations | Migration `0009_migration_202108031614` has been created.
+2021-08-03 16:14:21,067 - app - INFO - Migrations |[X] 0009_migration_202108031614
+2021-08-03 16:14:21,067 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:14:21,067 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:14:21,068 - app - INFO - Thread <TGBot(Thread-1, started daemon 140046459873024)> start
+2021-08-03 16:17:41,311 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:17:41,382 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:17:41,458 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:17:41,534 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:17:41,609 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:17:41,683 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:17:41,757 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:17:41,829 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:17:41,900 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:17:41,976 - app - INFO - Migrations | No changes found.
+2021-08-03 16:17:42,058 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:17:42,059 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:17:42,059 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:17:42,060 - app - INFO - Thread <TGBot(Thread-1, started daemon 139653028071168)> start
+2021-08-03 16:22:09,646 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:22:09,720 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:22:09,793 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:22:09,867 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:22:09,941 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:22:10,013 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:22:10,085 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:22:10,155 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:22:10,228 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:22:10,309 - app - INFO - Migrations | Migration `0010_migration_202108031622` has been created.
+2021-08-03 16:22:10,400 - app - INFO - Migrations |[X] 0010_migration_202108031622
+2021-08-03 16:22:10,401 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:22:10,401 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:22:10,402 - app - INFO - Thread <TGBot(Thread-1, started daemon 140151310141184)> start
+2021-08-03 16:24:19,743 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:24:19,814 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:24:19,885 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:24:19,957 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:24:20,031 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:24:20,105 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:24:20,178 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:24:20,248 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:24:20,319 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:24:20,395 - app - INFO - Migrations | No changes found.
+2021-08-03 16:24:20,479 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:24:20,479 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:24:20,480 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:24:20,481 - app - INFO - Thread <TGBot(Thread-1, started daemon 139935095420672)> start
+2021-08-03 16:24:30,239 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:24:30,311 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:24:30,389 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:24:30,462 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:24:30,536 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:24:30,608 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:24:30,682 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:24:30,757 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:24:30,829 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:24:30,904 - app - INFO - Migrations | No changes found.
+2021-08-03 16:24:30,987 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:24:30,987 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:24:30,987 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:24:30,988 - app - INFO - Thread <TGBot(Thread-1, started daemon 140530189072128)> start
+2021-08-03 16:25:30,294 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:30,368 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:25:30,443 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:25:30,517 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:25:30,587 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:25:30,663 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:25:30,736 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:25:30,810 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:25:30,882 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:25:30,958 - app - INFO - Migrations | No changes found.
+2021-08-03 16:25:31,043 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:25:31,044 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:25:31,044 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:31,045 - app - INFO - Thread <TGBot(Thread-1, started daemon 140472475449088)> start
+2021-08-03 16:25:46,807 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:46,878 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:25:46,955 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:25:47,027 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:25:47,099 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:25:47,172 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:25:47,244 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:25:47,319 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:25:47,393 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:25:47,471 - app - INFO - Migrations | No changes found.
+2021-08-03 16:25:47,556 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:25:47,556 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:25:47,556 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:47,557 - app - INFO - Thread <TGBot(Thread-1, started daemon 139817872676608)> start
+2021-08-03 16:25:56,649 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:56,723 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:25:56,798 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:25:56,872 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:25:56,945 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:25:57,018 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:25:57,092 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:25:57,166 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:25:57,238 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:25:57,316 - app - INFO - Migrations | No changes found.
+2021-08-03 16:25:57,400 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:25:57,400 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:25:57,400 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:25:57,401 - app - INFO - Thread <TGBot(Thread-1, started daemon 140656834868992)> start
+2021-08-03 16:27:02,331 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:27:02,404 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:27:02,480 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:27:02,553 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:27:02,625 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:27:02,698 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:27:02,770 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:27:02,842 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:27:02,915 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:27:02,992 - app - INFO - Migrations | No changes found.
+2021-08-03 16:27:03,076 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:27:03,077 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:27:03,077 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:27:03,078 - app - INFO - Thread <TGBot(Thread-1, started daemon 140000725317376)> start
+2021-08-03 16:27:43,053 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:27:43,124 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:27:43,200 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:27:43,274 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:27:43,347 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:27:43,419 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:27:43,490 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:27:43,563 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:27:43,636 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:27:43,711 - app - INFO - Migrations | No changes found.
+2021-08-03 16:27:43,793 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:27:43,793 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:27:43,793 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:27:43,794 - app - INFO - Thread <TGBot(Thread-1, started daemon 140650163926784)> start
+2021-08-03 16:28:03,642 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:03,714 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:28:03,786 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:28:03,858 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:28:03,930 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:28:04,001 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:28:04,075 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:28:04,146 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:28:04,217 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:28:04,292 - app - INFO - Migrations | No changes found.
+2021-08-03 16:28:04,374 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:28:04,374 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:28:04,374 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:04,375 - app - INFO - Thread <TGBot(Thread-1, started daemon 140636119586560)> start
+2021-08-03 16:28:31,132 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:31,204 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:28:31,280 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:28:31,352 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:28:31,425 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:28:31,498 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:28:31,573 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:28:31,647 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:28:31,721 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:28:31,799 - app - INFO - Migrations | No changes found.
+2021-08-03 16:28:31,883 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:28:31,883 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:28:31,883 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:31,884 - app - INFO - Thread <TGBot(Thread-1, started daemon 140704565151488)> start
+2021-08-03 16:28:50,802 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:50,873 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:28:50,946 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:28:51,020 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:28:51,092 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:28:51,165 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:28:51,240 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:28:51,312 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:28:51,383 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:28:51,460 - app - INFO - Migrations | No changes found.
+2021-08-03 16:28:51,543 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:28:51,544 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:28:51,544 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:28:51,545 - app - INFO - Thread <TGBot(Thread-1, started daemon 139803679840000)> start
+2021-08-03 16:29:40,449 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:29:40,520 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:29:40,594 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:29:40,668 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:29:40,740 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:29:40,812 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:29:40,882 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:29:40,954 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:29:41,027 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:29:41,103 - app - INFO - Migrations | No changes found.
+2021-08-03 16:29:41,184 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:29:41,184 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:29:41,184 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:29:41,185 - app - INFO - Thread <TGBot(Thread-1, started daemon 140606357632768)> start
+2021-08-03 16:29:54,873 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:29:54,949 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:29:55,024 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:29:55,095 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:29:55,168 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:29:55,244 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:29:55,319 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:29:55,392 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:29:55,463 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:29:55,541 - app - INFO - Migrations | No changes found.
+2021-08-03 16:29:55,626 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:29:55,626 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:29:55,626 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:29:55,627 - app - INFO - Thread <TGBot(Thread-1, started daemon 139648187959040)> start
+2021-08-03 16:30:34,832 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:30:34,907 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:30:34,983 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:30:35,057 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:30:35,130 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:30:35,204 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:30:35,277 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:30:35,349 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:30:35,422 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:30:35,498 - app - INFO - Migrations | No changes found.
+2021-08-03 16:30:35,579 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:30:35,580 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:30:35,580 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:30:35,581 - app - INFO - Thread <TGBot(Thread-1, started daemon 140292212647680)> start
+2021-08-03 16:31:12,179 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:31:12,253 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:31:12,328 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:31:12,401 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:31:12,473 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:31:12,545 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:31:12,623 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:31:12,717 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:31:12,788 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:31:12,863 - app - INFO - Migrations | No changes found.
+2021-08-03 16:31:12,946 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:31:12,946 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:31:12,946 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:31:12,947 - app - INFO - Thread <TGBot(Thread-1, started daemon 140252709115648)> start
+2021-08-03 16:31:55,017 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:31:55,088 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:31:55,167 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:31:55,241 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:31:55,316 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:31:55,396 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:31:55,473 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:31:55,544 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:31:55,615 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:31:55,698 - app - INFO - Migrations | No changes found.
+2021-08-03 16:31:55,782 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:31:55,782 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:31:55,782 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:31:55,783 - app - INFO - Thread <TGBot(Thread-1, started daemon 140006292424448)> start
+2021-08-03 16:32:45,054 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:32:45,128 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:32:45,204 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:32:45,279 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:32:45,352 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:32:45,425 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:32:45,500 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:32:45,573 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:32:45,647 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:32:45,725 - app - INFO - Migrations | No changes found.
+2021-08-03 16:32:45,808 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:32:45,808 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:32:45,808 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:32:45,809 - app - INFO - Thread <TGBot(Thread-1, started daemon 140137727846144)> start
+2021-08-03 16:33:13,740 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:33:13,812 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:33:13,885 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:33:13,964 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:33:14,036 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:33:14,108 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:33:14,180 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:33:14,250 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:33:14,322 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:33:14,398 - app - INFO - Migrations | No changes found.
+2021-08-03 16:33:14,481 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:33:14,481 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:33:14,481 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:33:14,482 - app - INFO - Thread <TGBot(Thread-1, started daemon 140098534463232)> start
+2021-08-03 16:38:25,756 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:38:25,826 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:38:25,900 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:38:25,973 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:38:26,046 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:38:26,118 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:38:26,191 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:38:26,261 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:38:26,333 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:38:26,416 - app - INFO - Migrations | Migration `0011_migration_202108031638` has been created.
+2021-08-03 16:38:26,508 - app - INFO - Migrations |[X] 0011_migration_202108031638
+2021-08-03 16:38:26,508 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:38:26,508 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:38:26,509 - app - INFO - Thread <TGBot(Thread-1, started daemon 140297187096320)> start
+2021-08-03 16:39:47,603 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:39:47,674 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:39:47,756 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:39:47,851 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:39:47,923 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:39:47,994 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:39:48,068 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:39:48,143 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:39:48,215 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:39:48,294 - app - INFO - Migrations | Migration `0012_migration_202108031639` has been created.
+2021-08-03 16:39:48,385 - app - INFO - Migrations |[X] 0012_migration_202108031639
+2021-08-03 16:39:48,385 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:39:48,385 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:39:48,387 - app - INFO - Thread <TGBot(Thread-1, started daemon 140462736271104)> start
+2021-08-03 16:41:23,155 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:41:23,227 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:41:23,298 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:41:23,369 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:41:23,440 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:41:23,514 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:41:23,589 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:41:23,660 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:41:23,733 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:41:23,810 - app - INFO - Migrations | No changes found.
+2021-08-03 16:41:23,893 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:41:23,893 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:41:23,893 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:41:23,894 - app - INFO - Thread <TGBot(Thread-1, started daemon 140444130825984)> start
+2021-08-03 16:42:15,614 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:42:15,689 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:42:15,764 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:42:15,838 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:42:15,910 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:42:15,984 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:42:16,059 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:42:16,131 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:42:16,202 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:42:16,281 - app - INFO - Migrations | Migration `0013_migration_202108031642` has been created.
+2021-08-03 16:42:16,379 - app - INFO - Migrations |[X] 0013_migration_202108031642
+2021-08-03 16:42:16,379 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:42:16,379 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:42:16,380 - app - INFO - Thread <TGBot(Thread-1, started daemon 139827392788224)> start
+2021-08-03 16:54:30,851 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:54:30,925 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:54:31,004 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:54:31,077 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:54:31,149 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:54:31,219 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:54:31,292 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:54:31,364 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:54:31,435 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:54:31,512 - app - INFO - Migrations | Migration `0014_migration_202108031654` has been created.
+2021-08-03 16:54:31,625 - app - INFO - Migrations |[X] 0014_migration_202108031654
+2021-08-03 16:54:31,626 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:54:31,626 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:54:31,628 - app - INFO - Thread <TGBot(Thread-1, started daemon 139910556706560)> start
+2021-08-03 16:58:10,799 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:58:10,868 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 16:58:10,940 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 16:58:11,009 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 16:58:11,080 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 16:58:11,154 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 16:58:11,228 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 16:58:11,299 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 16:58:11,370 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 16:58:11,444 - app - INFO - Migrations | No changes found.
+2021-08-03 16:58:11,530 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 16:58:11,531 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 16:58:11,531 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 16:58:11,532 - app - INFO - Thread <TGBot(Thread-1, started daemon 139819752081152)> start
+2021-08-03 17:07:00,420 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:07:00,490 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:07:00,568 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:07:00,642 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:07:00,713 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:07:00,787 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:07:00,860 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:07:00,985 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:07:01,059 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:07:01,138 - app - INFO - Migrations | No changes found.
+2021-08-03 17:07:01,224 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:07:01,225 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:07:01,225 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:07:01,226 - app - INFO - Thread <TGBot(Thread-1, started daemon 140254877124352)> start
+2021-08-03 17:14:22,451 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:14:22,523 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:14:22,596 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:14:22,671 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:14:22,746 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:14:22,820 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:14:22,892 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:14:22,967 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:14:23,040 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:14:23,118 - app - INFO - Migrations | No changes found.
+2021-08-03 17:14:23,203 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:14:23,203 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:14:23,203 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:14:23,205 - app - INFO - Thread <TGBot(Thread-1, started daemon 140580619691776)> start
+2021-08-03 17:14:46,671 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:14:46,743 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:14:46,818 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:14:46,892 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:14:46,963 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:14:47,035 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:14:47,110 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:14:47,182 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:14:47,254 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:14:47,331 - app - INFO - Migrations | No changes found.
+2021-08-03 17:14:47,415 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:14:47,416 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:14:47,416 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:14:47,417 - app - INFO - Thread <TGBot(Thread-1, started daemon 140247815104256)> start
+2021-08-03 17:15:13,213 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:15:13,285 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:15:13,359 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:15:13,434 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:15:13,508 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:15:13,581 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:15:13,653 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:15:13,727 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:15:13,799 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:15:13,875 - app - INFO - Migrations | No changes found.
+2021-08-03 17:15:13,957 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:15:13,957 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:15:13,957 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:15:13,958 - app - INFO - Thread <TGBot(Thread-1, started daemon 139890809079552)> start
+2021-08-03 17:15:24,030 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:15:24,105 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:15:24,181 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:15:24,255 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:15:24,326 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:15:24,400 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:15:24,485 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:15:24,559 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:15:24,633 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:15:24,708 - app - INFO - Migrations | No changes found.
+2021-08-03 17:15:24,792 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:15:24,792 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:15:24,792 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:15:24,793 - app - INFO - Thread <TGBot(Thread-1, started daemon 140251382425344)> start
+2021-08-03 17:21:08,229 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:21:08,301 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:21:08,376 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:21:08,449 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:21:08,522 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:21:08,594 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:21:08,672 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:21:08,758 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:21:08,829 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:21:08,907 - app - INFO - Migrations | Migration `0015_migration_202108031721` has been created.
+2021-08-03 17:21:08,998 - app - INFO - Migrations |[X] 0015_migration_202108031721
+2021-08-03 17:21:08,999 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:21:08,999 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:21:09,000 - app - INFO - Thread <TGBot(Thread-1, started daemon 139855392450304)> start
+2021-08-03 17:21:50,736 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:21:50,807 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:21:50,883 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:21:50,958 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:21:51,030 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:21:51,103 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:21:51,176 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:21:51,248 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:21:51,321 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:21:51,397 - app - ERROR - Migrations | Command '['pem', 'watch']' returned non-zero exit status 3.
+2021-08-03 17:21:51,397 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:21:51,398 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:21:51,398 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:22:32,534 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:22:32,608 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:22:32,681 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:22:32,756 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:22:32,828 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:22:32,900 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:22:32,973 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:22:33,048 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:22:33,122 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:22:33,197 - app - ERROR - Migrations | Command '['pem', 'watch']' returned non-zero exit status 3.
+2021-08-03 17:22:33,197 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:22:33,198 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:22:33,198 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:26:21,510 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:26:21,581 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:26:21,653 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:26:21,725 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:26:21,799 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:26:21,873 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:26:22,018 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:26:22,091 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:26:22,162 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:26:22,241 - app - INFO - Migrations | Migration `0016_migration_202108031726` has been created.
+2021-08-03 17:26:22,366 - app - INFO - Migrations |[X] 0016_migration_202108031726
+2021-08-03 17:26:22,366 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:26:22,366 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:26:22,368 - app - INFO - Thread <TGBot(Thread-1, started daemon 140145118410496)> start
+2021-08-03 17:27:10,174 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:27:10,245 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:27:10,320 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:27:10,393 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:27:10,463 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:27:10,612 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:27:10,683 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:27:10,754 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:27:10,827 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:27:10,899 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:27:10,980 - app - INFO - Migrations | Migration `0017_migration_202108031727` has been created.
+2021-08-03 17:27:11,114 - app - INFO - Migrations |[X] 0017_migration_202108031727
+2021-08-03 17:27:11,114 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:27:11,114 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:27:11,116 - app - INFO - Thread <TGBot(Thread-1, started daemon 139864955987712)> start
+2021-08-03 17:30:03,693 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:30:03,767 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:30:03,842 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:30:03,915 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:30:03,987 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:30:04,060 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:30:04,137 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:30:04,226 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:30:04,301 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:30:04,376 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:30:04,449 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:30:04,534 - app - INFO - Migrations | Migration `0018_migration_202108031730` has been created.
+Line 103: Check the field textanswerstortage.text_q_id does not contain null values
+Line 108: Check the field textanswerstortage.button_id does not contain null values
+2021-08-03 17:30:04,638 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:30:04,638 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:30:04,638 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:30:04,638 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:31:15,599 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:15,672 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:31:15,744 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:31:15,818 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:31:15,891 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:31:15,964 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:31:16,036 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:31:16,108 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:31:16,182 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:31:16,261 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:31:16,333 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:31:16,412 - app - INFO - Migrations | No changes found.
+2021-08-03 17:31:16,513 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:31:16,513 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:31:16,513 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:16,513 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:31:30,520 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:30,592 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:31:30,665 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:31:30,736 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:31:30,808 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:31:30,881 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:31:30,953 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:31:31,023 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:31:31,094 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:31:31,167 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:31:31,237 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:31:31,315 - app - INFO - Migrations | Migration `0017_migration_202108031731` has been created.
+2021-08-03 17:31:31,399 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:31:31,399 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:31:31,399 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:31,399 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:31:47,349 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:47,421 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:31:47,491 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:31:47,565 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:31:47,638 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:31:47,709 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:31:47,779 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:31:47,849 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:31:47,920 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:31:47,991 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:31:48,061 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:31:48,136 - app - INFO - Migrations | No changes found.
+2021-08-03 17:31:48,222 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:31:48,222 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:31:48,222 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:31:48,222 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:32:19,650 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:32:19,721 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:32:19,791 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:32:19,865 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:32:19,938 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:32:20,008 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:32:20,080 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:32:20,150 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:32:20,221 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:32:20,293 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:32:20,366 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:32:20,442 - app - INFO - Migrations | No changes found.
+2021-08-03 17:32:20,526 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:32:20,526 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:32:20,526 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:32:20,527 - app - INFO - Thread <TGBot(Thread-1, started daemon 140519040608000)> start
+2021-08-03 17:37:16,037 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:37:16,109 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:37:16,185 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:37:16,259 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:37:16,329 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:37:16,402 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:37:16,475 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:37:16,559 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:37:16,635 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:37:16,709 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:37:16,783 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:37:16,864 - app - INFO - Migrations | No changes found.
+2021-08-03 17:37:16,953 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 17:37:16,953 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:37:16,953 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:37:16,954 - app - INFO - Thread <TGBot(Thread-1, started daemon 139921285093120)> start
+2021-08-03 17:42:33,906 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:42:33,981 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:42:34,056 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:42:34,127 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:42:34,199 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:42:34,273 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:42:34,347 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:42:34,422 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:42:34,496 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:42:34,640 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:42:34,715 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:42:34,810 - app - INFO - Migrations | Migration `0018_migration_202108031742` has been created.
+2021-08-03 17:42:34,934 - app - INFO - Migrations |[X] 0018_migration_202108031742
+2021-08-03 17:42:34,934 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:42:34,935 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:42:34,936 - app - INFO - Thread <TGBot(Thread-1, started daemon 140063304312576)> start
+2021-08-03 17:46:46,503 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:46:46,576 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:46:46,649 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:46:46,724 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:46:46,801 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:46:46,876 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:46:46,948 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:46:47,020 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:46:47,094 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:46:47,170 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:46:47,241 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:46:47,312 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:46:47,393 - app - INFO - Migrations | Migration `0019_migration_202108031746` has been created.
+2021-08-03 17:46:47,529 - app - INFO - Migrations |[X] 0019_migration_202108031746
+2021-08-03 17:46:47,530 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:46:47,530 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:46:47,532 - app - INFO - Thread <TGBot(Thread-1, started daemon 140368407602944)> start
+2021-08-03 17:51:06,647 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:51:06,721 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:51:06,796 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:51:06,870 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:51:06,941 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:51:07,015 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:51:07,090 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:51:07,167 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:51:07,240 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:51:07,313 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:51:07,388 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:51:07,462 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:51:07,543 - app - INFO - Migrations | Migration `0020_migration_202108031751` has been created.
+Line 112: Check the field btnanswerstortage.q_id does not contain null values
+Line 113: Check the field commandsanswerstortage.q_id does not contain null values
+Line 114: Check the field textanswerstortage.q_id does not contain null values
+Line 121: Check the field btnanswerstortage.button_id does not contain null values
+Line 122: Check the field commandsanswerstortage.text_c_id does not contain null values
+Line 123: Check the field textanswerstortage.text_q_id does not contain null values
+2021-08-03 17:51:07,649 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:51:07,649 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:51:07,649 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:51:07,649 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:52:28,084 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:52:28,159 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:52:28,233 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:52:28,308 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:52:28,380 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:52:28,452 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:52:28,524 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:52:28,598 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:52:28,671 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:52:28,743 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:52:28,816 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:52:28,886 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:52:28,963 - app - INFO - Migrations | No changes found.
+2021-08-03 17:52:29,065 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:52:29,065 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:52:29,065 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:52:29,065 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:53:17,550 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:53:17,624 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:53:17,694 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:53:17,768 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:53:17,841 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:53:17,912 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:53:17,984 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:53:18,057 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:53:18,131 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:53:18,203 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:53:18,275 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:53:18,345 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:53:18,422 - app - INFO - Migrations | No changes found.
+2021-08-03 17:53:19,028 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:53:19,029 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:53:19,029 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:53:19,029 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:54:03,556 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:03,630 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:54:03,701 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:54:03,772 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:54:03,842 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:54:03,917 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:54:03,987 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:54:04,057 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:54:04,127 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:54:04,197 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:54:04,268 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:54:04,338 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:54:04,414 - app - INFO - Migrations | Migration `0001_migration_202108031754` has been created.
+2021-08-03 17:54:04,500 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:54:04,500 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:54:04,500 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:04,500 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:54:16,673 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:16,747 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:54:16,819 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:54:16,890 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:54:16,963 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:54:17,038 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:54:17,108 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:54:17,179 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:54:17,249 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:54:17,324 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:54:17,398 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:54:17,472 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:54:17,550 - app - INFO - Migrations | No changes found.
+2021-08-03 17:54:17,633 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:54:17,634 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:54:17,634 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:17,634 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:54:42,197 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:42,268 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:54:42,341 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:54:42,414 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:54:42,485 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:54:42,556 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:54:42,628 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:54:42,700 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:54:42,772 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:54:42,844 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:54:42,915 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:54:42,986 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:54:43,066 - app - INFO - Migrations | Migration `0001_migration_202108031754` has been created.
+2021-08-03 17:54:43,158 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:54:43,158 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:54:43,158 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:43,159 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:54:50,587 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:50,662 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:54:50,735 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:54:50,807 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:54:50,880 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:54:50,952 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:54:51,024 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:54:51,100 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:54:51,173 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:54:51,247 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:54:51,320 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:54:51,394 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:54:51,473 - app - INFO - Migrations | No changes found.
+2021-08-03 17:54:51,565 - app - ERROR - Migrations | Command '['pem', 'migrate']' returned non-zero exit status 1.
+2021-08-03 17:54:51,565 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:54:51,565 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:54:51,565 - app - CRITICAL - Migrations not set, exit
+2021-08-03 17:55:27,774 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:55:27,847 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:55:27,918 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:55:27,989 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:55:28,062 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:55:28,134 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:55:28,204 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:55:28,275 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:55:28,348 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:55:28,422 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:55:28,493 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:55:28,564 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:55:28,646 - app - INFO - Migrations | Migration `0001_migration_202108031755` has been created.
+2021-08-03 17:55:28,999 - app - INFO - Migrations |[X] 0001_migration_202108031755
+2021-08-03 17:55:29,000 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:55:29,000 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:55:29,002 - app - INFO - Thread <TGBot(Thread-1, started daemon 140433922279168)> start
+2021-08-03 17:58:04,689 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:58:04,761 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:58:04,835 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:58:04,910 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:58:04,984 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:58:05,056 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:58:05,129 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:58:05,208 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:58:05,304 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:58:05,377 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:58:05,450 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:58:05,523 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:58:05,604 - app - INFO - Migrations | Migration `0002_migration_202108031758` has been created.
+2021-08-03 17:58:05,698 - app - INFO - Migrations |[X] 0002_migration_202108031758
+2021-08-03 17:58:05,698 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:58:05,698 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:58:05,699 - app - INFO - Thread <TGBot(Thread-1, started daemon 140557435270912)> start
+2021-08-03 17:59:03,533 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:59:03,607 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 17:59:03,680 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 17:59:03,752 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 17:59:03,824 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 17:59:03,896 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 17:59:03,968 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 17:59:04,038 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 17:59:04,112 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 17:59:04,186 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 17:59:04,260 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 17:59:04,332 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 17:59:04,414 - app - INFO - Migrations | Migration `0003_migration_202108031759` has been created.
+2021-08-03 17:59:04,513 - app - INFO - Migrations |[X] 0003_migration_202108031759
+2021-08-03 17:59:04,513 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 17:59:04,513 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 17:59:04,514 - app - INFO - Thread <TGBot(Thread-1, started daemon 140464466552576)> start
+2021-08-03 18:01:19,625 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:01:19,699 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:01:19,774 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:01:19,848 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:01:19,923 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:01:19,994 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:01:20,068 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:01:20,139 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:01:20,210 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:01:20,281 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:01:20,351 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:01:20,423 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:01:20,504 - app - INFO - Migrations | Migration `0004_migration_202108031801` has been created.
+2021-08-03 18:01:20,599 - app - INFO - Migrations |[X] 0004_migration_202108031801
+2021-08-03 18:01:20,599 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:01:20,600 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:01:20,601 - app - INFO - Thread <TGBot(Thread-1, started daemon 139974604228352)> start
+2021-08-03 18:03:35,663 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:03:35,736 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:03:35,808 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:03:35,885 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:03:35,960 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:03:36,041 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:03:36,163 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:03:36,304 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:03:36,432 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:03:36,518 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:03:36,602 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:03:36,684 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:03:36,764 - app - INFO - Migrations | No changes found.
+2021-08-03 18:03:36,854 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:03:36,854 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:03:36,855 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:03:36,856 - app - INFO - Thread <TGBot(Thread-1, started daemon 140657677592320)> start
+2021-08-03 18:04:06,588 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:04:06,660 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:04:06,737 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:04:06,810 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:04:06,883 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:04:06,954 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:04:07,028 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:04:07,102 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:04:07,175 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:04:07,247 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:04:07,320 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:04:07,393 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:04:07,470 - app - INFO - Migrations | No changes found.
+2021-08-03 18:04:07,554 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:04:07,554 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:04:07,554 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:04:07,555 - app - INFO - Thread <TGBot(Thread-1, started daemon 139966626109184)> start
+2021-08-03 18:04:38,482 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:04:38,556 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:04:38,633 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:04:38,707 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:04:38,783 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:04:38,858 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:04:38,932 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:04:39,006 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:04:39,081 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:04:39,154 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:04:39,226 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:04:39,298 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:04:39,375 - app - INFO - Migrations | No changes found.
+2021-08-03 18:04:39,457 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:04:39,457 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:04:39,457 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:04:39,458 - app - INFO - Thread <TGBot(Thread-1, started daemon 139997200496384)> start
+2021-08-03 18:05:13,757 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:05:13,831 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:05:13,906 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:05:13,976 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:05:14,049 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:05:14,123 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:05:14,197 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:05:14,269 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:05:14,341 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:05:14,414 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:05:14,488 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:05:14,560 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:05:14,639 - app - INFO - Migrations | No changes found.
+2021-08-03 18:05:14,722 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:05:14,722 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:05:14,722 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:05:14,723 - app - INFO - Thread <TGBot(Thread-1, started daemon 139953289910016)> start
+2021-08-03 18:05:36,098 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:05:36,172 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:05:36,250 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:05:36,322 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:05:36,394 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:05:36,467 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:05:36,541 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:05:36,612 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:05:36,684 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:05:36,756 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:05:36,832 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:05:36,907 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:05:36,986 - app - INFO - Migrations | No changes found.
+2021-08-03 18:05:37,070 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:05:37,070 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:05:37,070 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:05:37,071 - app - INFO - Thread <TGBot(Thread-1, started daemon 140105202128640)> start
+2021-08-03 18:06:28,834 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:06:28,907 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:06:28,984 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:06:29,056 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:06:29,129 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:06:29,203 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:06:29,278 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:06:29,352 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:06:29,424 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:06:29,497 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:06:29,572 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:06:29,644 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:06:29,721 - app - INFO - Migrations | No changes found.
+2021-08-03 18:06:29,805 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:06:29,805 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:06:29,805 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:06:29,806 - app - INFO - Thread <TGBot(Thread-1, started daemon 140669659956992)> start
+2021-08-03 18:06:50,832 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:06:50,904 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:06:50,978 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:06:51,051 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:06:51,124 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:06:51,197 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:06:51,271 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:06:51,344 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:06:51,415 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:06:51,487 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:06:51,562 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:06:51,636 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:06:51,716 - app - INFO - Migrations | No changes found.
+2021-08-03 18:06:51,799 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:06:51,799 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:06:51,799 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:06:51,800 - app - INFO - Thread <TGBot(Thread-1, started daemon 140085948483328)> start
+2021-08-03 18:07:03,081 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:03,152 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:07:03,227 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:07:03,300 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:07:03,371 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:07:03,445 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:07:03,519 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:07:03,590 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:07:03,661 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:07:03,733 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:07:03,807 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:07:03,881 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:07:03,958 - app - INFO - Migrations | No changes found.
+2021-08-03 18:07:04,041 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:07:04,041 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:07:04,041 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:04,042 - app - INFO - Thread <TGBot(Thread-1, started daemon 139678285866752)> start
+2021-08-03 18:07:28,838 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:28,913 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:07:28,987 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:07:29,063 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:07:29,138 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:07:29,210 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:07:29,283 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:07:29,355 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:07:29,431 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:07:29,504 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:07:29,575 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:07:29,648 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:07:29,728 - app - INFO - Migrations | No changes found.
+2021-08-03 18:07:29,812 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:07:29,812 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:07:29,812 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:29,813 - app - INFO - Thread <TGBot(Thread-1, started daemon 139685386086144)> start
+2021-08-03 18:07:32,048 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:32,123 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:07:32,198 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:07:32,270 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:07:32,341 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:07:32,411 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:07:32,483 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:07:32,557 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:07:32,629 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:07:32,700 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:07:32,771 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:07:32,843 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:07:32,918 - app - INFO - Migrations | No changes found.
+2021-08-03 18:07:33,001 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:07:33,001 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:07:33,001 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:33,003 - app - INFO - Thread <TGBot(Thread-1, started daemon 139896062064384)> start
+2021-08-03 18:07:56,240 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:56,315 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:07:56,389 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:07:56,461 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:07:56,532 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:07:56,604 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:07:56,679 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:07:56,754 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:07:56,826 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:07:56,897 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:07:56,971 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:07:57,046 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:07:57,124 - app - INFO - Migrations | No changes found.
+2021-08-03 18:07:57,207 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:07:57,207 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:07:57,207 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:07:57,208 - app - INFO - Thread <TGBot(Thread-1, started daemon 140096417867520)> start
+2021-08-03 18:08:13,926 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:08:13,999 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:08:14,074 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:08:14,147 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:08:14,221 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:08:14,294 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:08:14,367 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:08:14,442 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:08:14,516 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:08:14,588 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:08:14,659 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:08:14,730 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:08:14,808 - app - INFO - Migrations | No changes found.
+2021-08-03 18:08:14,892 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:08:14,892 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:08:14,892 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:08:14,893 - app - INFO - Thread <TGBot(Thread-1, started daemon 140246412781312)> start
+2021-08-03 18:08:55,348 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:08:55,420 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:08:55,493 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:08:55,568 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:08:55,644 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:08:55,718 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:08:55,793 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:08:55,869 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:08:55,943 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:08:56,017 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:08:56,090 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:08:56,166 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:08:56,244 - app - INFO - Migrations | No changes found.
+2021-08-03 18:08:56,329 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:08:56,329 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:08:56,330 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:08:56,330 - app - INFO - Thread <TGBot(Thread-1, started daemon 139829519709952)> start
+2021-08-03 18:12:50,605 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:12:50,683 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:12:50,755 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:12:50,830 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:12:50,906 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:12:50,978 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:12:51,050 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:12:51,123 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:12:51,197 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:12:51,272 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:12:51,343 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:12:51,417 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:12:51,496 - app - INFO - Migrations | No changes found.
+2021-08-03 18:12:51,578 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:12:51,578 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:12:51,578 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:12:51,579 - app - INFO - Thread <TGBot(Thread-1, started daemon 140601651619584)> start
+2021-08-03 18:13:12,862 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:13:12,933 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:13:13,009 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:13:13,080 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:13:13,153 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:13:13,225 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:13:13,300 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:13:13,373 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:13:13,445 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:13:13,518 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:13:13,593 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:13:13,667 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:13:13,744 - app - INFO - Migrations | No changes found.
+2021-08-03 18:13:13,832 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:13:13,833 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:13:13,833 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:13:13,834 - app - INFO - Thread <TGBot(Thread-1, started daemon 140377305306880)> start
+2021-08-03 18:14:38,334 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:14:38,410 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:14:38,482 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:14:38,554 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:14:38,626 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:14:38,698 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:14:38,771 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:14:38,845 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:14:38,918 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:14:38,989 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:14:39,060 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:14:39,133 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:14:39,210 - app - INFO - Migrations | No changes found.
+2021-08-03 18:14:39,292 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:14:39,292 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:14:39,293 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:14:39,294 - app - INFO - Thread <TGBot(Thread-1, started daemon 139805394454272)> start
+2021-08-03 18:15:32,636 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:15:32,709 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:15:32,783 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:15:32,856 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:15:32,929 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:15:33,002 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:15:33,076 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:15:33,148 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:15:33,220 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:15:33,293 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:15:33,368 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:15:33,441 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:15:33,518 - app - INFO - Migrations | No changes found.
+2021-08-03 18:15:33,603 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:15:33,603 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:15:33,603 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:15:33,604 - app - INFO - Thread <TGBot(Thread-1, started daemon 140488542410496)> start
+2021-08-03 18:15:55,550 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:15:55,621 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:15:55,694 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:15:55,766 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:15:55,840 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:15:55,913 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:15:55,985 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:15:56,056 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:15:56,128 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:15:56,202 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:15:56,275 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:15:56,346 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:15:56,422 - app - INFO - Migrations | No changes found.
+2021-08-03 18:15:56,506 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:15:56,506 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:15:56,506 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:15:56,507 - app - INFO - Thread <TGBot(Thread-1, started daemon 140687978645248)> start
+2021-08-03 18:18:42,894 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:18:42,966 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:18:43,039 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:18:43,114 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:18:43,188 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:18:43,259 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:18:43,332 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:18:43,404 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:18:43,478 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:18:43,552 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:18:43,624 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:18:43,697 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:18:43,776 - app - INFO - Migrations | No changes found.
+2021-08-03 18:18:43,860 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:18:43,861 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:18:43,861 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:18:43,861 - app - INFO - Thread <TGBot(Thread-1, started daemon 140670135576320)> start
+2021-08-03 18:19:19,244 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:19:19,319 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:19:19,394 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:19:19,468 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:19:19,539 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:19:19,612 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:19:19,687 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:19:19,761 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:19:19,831 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:19:19,906 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:19:19,979 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:19:20,050 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:19:20,128 - app - INFO - Migrations | No changes found.
+2021-08-03 18:19:20,212 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:19:20,212 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:19:20,212 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:19:20,213 - app - INFO - Thread <TGBot(Thread-1, started daemon 140318301378304)> start
+2021-08-03 18:19:42,790 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:19:42,863 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:19:42,935 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:19:43,008 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:19:43,081 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:19:43,156 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:19:43,230 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:19:43,301 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:19:43,372 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:19:43,444 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:19:43,517 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:19:43,591 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:19:43,671 - app - INFO - Migrations | No changes found.
+2021-08-03 18:19:43,753 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:19:43,754 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:19:43,754 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:19:43,755 - app - INFO - Thread <TGBot(Thread-1, started daemon 139707468662528)> start
+2021-08-03 18:20:23,333 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:20:23,406 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:20:23,503 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:20:23,576 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:20:23,647 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:20:23,722 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:20:23,797 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:20:23,872 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:20:23,944 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:20:24,015 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:20:24,087 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:20:24,159 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:20:24,236 - app - INFO - Migrations | No changes found.
+2021-08-03 18:20:24,319 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:20:24,319 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:20:24,319 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:20:24,320 - app - INFO - Thread <TGBot(Thread-1, started daemon 139762886301440)> start
+2021-08-03 18:21:54,168 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:21:54,241 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:21:54,317 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:21:54,389 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:21:54,460 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:21:54,532 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:21:54,605 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:21:54,681 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:21:54,754 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:21:54,827 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:21:54,900 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:21:54,975 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:21:55,054 - app - INFO - Migrations | No changes found.
+2021-08-03 18:21:55,138 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:21:55,138 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:21:55,138 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:21:55,139 - app - INFO - Thread <TGBot(Thread-1, started daemon 140516141364992)> start
+2021-08-03 18:27:21,321 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:27:21,394 - app - INFO - Migrations | models.Statuses already in the watch list
+2021-08-03 18:27:21,464 - app - INFO - Migrations | models.TgClient already in the watch list
+2021-08-03 18:27:21,540 - app - INFO - Migrations | models.Menu already in the watch list
+2021-08-03 18:27:21,617 - app - INFO - Migrations | models.TextAnswers already in the watch list
+2021-08-03 18:27:21,689 - app - INFO - Migrations | models.TextAnswerStortage already in the watch list
+2021-08-03 18:27:21,761 - app - INFO - Migrations | models.MenuButton already in the watch list
+2021-08-03 18:27:21,834 - app - INFO - Migrations | models.BtnAnswerStortage already in the watch list
+2021-08-03 18:27:21,907 - app - INFO - Migrations | models.Commands already in the watch list
+2021-08-03 18:27:21,980 - app - INFO - Migrations | models.CommandsAnswerStortage already in the watch list
+2021-08-03 18:27:22,054 - app - INFO - Migrations | models.AdminUser already in the watch list
+2021-08-03 18:27:22,126 - app - INFO - Migrations | models.AnswersStatistic already in the watch list
+2021-08-03 18:27:22,203 - app - INFO - Migrations | No changes found.
+2021-08-03 18:27:22,286 - app - INFO - Migrations |There is nothing to migrate
+2021-08-03 18:27:22,287 - app - DEBUG - Directory changed successfully /home/yaroher/Python/PSIHO_BOT/database
+2021-08-03 18:27:22,287 - app - DEBUG - Current working directory /home/yaroher/Python/PSIHO_BOT
+2021-08-03 18:27:22,288 - app - INFO - Thread <TGBot(Thread-1, started daemon 140648896259840)> start

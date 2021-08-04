@@ -39,13 +39,6 @@ class Menu(Model):
 
 class TextAnswers(Model):
     question = CharField()
-
-    class Meta:
-        database = pg_db
-
-
-class TextAnswerStortage(Model):
-    q_id = ForeignKeyField(TextAnswers, on_delete="CASCADE")
     answer = CharField()
 
     class Meta:
@@ -55,6 +48,7 @@ class TextAnswerStortage(Model):
 class MenuButton(Model):
     menu_id = ForeignKeyField(Menu, on_delete="CASCADE")
     text = CharField()
+    answer = CharField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     set_action = CharField(null=True)
 
@@ -62,25 +56,10 @@ class MenuButton(Model):
         database = pg_db
 
 
-class BtnAnswerStortage(Model):
-    q_id = ForeignKeyField(MenuButton, on_delete="CASCADE")
-    answer = CharField()
-
-    class Meta:
-        database = pg_db
-
-
 class Commands(Model):
     text = CharField()
-    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
-
-    class Meta:
-        database = pg_db
-
-
-class CommandsAnswerStortage(Model):
-    q_id = ForeignKeyField(Commands, on_delete="CASCADE")
     answer = CharField()
+    to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
     class Meta:
         database = pg_db

@@ -20,9 +20,7 @@ def change_dir(dir):
             os.chdir(retval)
             app_logger.debug("Current working directory %s" % os.getcwd())
             return ret
-
         return wrapper
-
     return actual_decorator
 
 
@@ -34,7 +32,7 @@ def migrate():
 if __name__ == '__main__':
     if migrate():
         threads = []
-        workers = [TGBot(conf)]
+        workers = [TGBot(conf), AdminApp(conf)]
         for wrkr in workers:
             wrkr.setDaemon(True)
             wrkr.start()
