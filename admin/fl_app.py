@@ -24,12 +24,12 @@ class AdminApp(threading.Thread):
         @self.app.errorhandler(404)
         def page_not_found(e):
             # note that we set the 404 status explicitly
-            return render_template('404.html'), 404
+            return render_template('helpers/404.html'), 404
 
         @self.app.errorhandler(500)
         def page_not_found(e):
             # note that we set the 404 status explicitly
-            return render_template('500.html'), 500
+            return render_template('helpers/500.html'), 500
 
     def register_api(self):
         self.app.add_url_rule('/index', view_func=Index.as_view('index'))
@@ -41,10 +41,10 @@ class AdminApp(threading.Thread):
         self.app.add_url_rule('/bots', view_func=Bots.as_view('bots'))
 
         self.app.add_url_rule('/menus', view_func=Menus.as_view('menus'))
-        self.app.add_url_rule('/add_menu', view_func=AddMenus.as_view('add_menu'))
-
         self.app.add_url_rule('/buttons', view_func=Buttons.as_view('buttons'))
-        self.app.add_url_rule('/add_buttons', view_func=AddButtons.as_view('add_buttons'))
+        self.app.add_url_rule('/texts', view_func=Texts.as_view('texts'))
+
+        self.app.add_url_rule('/statistic', view_func=Menus.as_view('statistic'))
 
     def run(self):
         self.app.run(debug=False)

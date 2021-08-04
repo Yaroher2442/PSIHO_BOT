@@ -3,6 +3,7 @@ import os
 import binascii
 import uuid
 from database import models
+from peewee import JOIN
 
 
 class BaseDb:
@@ -42,9 +43,19 @@ class BaseDb:
             print(e)
             return False
 
-    def get_all(self):
+    def get_all(self, *args, order=None):
         try:
-            return self.table.select()
+            if order:
+                return self.table.select(*args).order_by(order)
+            else:
+                return self.table.select(*args)
+        except Exception as e:
+            print(e)
+            return False
+
+    def get_all_join(self, table_name, order, *args):
+        try:
+            return self.table.select(*args).join(getattr(models, table_name), JOIN.LEFT_OUTER).order_by(order)
         except Exception as e:
             print(e)
             return False

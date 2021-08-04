@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+   * CoreUI Pro based Bootstrap Admin Template
+   * @version v3.2.0
+   * @link https://coreui.io/pro/
+   * Copyright (c) 2020 creativeLabs Łukasz Holeczek
+   * License (https://coreui.io/pro/license)
+   -->
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Pro Bootstrap Admin Template</title>
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="c-app c-no-layout-transition">
+{% include "./helpers/side_menu.html" %}
+<div class="c-wrapper">
+    {% include "./helpers/header.html" %}
+    <div class="c-body">
+        <main class="c-main">
+            <div class="container-fluid">
+                <div class="fade-in">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addMenuModal">Добавить
+                                    меню</a>
+                            </div>
+
+                            <hr/>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Описание</th>
+                                    <th>Статус отображения</th>
+                                    <th>Удалить</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {%for item in menus%}
+                                <tr>
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.descr}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>
+                                        <button class="btn btn-pill btn-danger" type="button">Удалить</button>
+                                    </td>
+                                </tr>
+                                {%endfor%}
+                                </tbody>
+                                {% for notify in notifys %}
+                                <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="c-footer">
+        <div>© 2021</div>
+    </footer>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addMenuModal">Добавить меню</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addMenuForm" method="post" action="/menus">
+                    <div class="form-group">
+                        <label class="col-form-label" for="description">Описание меню</label>
+                        <input class="form-control" id="description" type="text" name="descr" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+<!--[if IE]><!-->
+<script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+<!--<![endif]-->
+<!-- Plugins and scripts required by this view-->
+<script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+<!-- Plugins and scripts required by this view-->
+<script src="vendors/jquery/js/jquery.slim.min.js"></script>
+<script src="vendors/jquery-validation/js/jquery.validate.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script>
+         document.addEventListener("DOMContentLoaded", function(event) {
+           setTimeout(function() {
+             document.body.classList.remove('c-no-layout-transition')
+           }, 2000);
+         });
+
+
+
+</script>
+</body>
+</html>

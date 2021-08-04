@@ -97,50 +97,94 @@ class Menus(BaseView):
     def __init__(self):
         BaseView.__init__(self)
 
+    def post(self):
+        if all(request.form.to_dict().values()):
+            new_status = self.db.Statuses.set_row(descr="new_status")
+            if new_status:
+                if self.db.Menu.set_row(**request.form.to_dict(), status_id=new_status.id):
+                    self.set_notices(Notice.success, 'Меню успешно создано')
+                else:
+                    self.set_notices(Notice.danger, 'Не удалось создать меню, попробуйте ещё раз')
+            else:
+                self.set_notices(Notice.danger, 'Не удалось создать меню, попробуйте ещё раз')
+            return redirect('/menus')
+        else:
+            self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
+            return redirect('/menus')
+
     def get(self):
         if self.check_token(request):
-            return self.render_with_notices('menus.html', menus=self.db.Menu.get_all())
+            return self.render_with_notices('pages/menus.html', menus=self.db.Menu.get_all(order=self.db.Menu.table.id))
         else:
             return redirect('/login')
 
-
-class AddMenus(BaseView):
-    def __init__(self):
-        BaseView.__init__(self)
-
-    def post(self):
-        new_status = self.db.Statuses.set_row(descr="new_status")
-        if new_status:
-            if self.db.Menu.set_row(**request.form.to_dict(), status_id=new_status.id):
-                self.set_notices(Notice.success, 'Menu success create')
-            else:
-                self.set_notices(Notice.danger, 'Menu create, failed, try again')
-        else:
-            self.set_notices(Notice.danger, 'Menu create, failed, try again')
-        return redirect('/menus')
 
 class Buttons(BaseView):
     def __init__(self):
         BaseView.__init__(self)
 
+    def post(self):
+        up_req = request.form.to_dict()
+        if all(up_req.values()):
+            for k, v in up_req.items():
+                if v.isdigit():
+                    up_req[k] = int(v)
+                if v == "None":
+                    up_req[k] = None
+            if self.db.MenuButton.set_row(**up_req):
+                self.set_notices(Notice.success, 'Кнопка добавлена')
+                return redirect('/buttons')
+            else:
+                self.set_notices(Notice.danger, 'Не удалось создать кнопку, попробуйте ещё раз')
+                return redirect('/buttons')
+        else:
+            self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
+            return redirect('/buttons')
+
     def get(self):
         if self.check_token(request):
-            return self.render_with_notices('buttons.html', menus=self.db.Menu.get_all())
+            class OBJ:
+                def __init__(self, menu, btn, to_menu):
+                    self.menu = menu
+                    self.btn = btn
+                    self.to_menu = to_menu
+
+            obj_lst = []
+            btns = self.db.MenuButton.get_all()
+            menus = self.db.Menu.get_all()
+            for i in btns:
+                for j in menus:
+                    if i.menu_id == j:
+                        q = OBJ(j, i, to_menu=self.db.Menu.get_by_id(i.to_status))
+
+                        obj_lst.append(q)
+            return self.render_with_notices('pages/buttons.html',
+                                            buttons=obj_lst,
+                                            menus=self.db.Menu.get_all())
         else:
             return redirect('/login')
 
 
-class AddButtons(BaseView):
+class Texts(BaseView):
     def __init__(self):
         BaseView.__init__(self)
 
     def post(self):
-        new_status = self.db.Statuses.set_row(descr="new_status")
-        if new_status:
-            if self.db.Menu.set_row(**request.form.to_dict(), status_id=new_status.id):
-                self.set_notices(Notice.success, 'Menu success create')
+        up_req = request.form.to_dict()
+        if all(up_req.values()):
+            if self.db.TextAnswers.set_row(**up_req):
+                self.set_notices(Notice.success, 'Текстовый ответ добавлен')
+                return redirect('/texts')
             else:
-                self.set_notices(Notice.danger, 'Menu create, failed, try again')
+                self.set_notices(Notice.danger, 'Не удалось создать текстовый ответ, попробуйте ещё раз')
+                return redirect('/texts')
         else:
-            self.set_notices(Notice.danger, 'Menu create, failed, try again')
-        return redirect('/menus')
+            self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
+            return redirect('/texts')
+
+    def get(self):
+        if self.check_token(request):
+            return self.render_with_notices('pages/texts.html',
+                                            texts=self.db.TextAnswers.get_all(order=self.db.TextAnswers.table.id))
+        else:
+            return redirect('/login')
