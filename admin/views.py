@@ -88,7 +88,7 @@ class Bots(BaseView):
 
     def get(self):
         if self.check_token(request):
-            return render_template('bots.html')
+            return render_template('pages/bots.html')
         else:
             return redirect('/login')
 
@@ -188,3 +188,61 @@ class Texts(BaseView):
                                             texts=self.db.TextAnswers.get_all(order=self.db.TextAnswers.table.id))
         else:
             return redirect('/login')
+
+
+class Commands(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def post(self):
+        up_req = request.form.to_dict()
+        if all(up_req.values()):
+            if self.db.Commands.set_row(**up_req):
+                self.set_notices(Notice.success, 'Команда успешно добавлена')
+                return redirect('/commands')
+            else:
+                self.set_notices(Notice.danger, 'Не удалось создать комманду, попробуйте ещё раз')
+                return redirect('/commands')
+        else:
+            self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
+            return redirect('/commands')
+
+    def get(self):
+        if self.check_token(request):
+            class OBJ:
+                def __init__(self, menu, commands):
+                    self.menu = menu
+                    self.commands = commands
+
+            obj_lst = []
+            commands = self.db.Commands.get_all()
+            menus = self.db.Menu.get_all()
+            for i in commands:
+                for j in menus:
+                    if i.to_status == j.status:
+                        q = OBJ(j, i)
+                        obj_lst.append(q)
+            print(obj_lst)
+            return self.render_with_notices('pages/commands.html',
+                                            commands=obj_lst,
+                                            menus=self.db.Menu.get_all())
+        else:
+            return redirect('/login')
+
+
+class Delete(BaseView):
+    redirect_data = {"TextAnswers": '/texts',
+                     "Menu": '/menus',
+                     "MenuButton": "/buttons",
+                     "Commands": "/commands"}
+
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self, table, item_id):
+        if getattr(self.db, table).delete_row(item_id):
+            self.set_notices(Notice.success, 'Успешно удалено')
+            return redirect(self.redirect_data[table])
+        else:
+            self.set_notices(Notice.success, 'Не удалось удалить объект')
+            return redirect(self.redirect_data[table])

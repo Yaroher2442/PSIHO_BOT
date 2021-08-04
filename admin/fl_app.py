@@ -43,7 +43,9 @@ class AdminApp(threading.Thread):
         self.app.add_url_rule('/menus', view_func=Menus.as_view('menus'))
         self.app.add_url_rule('/buttons', view_func=Buttons.as_view('buttons'))
         self.app.add_url_rule('/texts', view_func=Texts.as_view('texts'))
+        self.app.add_url_rule('/commands', view_func=Commands.as_view('commands'))
 
+        self.app.add_url_rule('/delete/<table>/<item_id>', view_func=Delete.as_view('delete'))
         self.app.add_url_rule('/statistic', view_func=Menus.as_view('statistic'))
 
     def run(self):

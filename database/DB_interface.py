@@ -18,6 +18,13 @@ class BaseDb:
         except:
             return False
 
+    def delete_row(self, id):
+        try:
+            to_delete = self.table.get(self.table.id == id)
+            return to_delete.delete_instance()
+        except:
+            return False
+
     def update(self, id, **kwargs):
         try:
             up_dict = {}
