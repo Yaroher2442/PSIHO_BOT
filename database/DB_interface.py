@@ -154,6 +154,10 @@ class CommandsApi(BaseDb):
         BaseDb.__init__(self)
         self.table = models.Commands
 
+class AnswersStatisticApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+        self.table = models.AnswersStatistic
 
 class DBInterface:
     def __init__(self):
@@ -163,3 +167,4 @@ class DBInterface:
         self.MenuButton = MenuButtonApi()
         self.TextAnswers = TextAnswersApi()
         self.Commands = CommandsApi()
+        self.AnswersStatistic=AnswersStatisticApi()

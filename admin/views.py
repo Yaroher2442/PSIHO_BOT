@@ -246,3 +246,18 @@ class Delete(BaseView):
         else:
             self.set_notices(Notice.success, 'Не удалось удалить объект')
             return redirect(self.redirect_data[table])
+
+
+class Statistic(BaseView):
+    redirect_data = {"TextAnswers": '/texts',
+                     "Menu": '/menus',
+                     "MenuButton": "/buttons",
+                     "Commands": "/commands"}
+
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        if self.check_token(request):
+            return self.render_with_notices('pages/statistic.html',
+                                            statistic=self.db.AnswersStatistic.get_all(order=self.db.AnswersStatistic.table.id))

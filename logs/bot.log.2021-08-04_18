@@ -1,0 +1,348 @@
+2021-08-04 10:54:06,326 - bot - DEBUG - Bot started
+2021-08-04 11:04:22,951 - bot - DEBUG - Bot started
+2021-08-04 11:05:03,718 - bot - DEBUG - User not found, try to create
+2021-08-04 11:05:03,741 - bot - DEBUG -  button False
+2021-08-04 11:05:03,744 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fa6f98a8b80>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': <Commands: 1>, 'button': None, 'new_status': <Statuses: 1>, 'returns_answr_id': 'hi', 'returns_answr': [], 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fa6f98a8a30>, 'mode': 'command'}
+2021-08-04 11:05:39,975 - bot - DEBUG - Bot started
+2021-08-04 11:05:41,483 - bot - DEBUG -  button False
+2021-08-04 11:05:41,488 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05e5a00>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': <Commands: 1>, 'button': None, 'new_status': <Statuses: 1>, 'returns_answr': 'hi', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b05e5af0>, 'mode': 'command'}
+2021-08-04 11:05:57,494 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05e5a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': '55', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b05e5a00>, 'mode': 'button'}
+2021-08-04 11:05:58,847 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05e5b80>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': None, 'button': <MenuButton: 4>, 'new_status': <Statuses: 1>, 'returns_answr': '44', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b05e5970>, 'mode': 'button'}
+2021-08-04 11:06:02,358 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b019fe20>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b0e4bfd0>, 'mode': 'button'}
+2021-08-04 11:06:09,716 - bot - DEBUG -  button False
+2021-08-04 11:06:09,716 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:06:09,717 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05e58e0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': 'да я люблю', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:06:10,999 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b5685640>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': '55', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b05f2d00>, 'mode': 'button'}
+2021-08-04 11:06:20,361 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05f2eb0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': None, 'button': <MenuButton: 4>, 'new_status': <Statuses: 1>, 'returns_answr': '44', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b0e4bfd0>, 'mode': 'button'}
+2021-08-04 11:06:25,175 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b019f130>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f43b05e58b0>, 'mode': 'button'}
+2021-08-04 11:06:29,576 - bot - DEBUG -  button False
+2021-08-04 11:06:29,576 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:06:29,576 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f43b05e58b0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': 'да я люблю', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:10:31,579 - bot - DEBUG - Bot started
+2021-08-04 11:10:36,965 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f19d8000a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f19d800e5b0>, 'mode': 'button'}
+2021-08-04 11:10:41,881 - bot - DEBUG -  button False
+2021-08-04 11:10:41,882 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:10:41,882 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f19d8000ac0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:10:54,935 - bot - DEBUG - Bot started
+2021-08-04 11:10:56,093 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f39a1f34a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f39a1f34910>, 'mode': 'button'}
+2021-08-04 11:11:01,073 - bot - DEBUG -  button False
+2021-08-04 11:11:01,074 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:11:01,074 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f39a1f34910>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:25:18,651 - bot - DEBUG - Bot started
+2021-08-04 11:25:26,453 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fdf19836a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fdf19836bb0>, 'mode': 'button'}
+2021-08-04 11:25:31,628 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fdf0b9b89a0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fdf198367f0>, 'mode': 'button'}
+2021-08-04 11:26:31,334 - bot - DEBUG - Bot started
+2021-08-04 11:26:32,639 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f4b341a8a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f4b341b4b20>, 'mode': 'button'}
+2021-08-04 11:27:04,139 - bot - DEBUG - Bot started
+2021-08-04 11:27:05,324 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f750eea3a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f750eea37f0>, 'mode': 'button'}
+2021-08-04 11:29:07,015 - bot - DEBUG - Bot started
+2021-08-04 11:29:09,250 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f597af27a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f597af27940>, 'mode': 'button'}
+2021-08-04 11:29:32,367 - bot - DEBUG - Bot started
+2021-08-04 11:29:33,674 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fbdc3bc6a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fbdc3bd2b20>, 'mode': 'button'}
+2021-08-04 11:29:45,112 - bot - DEBUG - Bot started
+2021-08-04 11:29:46,394 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f1d71377a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f1d713825b0>, 'mode': 'button'}
+2021-08-04 11:29:54,636 - bot - DEBUG - Bot started
+2021-08-04 11:29:55,768 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fabde51ba90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fabde51b970>, 'mode': 'button'}
+2021-08-04 11:32:30,408 - bot - DEBUG - Bot started
+2021-08-04 11:32:35,338 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fdf9b2efa30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fdf9b2efb20>, 'mode': 'button'}
+2021-08-04 11:33:49,243 - bot - DEBUG - Bot started
+2021-08-04 11:33:50,831 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fb99e905a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fb99e905910>, 'mode': 'button'}
+2021-08-04 11:33:58,119 - bot - DEBUG -  button False
+2021-08-04 11:33:58,120 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:33:58,120 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fb99e9059a0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:34:18,974 - bot - DEBUG - Bot started
+2021-08-04 11:34:20,286 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7efe89c29a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7efe89c29910>, 'mode': 'button'}
+2021-08-04 11:34:23,701 - bot - DEBUG -  button False
+2021-08-04 11:34:23,702 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:34:23,702 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7efe89c299a0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:35:30,139 - bot - DEBUG - Bot started
+2021-08-04 11:35:36,785 - bot - DEBUG -  button False
+2021-08-04 11:35:36,785 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:35:36,786 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fef65728a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:36:31,007 - bot - DEBUG - Bot started
+2021-08-04 11:36:34,860 - bot - DEBUG -  button False
+2021-08-04 11:36:34,860 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:36:34,860 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f326c865a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:36:47,581 - bot - DEBUG - Bot started
+2021-08-04 11:36:55,462 - bot - DEBUG -  button False
+2021-08-04 11:36:55,463 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:36:55,463 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7efe89583a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:37:30,626 - bot - DEBUG - Bot started
+2021-08-04 11:37:33,703 - bot - DEBUG -  button False
+2021-08-04 11:37:33,704 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:37:33,704 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f39bc8b4a30>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:38:35,546 - bot - DEBUG - Bot started
+2021-08-04 11:38:36,507 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f9ff1168a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f9ff1168820>, 'mode': 'button'}
+2021-08-04 11:38:43,784 - bot - DEBUG -  button False
+2021-08-04 11:38:43,785 - bot - DEBUG - Can't found new menu render
+2021-08-04 11:38:43,785 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f9ff1168820>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 11:44:30,139 - bot - DEBUG - Bot started
+2021-08-04 11:50:41,149 - bot - DEBUG - Bot started
+2021-08-04 11:52:06,779 - bot - DEBUG - Bot started
+2021-08-04 11:53:40,105 - bot - DEBUG - Bot started
+2021-08-04 11:54:10,234 - bot - DEBUG - Bot started
+2021-08-04 11:55:46,698 - bot - DEBUG - Bot started
+2021-08-04 11:56:15,817 - bot - DEBUG - Bot started
+2021-08-04 11:56:26,320 - bot - DEBUG - Bot started
+2021-08-04 11:57:20,788 - bot - DEBUG - Bot started
+2021-08-04 11:58:38,788 - bot - DEBUG - Bot started
+2021-08-04 12:10:59,953 - bot - DEBUG - Bot started
+2021-08-04 12:11:13,667 - bot - DEBUG - Bot started
+2021-08-04 12:13:34,339 - bot - DEBUG - Bot started
+2021-08-04 12:18:27,379 - bot - DEBUG - Bot started
+2021-08-04 12:19:12,636 - bot - DEBUG - Bot started
+2021-08-04 12:20:43,440 - bot - DEBUG - Bot started
+2021-08-04 12:21:53,261 - bot - DEBUG - Bot started
+2021-08-04 12:26:21,231 - bot - DEBUG - Bot started
+2021-08-04 12:28:20,949 - bot - DEBUG - Bot started
+2021-08-04 12:30:21,878 - bot - DEBUG - Bot started
+2021-08-04 12:35:18,944 - bot - DEBUG - Bot started
+2021-08-04 12:36:19,659 - bot - DEBUG - Bot started
+2021-08-04 12:40:00,238 - bot - DEBUG - Bot started
+2021-08-04 12:42:08,382 - bot - DEBUG - Bot started
+2021-08-04 12:42:48,218 - bot - DEBUG - Bot started
+2021-08-04 12:46:54,727 - bot - DEBUG - Bot started
+2021-08-04 12:52:23,128 - bot - DEBUG - Bot started
+2021-08-04 12:52:38,417 - bot - DEBUG - Bot started
+2021-08-04 12:54:48,856 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fd3dc8923d0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fd3dc892280>, 'mode': 'button'}
+2021-08-04 12:54:51,871 - bot - DEBUG -  button False
+2021-08-04 12:54:51,872 - bot - DEBUG - Can't found new menu render
+2021-08-04 12:54:51,872 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fd3def01ca0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 12:54:53,369 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fd3dc064610>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 1>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7fd3dc0645b0>, 'mode': 'button'}
+2021-08-04 12:54:58,028 - bot - DEBUG -  button False
+2021-08-04 12:54:58,029 - bot - DEBUG - Can't found new menu render
+2021-08-04 12:54:58,029 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7fd3dc064a90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': None, 'new_status': None, 'returns_answr': None, 'reply_markup': None, 'mode': 'text'}
+2021-08-04 12:57:03,380 - bot - DEBUG - Bot started
+2021-08-04 12:57:06,009 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f02092d7970>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f02092e2d00>, 'mode': 'button'}
+2021-08-04 12:57:08,784 - bot - DEBUG -  button False
+2021-08-04 12:57:08,784 - bot - DEBUG - Can't found new menu render
+2021-08-04 12:57:08,784 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f02092e2bb0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 12:57:10,880 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f02092d7730>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 1>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f02092d7910>, 'mode': 'button'}
+2021-08-04 12:57:13,088 - bot - DEBUG -  button False
+2021-08-04 12:57:13,089 - bot - DEBUG - Can't found new menu render
+2021-08-04 12:57:13,089 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f02092d7940>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': None, 'new_status': None, 'returns_answr': None, 'reply_markup': None, 'mode': 'text'}
+2021-08-04 13:02:21,464 - bot - DEBUG - Bot started
+2021-08-04 13:03:03,151 - bot - DEBUG - Bot started
+2021-08-04 13:03:34,169 - bot - DEBUG - Bot started
+2021-08-04 13:09:25,148 - bot - DEBUG - Bot started
+2021-08-04 13:12:06,762 - bot - DEBUG - Bot started
+2021-08-04 13:12:31,494 - bot - DEBUG - Bot started
+2021-08-04 13:12:43,102 - bot - DEBUG - Bot started
+2021-08-04 13:13:19,688 - bot - DEBUG - Bot started
+2021-08-04 13:15:19,926 - bot - DEBUG - Bot started
+2021-08-04 13:18:05,512 - bot - DEBUG - Bot started
+2021-08-04 13:18:23,743 - bot - DEBUG - Bot started
+2021-08-04 13:19:13,651 - bot - DEBUG - Bot started
+2021-08-04 13:19:33,763 - bot - DEBUG - Bot started
+2021-08-04 13:22:00,256 - bot - DEBUG - Bot started
+2021-08-04 13:22:30,209 - bot - DEBUG - Bot started
+2021-08-04 13:24:06,068 - bot - DEBUG - Bot started
+2021-08-04 13:25:10,911 - bot - DEBUG - Bot started
+2021-08-04 13:26:37,681 - bot - DEBUG - Bot started
+2021-08-04 13:26:56,552 - bot - DEBUG - Bot started
+2021-08-04 13:27:58,105 - bot - DEBUG - Bot started
+2021-08-04 13:29:05,937 - bot - DEBUG - Bot started
+2021-08-04 13:33:08,722 - bot - DEBUG - Bot started
+2021-08-04 13:33:50,683 - bot - DEBUG - Bot started
+2021-08-04 13:34:42,118 - bot - DEBUG - Bot started
+2021-08-04 13:34:59,081 - bot - DEBUG - Bot started
+2021-08-04 13:35:22,019 - bot - DEBUG - Bot started
+2021-08-04 13:36:28,005 - bot - DEBUG - Bot started
+2021-08-04 13:37:20,726 - bot - DEBUG - Bot started
+2021-08-04 13:38:10,383 - bot - DEBUG - Bot started
+2021-08-04 13:38:37,762 - bot - DEBUG - Bot started
+2021-08-04 13:38:49,510 - bot - DEBUG - Bot started
+2021-08-04 13:39:39,182 - bot - DEBUG - Bot started
+2021-08-04 13:45:56,092 - bot - DEBUG - Bot started
+2021-08-04 13:53:16,310 - bot - DEBUG - Bot started
+2021-08-04 13:57:29,093 - bot - DEBUG - Bot started
+2021-08-04 13:57:49,086 - bot - DEBUG - Bot started
+2021-08-04 13:58:08,689 - bot - DEBUG - Bot started
+2021-08-04 14:00:04,427 - bot - DEBUG - Bot started
+2021-08-04 14:00:20,893 - bot - DEBUG - Bot started
+2021-08-04 14:00:51,422 - bot - DEBUG - Bot started
+2021-08-04 14:01:12,413 - bot - DEBUG - Bot started
+2021-08-04 14:32:13,632 - bot - DEBUG - Bot started
+2021-08-04 14:32:54,416 - bot - DEBUG - Bot started
+2021-08-04 14:34:25,183 - bot - DEBUG - Bot started
+2021-08-04 14:38:09,054 - bot - DEBUG - Bot started
+2021-08-04 14:45:30,118 - bot - DEBUG - Bot started
+2021-08-04 14:45:44,922 - bot - DEBUG - Bot started
+2021-08-04 14:46:14,622 - bot - DEBUG - Bot started
+2021-08-04 14:47:59,374 - bot - DEBUG - Bot started
+2021-08-04 14:49:40,349 - bot - DEBUG - Bot started
+2021-08-04 14:52:51,528 - bot - DEBUG - Bot started
+2021-08-04 14:53:26,907 - bot - DEBUG - Bot started
+2021-08-04 14:53:48,776 - bot - DEBUG - Bot started
+2021-08-04 14:54:27,920 - bot - DEBUG - Bot started
+2021-08-04 14:57:03,139 - bot - DEBUG - Bot started
+2021-08-04 14:58:18,305 - bot - DEBUG - Bot started
+2021-08-04 15:01:56,869 - bot - DEBUG - Bot started
+2021-08-04 15:02:14,154 - bot - DEBUG - Bot started
+2021-08-04 15:02:45,354 - bot - DEBUG - Bot started
+2021-08-04 15:02:54,441 - bot - DEBUG - Bot started
+2021-08-04 15:05:43,742 - bot - DEBUG - Bot started
+2021-08-04 15:07:45,572 - bot - DEBUG - Bot started
+2021-08-04 15:08:10,216 - bot - DEBUG - Bot started
+2021-08-04 15:10:20,261 - bot - DEBUG - Bot started
+2021-08-04 15:12:02,959 - bot - DEBUG - Bot started
+2021-08-04 15:12:14,872 - bot - DEBUG - Bot started
+2021-08-04 15:17:47,676 - bot - DEBUG - Bot started
+2021-08-04 15:18:29,215 - bot - DEBUG - Bot started
+2021-08-04 15:19:21,374 - bot - DEBUG - Bot started
+2021-08-04 15:19:49,367 - bot - DEBUG - Bot started
+2021-08-04 15:20:29,312 - bot - DEBUG - Bot started
+2021-08-04 15:22:01,415 - bot - DEBUG - Bot started
+2021-08-04 15:23:39,180 - bot - DEBUG - Bot started
+2021-08-04 15:25:53,645 - bot - DEBUG - Bot started
+2021-08-04 15:27:00,409 - bot - DEBUG - Bot started
+2021-08-04 15:28:23,463 - bot - DEBUG - Bot started
+2021-08-04 15:28:36,486 - bot - DEBUG - Bot started
+2021-08-04 15:29:01,915 - bot - DEBUG - Bot started
+2021-08-04 15:31:00,256 - bot - DEBUG - Bot started
+2021-08-04 15:31:35,633 - bot - DEBUG - Bot started
+2021-08-04 15:33:27,403 - bot - DEBUG - Bot started
+2021-08-04 15:34:54,847 - bot - DEBUG - Bot started
+2021-08-04 15:37:24,262 - bot - DEBUG - Bot started
+2021-08-04 15:37:48,169 - bot - DEBUG - Bot started
+2021-08-04 15:38:45,105 - bot - DEBUG - Bot started
+2021-08-04 15:38:57,799 - bot - DEBUG - Bot started
+2021-08-04 15:39:08,508 - bot - DEBUG - Bot started
+2021-08-04 15:39:10,415 - bot - DEBUG - Bot started
+2021-08-04 15:39:42,124 - bot - DEBUG - Bot started
+2021-08-04 15:40:07,847 - bot - DEBUG - Bot started
+2021-08-04 15:43:14,822 - bot - DEBUG - Bot started
+2021-08-04 15:44:58,666 - bot - DEBUG - Bot started
+2021-08-04 15:45:27,112 - bot - DEBUG - Bot started
+2021-08-04 15:46:32,453 - bot - DEBUG - Bot started
+2021-08-04 15:47:11,742 - bot - DEBUG - Bot started
+2021-08-04 15:47:45,033 - bot - DEBUG - Bot started
+2021-08-04 15:49:27,155 - bot - DEBUG - Bot started
+2021-08-04 15:51:24,979 - bot - DEBUG - Bot started
+2021-08-04 15:52:21,282 - bot - DEBUG - Bot started
+2021-08-04 15:52:47,711 - bot - DEBUG - Bot started
+2021-08-04 15:52:58,748 - bot - DEBUG - Bot started
+2021-08-04 15:54:20,235 - bot - DEBUG - Bot started
+2021-08-04 15:56:34,261 - bot - DEBUG - Bot started
+2021-08-04 15:57:17,348 - bot - DEBUG - Bot started
+2021-08-04 15:57:53,039 - bot - DEBUG - Bot started
+2021-08-04 15:59:51,155 - bot - DEBUG - Bot started
+2021-08-04 16:01:06,187 - bot - DEBUG - Bot started
+2021-08-04 16:05:23,204 - bot - DEBUG - Bot started
+2021-08-04 16:06:03,492 - bot - DEBUG - Bot started
+2021-08-04 16:06:37,794 - bot - DEBUG - Bot started
+2021-08-04 16:07:13,072 - bot - DEBUG - Bot started
+2021-08-04 16:07:40,468 - bot - DEBUG - Bot started
+2021-08-04 16:08:38,042 - bot - DEBUG - Bot started
+2021-08-04 16:11:01,160 - bot - DEBUG - Bot started
+2021-08-04 16:12:11,259 - bot - DEBUG - Bot started
+2021-08-04 16:13:31,083 - bot - DEBUG - Bot started
+2021-08-04 16:14:20,109 - bot - DEBUG - Bot started
+2021-08-04 16:15:57,561 - bot - DEBUG - Bot started
+2021-08-04 16:17:42,057 - bot - DEBUG - Bot started
+2021-08-04 16:24:48,035 - bot - DEBUG - Bot started
+2021-08-04 16:32:29,829 - bot - DEBUG - Bot started
+2021-08-04 16:33:40,835 - bot - DEBUG - Bot started
+2021-08-04 16:35:02,369 - bot - DEBUG - Bot started
+2021-08-04 16:35:47,079 - bot - DEBUG - Bot started
+2021-08-04 16:37:02,858 - bot - DEBUG - Bot started
+2021-08-04 16:37:04,238 - bot - DEBUG - Bot started
+2021-08-04 16:37:31,533 - bot - DEBUG - Bot started
+2021-08-04 16:38:16,056 - bot - DEBUG - Bot started
+2021-08-04 16:38:51,716 - bot - DEBUG - Bot started
+2021-08-04 16:39:45,778 - bot - DEBUG - Bot started
+2021-08-04 16:40:08,929 - bot - DEBUG - Bot started
+2021-08-04 16:40:41,006 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64186370>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b641860d0>, 'mode': 'button'}
+2021-08-04 16:40:46,427 - bot - DEBUG -  button False
+2021-08-04 16:40:46,427 - bot - DEBUG - Can't found new menu render
+2021-08-04 16:40:46,428 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b68a06640>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': None, 'reply_markup': None, 'mode': 'text'}
+2021-08-04 16:40:59,358 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64175e80>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64175940>, 'mode': 'button'}
+2021-08-04 16:41:00,332 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b641860d0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 1>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b68a06640>, 'mode': 'button'}
+2021-08-04 16:41:01,322 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64175d90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64168400>, 'mode': 'button'}
+2021-08-04 16:41:03,738 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b600bd4c0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 1>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64175940>, 'mode': 'button'}
+2021-08-04 16:41:04,240 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b641860d0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64175940>, 'mode': 'button'}
+2021-08-04 16:41:04,595 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b600bdc70>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b68a06640>, 'mode': 'button'}
+2021-08-04 16:41:05,396 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64168a90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64186ee0>, 'mode': 'button'}
+2021-08-04 16:41:05,850 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64175940>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 1>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b600bdb80>, 'mode': 'button'}
+2021-08-04 16:41:06,231 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64186ee0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64175d90>, 'mode': 'button'}
+2021-08-04 16:41:06,781 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64168400>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64186370>, 'mode': 'button'}
+2021-08-04 16:41:16,897 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64175d90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64186040>, 'mode': 'button'}
+2021-08-04 16:41:17,577 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b600efe20>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 2>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64168a90>, 'mode': 'button'}
+2021-08-04 16:41:18,910 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b68a06640>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': 'Третяя', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64175d90>, 'mode': 'button'}
+2021-08-04 16:41:21,852 - bot - DEBUG -  button False
+2021-08-04 16:41:21,853 - bot - DEBUG - Can't found new menu render
+2021-08-04 16:41:21,853 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b600bd280>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 16:41:25,534 - bot - DEBUG -  button False
+2021-08-04 16:41:25,535 - bot - DEBUG - Can't found new menu render
+2021-08-04 16:41:25,535 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b64186100>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': 'креветки', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 16:41:48,669 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f7b600bd4c0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': 'Третяя', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f7b64186040>, 'mode': 'button'}
+2021-08-04 16:42:59,905 - bot - DEBUG - Bot started
+2021-08-04 16:43:24,555 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f00999c6af0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': 'Третяя', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f009816a790>, 'mode': 'button'}
+2021-08-04 16:43:25,677 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f00999c6a90>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': None, 'button': <MenuButton: 9>, 'new_status': <Statuses: 1>, 'returns_answr': '5', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f009e249640>, 'mode': 'button'}
+2021-08-04 16:43:27,654 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f009813a2e0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 2>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f00999c6a90>, 'mode': 'button'}
+2021-08-04 16:43:28,680 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f00999b8e20>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': <MenuButton: 5>, 'new_status': <Statuses: 2>, 'returns_answr': 'Третяя', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f00999c6a00>, 'mode': 'button'}
+2021-08-04 16:43:30,607 - bot - DEBUG -  button False
+2021-08-04 16:43:30,608 - bot - DEBUG - Can't found new menu render
+2021-08-04 16:43:30,608 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f00999c6a60>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 16:43:32,682 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f00999b8e20>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': None, 'button': <MenuButton: 9>, 'new_status': <Statuses: 1>, 'returns_answr': '5', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f009819da90>, 'mode': 'button'}
+2021-08-04 16:43:34,423 - bot - DEBUG -  button False
+2021-08-04 16:43:34,423 - bot - DEBUG - Can't found new menu render
+2021-08-04 16:43:34,423 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f009813a160>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': None, 'new_status': None, 'returns_answr': None, 'reply_markup': None, 'mode': 'text'}
+2021-08-04 16:43:36,085 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f009816a880>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 1>, 'new_status': <Statuses: 1>, 'returns_answr': '11', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f00999aba90>, 'mode': 'button'}
+2021-08-04 16:43:36,717 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f009813a2e0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f00999aba90>, 'mode': 'button'}
+2021-08-04 16:49:36,702 - bot - DEBUG - Bot started
+2021-08-04 17:08:35,308 - bot - DEBUG - Bot started
+2021-08-04 17:08:47,895 - bot - DEBUG - Bot started
+2021-08-04 17:24:36,017 - bot - DEBUG - Bot started
+2021-08-04 17:24:49,291 - bot - DEBUG - Bot started
+2021-08-04 17:24:51,920 - bot - DEBUG - Bot started
+2021-08-04 17:24:56,949 - bot - DEBUG - Bot started
+2021-08-04 17:26:25,358 - bot - DEBUG - Bot started
+2021-08-04 17:27:16,406 - bot - DEBUG - Bot started
+2021-08-04 17:28:04,968 - bot - DEBUG - Bot started
+2021-08-04 17:28:34,525 - bot - DEBUG - Bot started
+2021-08-04 17:28:57,543 - bot - DEBUG - Bot started
+2021-08-04 17:31:07,418 - bot - DEBUG - Bot started
+2021-08-04 17:31:15,556 - bot - DEBUG - Bot started
+2021-08-04 17:31:43,120 - bot - DEBUG - Bot started
+2021-08-04 17:32:34,449 - bot - DEBUG - Bot started
+2021-08-04 17:33:09,981 - bot - DEBUG - Bot started
+2021-08-04 17:36:49,014 - bot - DEBUG - Bot started
+2021-08-04 17:38:33,844 - bot - DEBUG - Bot started
+2021-08-04 17:43:49,377 - bot - DEBUG - Bot started
+2021-08-04 17:45:39,154 - bot - DEBUG - Bot started
+2021-08-04 17:46:11,980 - bot - DEBUG - Bot started
+2021-08-04 17:46:16,468 - bot - DEBUG - Bot started
+2021-08-04 17:47:11,820 - bot - DEBUG - Bot started
+2021-08-04 17:50:03,471 - bot - DEBUG - Bot started
+2021-08-04 17:50:21,669 - bot - DEBUG - Bot started
+2021-08-04 17:52:41,626 - bot - DEBUG - Bot started
+2021-08-04 17:52:59,264 - bot - DEBUG - Bot started
+2021-08-04 17:53:07,492 - bot - DEBUG - Bot started
+2021-08-04 17:55:28,285 - bot - DEBUG - Bot started
+2021-08-04 17:56:53,098 - bot - DEBUG - Bot started
+2021-08-04 17:57:41,810 - bot - DEBUG - Bot started
+2021-08-04 18:01:47,371 - bot - DEBUG - Bot started
+2021-08-04 18:02:08,486 - bot - DEBUG - Bot started
+2021-08-04 18:06:00,461 - bot - DEBUG - Bot started
+2021-08-04 18:06:17,075 - bot - DEBUG - Bot started
+2021-08-04 18:06:40,287 - bot - DEBUG - Bot started
+2021-08-04 18:08:08,014 - bot - DEBUG - Bot started
+2021-08-04 18:08:38,732 - bot - DEBUG - Bot started
+2021-08-04 18:10:22,574 - bot - DEBUG - Bot started
+2021-08-04 18:11:38,170 - bot - DEBUG - Bot started
+2021-08-04 18:11:42,053 - bot - DEBUG - Bot started
+2021-08-04 18:12:40,127 - bot - DEBUG - Bot started
+2021-08-04 18:13:36,708 - bot - DEBUG - Bot started
+2021-08-04 18:14:12,289 - bot - DEBUG - Bot started
+2021-08-04 18:16:14,468 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d319228b0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 2>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d31922970>, 'mode': 'button'}
+2021-08-04 18:16:15,846 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d31922970>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': None, 'button': <MenuButton: 9>, 'new_status': <Statuses: 1>, 'returns_answr': '5', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d319168e0>, 'mode': 'button'}
+2021-08-04 18:16:17,336 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d30052a00>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': <MenuButton: 3>, 'new_status': <Statuses: 1>, 'returns_answr': '33', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d300526d0>, 'mode': 'button'}
+2021-08-04 18:16:21,719 - bot - DEBUG -  button False
+2021-08-04 18:16:21,719 - bot - DEBUG - Can't found new menu render
+2021-08-04 18:16:21,719 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d300522b0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': None, 'button': None, 'new_status': None, 'returns_answr': '#messageда я люблю#message пиво #message пиво ', 'reply_markup': None, 'mode': 'text'}
+2021-08-04 18:16:26,169 - bot - DEBUG -  button False
+2021-08-04 18:16:26,175 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d30052fa0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': 'listen', 'command': <Commands: 2>, 'button': None, 'new_status': <Statuses: 1>, 'returns_answr': 'hi', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d30052bb0>, 'mode': 'command'}
+2021-08-04 18:16:28,223 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d300526d0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 1>, 'action': None, 'command': None, 'button': <MenuButton: 2>, 'new_status': <Statuses: 2>, 'returns_answr': '22', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d300529a0>, 'mode': 'button'}
+2021-08-04 18:16:31,796 - bot - DEBUG -  button False
+2021-08-04 18:16:31,802 - bot - INFO - {'logger': <AppLogger bot (NOTSET)>, 'message': <telebot.types.Message object at 0x7f6d300527f0>, 'user_obj': <TgClient: 1>, 'status': <Statuses: 2>, 'action': None, 'command': <Commands: 2>, 'button': None, 'new_status': <Statuses: 1>, 'returns_answr': 'hi', 'reply_markup': <telebot.types.ReplyKeyboardMarkup object at 0x7f6d300526d0>, 'mode': 'command'}

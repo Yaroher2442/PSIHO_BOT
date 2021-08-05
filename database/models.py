@@ -79,7 +79,7 @@ class AnswersStatistic(Model):
     tg_user_id = IntegerField()
     datetime = DateTimeField()
     question = CharField()
-    answer = CharField()
+    answer = CharField(null=True)
 
     class Meta:
         database = pg_db

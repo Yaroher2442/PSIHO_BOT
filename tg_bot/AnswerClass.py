@@ -8,11 +8,14 @@ import builtins
 from datetime import datetime
 import re
 
+
 class Answer:
     def __init__(self, message, logger: AppLogger):
         self.logger = logger
-
         self.message = message
+
+        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, datetime=datetime.now(),
+                                          question=self.message.text)
         self.user_obj = None
 
         self.status = None
@@ -127,10 +130,11 @@ class Answer:
         except:
             return ["Извините, не смог понять вас", "Попробуйте ещё раз"]
 
-
     def send_message(self, bot: telebot.telebot):
+        self.statistic.answer = self.returns_answr
         for msg in self.str_processor():
             bot.send_message(self.message.from_user.id,
                              text=msg,
                              reply_markup=self.reply_markup,
                              parse_mode="html")
+        self.statistic.save()
