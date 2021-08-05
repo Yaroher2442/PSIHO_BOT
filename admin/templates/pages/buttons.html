@@ -38,6 +38,7 @@
                                     <th>Ответ по кнопке</th>
                                     <th>Переводит к меню</th>
                                     <th>Флаг слушателя</th>
+                                    <th>Изменить</th>
                                     <th>Удалить</th>
                                 </tr>
                                 </thead>
@@ -50,6 +51,10 @@
                                     <td>{{item.btn.answer}}</td>
                                     <td>{{item.to_menu.descr}}</td>
                                     <td>{{item.btn.set_action}}</td>
+                                    <td>
+                                        <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
+                                           data-target="#ChangeCommandModal_{{item.btn.id}}">Изменить</a>
+                                    </td>
                                     <td>
                                         <a class="btn btn-pill btn-danger" href="/delete/MenuButton/{{item.btn.id}}">Удалить</a>
                                     </td>
@@ -104,7 +109,7 @@
                         <label class="col-form-label" for="select2">Переводит к меню</label>
                         <select class="form-control" id="select2" name="to_status">
                             {%for item in menus%}
-                            <option value="{{item.id}}">{{item.descr}}</option>
+                            <option value="{{item.status_id}}">{{item.descr}}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -116,6 +121,9 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <input class="form-control" type="hidden" name="flag" value="insert">
+                    </div>
+                    <div class="form-group">
                         <button class="btn btn-primary" type="submit">Добавить</button>
                     </div>
                 </form>
@@ -124,6 +132,63 @@
     </div>
 </div>
 
+
+{%for item in buttons%}
+<div class="modal fade" id="ChangeCommandModal_{{item.btn.id}}" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ChangeMenuModal">Обновление команды "{{item.btn.text}}" </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addButtonForm" method="post" action="/buttons">
+                    <div class="form-group">
+                        <label class="col-form-label" for="description">Новый текст кнопки</label>
+                        <input class="form-control" id="text" type="text" name="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="description">Новый ответ по кнопке</label>
+                        <input class="form-control" id="description" type="text" name="answer" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="select1">Новая привязка к меню</label>
+                        <select class="form-control" id="select1" name="menu_id">
+                            {%for item in menus%}
+                            <option value="{{item.id}}">{{item.descr}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="select2">Новый переход к меню</label>
+                        <select class="form-control" id="select2" name="to_status">
+                            {%for item in menus%}
+                            <option value="{{item.status_id}}">{{item.descr}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="select3">Флаг слушателя</label>
+                        <select class="form-control" id="select3" name="set_action">
+                            <option value="None">None</option>
+                            <option value="listen">Listen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="flag" value="update_{{item.btn.id}}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Обновить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}
 <!-- CoreUI and necessary plugins-->
 <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
 <!--[if IE]><!-->
@@ -142,6 +207,7 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
 </script>
 </body>
 </html>

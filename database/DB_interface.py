@@ -32,6 +32,7 @@ class BaseDb:
                 up_dict.update({getattr(self.table, k): v})
             query = self.table.update(up_dict).where(self.table.id == id)
             query.execute()
+            return True
         except Exception as e:
             print(e)
             return False
@@ -154,10 +155,12 @@ class CommandsApi(BaseDb):
         BaseDb.__init__(self)
         self.table = models.Commands
 
+
 class AnswersStatisticApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
         self.table = models.AnswersStatistic
+
 
 class DBInterface:
     def __init__(self):
@@ -167,4 +170,4 @@ class DBInterface:
         self.MenuButton = MenuButtonApi()
         self.TextAnswers = TextAnswersApi()
         self.Commands = CommandsApi()
-        self.AnswersStatistic=AnswersStatisticApi()
+        self.AnswersStatistic = AnswersStatisticApi()

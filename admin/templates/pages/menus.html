@@ -42,6 +42,7 @@
                                     <th>#</th>
                                     <th>Описание</th>
                                     <th>Статус отображения</th>
+                                    <th>Изменить</th>
                                     <th>Удалить</th>
                                 </tr>
                                 </thead>
@@ -51,6 +52,10 @@
                                     <td>{{item.id}}</td>
                                     <td>{{item.descr}}</td>
                                     <td>{{item.status}}</td>
+                                    <td>
+                                        <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
+                                           data-target="#ChangeMenuModal_{{item.id}}">Изменить</a>
+                                    </td>
                                     <td>
                                         <a class="btn btn-pill btn-danger" href="/delete/Menu/{{item.id}}">Удалить</a>
                                     </td>
@@ -91,12 +96,45 @@
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit">Добавить</button>
                     </div>
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="flag" value="insert">
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+
+{%for item in menus%}
+<div class="modal fade" id="ChangeMenuModal_{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ChangeMenuModal">Обновление меню "{{item.descr}}" </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="ChangeMenuForm" method="post" action="/menus">
+                    <div class="form-group">
+                        <label class="col-form-label" for="description">Новое описание меню</label>
+                        <input class="form-control" id="description" type="text" name="descr" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Обновить</button>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="flag" value="update_{{item.id}}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}
 <!-- CoreUI and necessary plugins-->
 <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
 <!--[if IE]><!-->
@@ -115,6 +153,7 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
 
 
 

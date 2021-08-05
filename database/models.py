@@ -46,7 +46,7 @@ class TextAnswers(Model):
 
 
 class MenuButton(Model):
-    menu_id = ForeignKeyField(Menu, on_delete="CASCADE")
+    menu_id = ForeignKeyField(Menu, on_delete="CASCADE", null=True)
     text = CharField()
     answer = CharField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
