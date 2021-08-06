@@ -16,6 +16,7 @@
   "server":
   {
     "host": null,
-    "port": null
+    "port": null,
+    "debug": false
   }
 }

@@ -14,6 +14,7 @@ class Configurator():
         self.tg_conf = TG_config(**self.json_conf['telegram'])
         self.db_conf = DB_config(**self.json_conf['database'])
         self.log_conf = LOG_config(**self.json_conf["logger"])
+        self.server_conf = Server_config(**self.json_conf["server"])
 
 
 class TG_config:
@@ -38,6 +39,15 @@ class LOG_config:
     def __init__(self, **kwargs):
         self.when = None
         self.interval = None
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+
+class Server_config:
+    def __init__(self, **kwargs):
+        self.host = None
+        self.port = None
+        self.debug = None
         for k, v in kwargs.items():
             setattr(self, k, v)
 

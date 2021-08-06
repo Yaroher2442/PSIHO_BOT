@@ -3,6 +3,8 @@ import threading
 from flask import Flask
 from flask.logging import default_handler
 from flask_cors import CORS
+
+import config_.conf
 from admin.views import *
 from config_.loger import AppLogger
 import logging
@@ -13,9 +15,10 @@ class AdminApp(threading.Thread):
                 , static_folder="static")
     CORS(app)
 
-    def __init__(self, conf):
+    def __init__(self, conf: config_.conf.Configurator):
         threading.Thread.__init__(self)
-        self.logger = AppLogger("admin", conf)
+        self.config = conf
+        self.logger = AppLogger("admin", self.config)
         self.log = logging.getLogger('werkzeug')
         for handl in self.logger.handlers:
             self.log.addHandler(handl)
@@ -47,4 +50,5 @@ class AdminApp(threading.Thread):
         self.app.add_url_rule('/statistic', view_func=Statistic.as_view('statistic'))
 
     def run(self):
-        self.app.run(debug=False)
+        self.app.run(host=self.config.server_conf.host, port=self.config.server_conf.port,
+                     debug=self.config.server_conf.debug)
