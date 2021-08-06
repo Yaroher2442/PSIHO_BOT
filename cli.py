@@ -5,6 +5,9 @@ from config_.loger import AppLogger
 from database.migration import makemigrations
 import os
 
+import sys
+sys.path.append(os.getcwd())
+
 conf = Configurator()
 app_logger = AppLogger("app", conf)
 
