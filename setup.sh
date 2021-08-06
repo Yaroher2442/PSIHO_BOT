@@ -6,6 +6,8 @@ echo "[+] Activating virtual environment"
 source "$PWD"/venv/bin/activate
 echo "[+] Installing packeges"
 "$PWD"/venv/bin/pip install -r requirements.txt
-echo "[+] Everything installed run cli.py"
 echo "[+] Add PYTHONPATH"
-export PYTHONPATH="${PYTHONPATH}:$PWD"
+export PYTHONPATH="$PWD"
+echo $PYTHONPATH
+echo "[+] Everything installed run cli.py"
+
