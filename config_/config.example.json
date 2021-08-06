@@ -5,9 +5,9 @@
   },
   "database": {
     "host": "localhost",
-    "user": "testuser",
-    "user_pass": "2442",
-    "db_name": "testdb"
+    "user": "botuser",
+    "user_pass": "botuser123",
+    "db_name": "botdb"
   },
   "logger": {
     "when": "H",

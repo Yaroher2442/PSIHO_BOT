@@ -1,23 +1,7 @@
 <!DOCTYPE html>
-<!--
-   * CoreUI Pro based Bootstrap Admin Template
-   * @version v3.2.0
-   * @link https://coreui.io/pro/
-   * Copyright (c) 2020 creativeLabs Łukasz Holeczek
-   * License (https://coreui.io/pro/license)
-   -->
 <html lang="en">
 <head>
-    <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Pro Bootstrap Admin Template</title>
-    <!-- Main styles for this application-->
-    <link href="css/style.css" rel="stylesheet">
+{% include "./helpers/includes.html" %}
 </head>
 <body class="c-app c-no-layout-transition">
 {% include "./helpers/side_menu.html" %}
@@ -114,27 +98,6 @@
         </div>
     </div>
 </div>
-
-<!-- CoreUI and necessary plugins-->
-<script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
-<!--[if IE]><!-->
-<script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
-<!--<![endif]-->
-<!-- Plugins and scripts required by this view-->
-<script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
-<!-- Plugins and scripts required by this view-->
-<script src="vendors/jquery/js/jquery.slim.min.js"></script>
-<script src="vendors/jquery-validation/js/jquery.validate.js"></script>
-<script src="js/validation.js"></script>
-<script src="js/main.js"></script>
-<script>
-         document.addEventListener("DOMContentLoaded", function(event) {
-           setTimeout(function() {
-             document.body.classList.remove('c-no-layout-transition')
-           }, 2000);
-         });
-
-
-</script>
+{% include "./helpers/scripts.html" %}
 </body>
 </html>

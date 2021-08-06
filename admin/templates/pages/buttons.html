@@ -1,213 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Pro Bootstrap Admin Template</title>
-    <!-- Main styles for this application-->
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body class="c-app c-no-layout-transition">
-{% include "./helpers/side_menu.html" %}
-<div class="c-wrapper">
-    {% include "./helpers/header.html" %}
-    <div class="c-body">
-        <main class="c-main">
-            <div class="container-fluid">
-                <div class="fade-in">
+{% extends './layouts/layout.html' %}
+{% block title %}Buttons{% endblock %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <div class="btn-group">
+                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addButtonModal">
+                    Добавить кнопку
+                </a>
+            </div>
+            <hr/>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Привязан к меню</th>
+                    <th>Текст кнопки</th>
+                    <th>Ответ по кнопке</th>
+                    <th>Переводит к меню</th>
+                    <th>Флаг слушателя</th>
+                    <th>Изменить</th>
+                    <th>Удалить</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in buttons %}
+                    <tr>
+                        <td>{{ item.btn.id }}</td>
+                        <td>{{ item.menu.descr }}</td>
+                        <td>{{ item.btn.text }}</td>
+                        <td>{{ item.btn.answer }}</td>
+                        <td>{{ item.to_menu.descr }}</td>
+                        <td>{{ item.btn.set_action }}</td>
+                        <td>
+                            <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
+                               data-target="#ChangeCommandModal_{{ item.btn.id }}">Изменить</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-pill btn-danger" href="/delete/MenuButton/{{ item.btn.id }}">Удалить</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                {% for notify in notifys %}
+                    <div class="{{ notify.html_class }}" role="alert">{{ notify.message }}</div>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
 
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addButtonModal">Добавить
-                                    кнопку</a>
-                            </div>
-
-                            <hr/>
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Привязан к меню</th>
-                                    <th>Текст кнопки</th>
-                                    <th>Ответ по кнопке</th>
-                                    <th>Переводит к меню</th>
-                                    <th>Флаг слушателя</th>
-                                    <th>Изменить</th>
-                                    <th>Удалить</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {%for item in buttons%}
-                                <tr>
-                                    <td>{{item.btn.id}}</td>
-                                    <td>{{item.menu.descr}}</td>
-                                    <td>{{item.btn.text}}</td>
-                                    <td>{{item.btn.answer}}</td>
-                                    <td>{{item.to_menu.descr}}</td>
-                                    <td>{{item.btn.set_action}}</td>
-                                    <td>
-                                        <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
-                                           data-target="#ChangeCommandModal_{{item.btn.id}}">Изменить</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-pill btn-danger" href="/delete/MenuButton/{{item.btn.id}}">Удалить</a>
-                                    </td>
-                                </tr>
-                                {%endfor%}
-                                </tbody>
-                                {% for notify in notifys %}
-                                <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
-                                {% endfor %}
-                            </table>
+{% block modals %}
+    <!-- Modal -->
+    <div class="modal fade" id="addButtonModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addButtonModal">Добавить кнопку</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addButtonForm" method="post" action="/buttons">
+                        <div class="form-group">
+                            <label class="col-form-label" for="description">Текст кнопки</label>
+                            <textarea class="form-control" id="text" name="text" rows="4" placeholder=""></textarea>
                         </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="description">Ответ по кнопке</label>
+                            <textarea class="form-control" id="text" name="answer" rows="4" placeholder=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="select1">Привязка к меню</label>
+                            <select class="form-control" id="select1" name="menu_id">
+                                {% for item in menus %}
+                                    <option value="{{ item.id }}">{{ item.descr }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="select2">Переводит к меню</label>
+                            <select class="form-control" id="select2" name="to_status">
+                                {% for item in menus %}
+                                    <option value="{{ item.status_id }}">{{ item.descr }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="select3">Флаг слушателя</label>
+                            <select class="form-control" id="select3" name="set_action">
+                                <option value="None">None</option>
+                                <option value="listen">Listen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="hidden" name="flag" value="insert">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% for item in buttons %}
+        <div class="modal fade" id="ChangeCommandModal_{{ item.btn.id }}" tabindex="-1" role="dialog"
+             aria-labelledby="addMenuModal"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ChangeMenuModal">Обновление команды "{{ item.btn.text }}" </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addButtonForm" method="post" action="/buttons">
+                            <div class="form-group">
+                                <label class="col-form-label" for="description">Новый текст кнопки</label>
+                                <textarea class="form-control" id="text" name="text" rows="4"
+                                          placeholder="">{{ item.btn.text }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="description">Новый ответ по кнопке</label>
+                                <textarea class="form-control" id="description" name="answer" rows="4"
+                                          placeholder="">{{ item.btn.answer }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="select1">Новая привязка к меню</label>
+                                <select class="form-control" id="select1" name="menu_id">
+                                    {% for item in menus %}
+                                        <option value="{{ item.id }}">{{ item.descr }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="select2">Новый переход к меню</label>
+                                <select class="form-control" id="select2" name="to_status">
+                                    {% for item in menus %}
+                                        <option value="{{ item.status_id }}">{{ item.descr }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="select3">Флаг слушателя</label>
+                                <select class="form-control" id="select3" name="set_action">
+                                    <option value="None">None</option>
+                                    <option value="listen">Listen</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="flag" value="update_{{ item.btn.id }}">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit">Обновить</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
-    <footer class="c-footer">
-        <div>© 2021</div>
-    </footer>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="addButtonModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addButtonModal">Добавить кнопку</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/buttons">
-                    <div class="form-group">
-                        <label class="col-form-label" for="description">Текст кнопки</label>
-                        <textarea class="form-control" id="text" name="text" rows="4" placeholder=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="description">Ответ по кнопке</label>
-                        <textarea class="form-control" id="text" name="answer" rows="4" placeholder=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select1">Привязка к меню</label>
-                        <select class="form-control" id="select1" name="menu_id">
-                            {%for item in menus%}
-                            <option value="{{item.id}}">{{item.descr}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select2">Переводит к меню</label>
-                        <select class="form-control" id="select2" name="to_status">
-                            {%for item in menus%}
-                            <option value="{{item.status_id}}">{{item.descr}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select3">Флаг слушателя</label>
-                        <select class="form-control" id="select3" name="set_action">
-                            <option value="None">None</option>
-                            <option value="listen">Listen</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="hidden" name="flag" value="insert">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Добавить</button>
-                    </div>
-                </form>
-            </div>
         </div>
-    </div>
-</div>
-
-
-{%for item in buttons%}
-<div class="modal fade" id="ChangeCommandModal_{{item.btn.id}}" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ChangeMenuModal">Обновление команды "{{item.btn.text}}" </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/buttons">
-                    <div class="form-group">
-                        <label class="col-form-label" for="description">Новый текст кнопки</label>
-                        <textarea class="form-control" id="text" name="text" rows="4" placeholder="">{{item.btn.text}}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="description">Новый ответ по кнопке</label>
-                        <textarea class="form-control" id="description" name="answer" rows="4" placeholder="">{{item.btn.answer}}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select1">Новая привязка к меню</label>
-                        <select class="form-control" id="select1" name="menu_id">
-                            {%for item in menus%}
-                            <option value="{{item.id}}">{{item.descr}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select2">Новый переход к меню</label>
-                        <select class="form-control" id="select2" name="to_status">
-                            {%for item in menus%}
-                            <option value="{{item.status_id}}">{{item.descr}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="select3">Флаг слушателя</label>
-                        <select class="form-control" id="select3" name="set_action">
-                            <option value="None">None</option>
-                            <option value="listen">Listen</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="hidden" name="flag" value="update_{{item.btn.id}}">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Обновить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-{%endfor%}
-<!-- CoreUI and necessary plugins-->
-<script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
-<!--[if IE]><!-->
-<script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
-<!--<![endif]-->
-<!-- Plugins and scripts required by this view-->
-<script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
-<!-- Plugins and scripts required by this view-->
-<script src="vendors/jquery/js/jquery.slim.min.js"></script>
-<script src="vendors/jquery-validation/js/jquery.validate.js"></script>
-<script src="js/validation.js"></script>
-<script src="js/main.js"></script>
-<script>
-         document.addEventListener("DOMContentLoaded", function(event) {
-           setTimeout(function() {
-             document.body.classList.remove('c-no-layout-transition')
-           }, 2000);
-         });
-
-</script>
-</body>
-</html>
+    {% endfor %}
+{% endblock %}

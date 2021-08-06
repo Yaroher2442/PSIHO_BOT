@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "./helpers/includes.html" %}
+</head>
+<body class="c-app c-no-layout-transition">
+{% include "./helpers/side_menu.html" %}
+<div class="c-wrapper">
+    {% include "./helpers/header.html" %}
+    <div class="c-body">
+        <main class="c-main">
+            <div class="container-fluid">
+                <div class="fade-in">
+                    {% block content %}
+                    {% endblock %}
+
+                {%  %}
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="c-footer">
+        {% include "./helpers/footer.html" %}
+    </footer>
+</div>
+
+{% block modals %}
+{% endblock %}
+
+{% include "./helpers/scripts.html" %}
+</body>
+</html>
