@@ -1,7 +1,7 @@
 from fuzzywuzzy import fuzz
 from telebot import types
 from database.models import *
-from config.loger import AppLogger
+from config_.loger import AppLogger
 import telebot
 import json
 import builtins

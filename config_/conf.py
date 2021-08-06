@@ -6,10 +6,10 @@ class Configurator():
     def __init__(self):
         self.base_path = os.getcwd()
         try:
-            with open(os.path.join(self.base_path, "config", "config.json")) as conf_file:
+            with open(os.path.join(self.base_path, "config_", "config.json")) as conf_file:
                 self.json_conf = dict(json.load(conf_file))
         except:
-            with open(os.path.join(self.base_path, "..", 'config', "config.json")) as conf_file:
+            with open(os.path.join(self.base_path, "..", 'config_', "config.json")) as conf_file:
                 self.json_conf = dict(json.load(conf_file))
         self.tg_conf = TG_config(**self.json_conf['telegram'])
         self.db_conf = DB_config(**self.json_conf['database'])

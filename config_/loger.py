@@ -1,6 +1,6 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from config.conf import Configurator
+from config_.conf import Configurator
 import os
 from colorlog import ColoredFormatter
 

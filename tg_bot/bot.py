@@ -2,7 +2,7 @@ import threading
 import telebot
 # from tg_bot.BotLogic import Answer
 from tg_bot.AnswerClass import Answer
-from config.loger import AppLogger
+from config_.loger import AppLogger
 
 
 class TGBot(threading.Thread):

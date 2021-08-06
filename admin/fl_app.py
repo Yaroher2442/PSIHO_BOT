@@ -4,7 +4,7 @@ from flask import Flask
 from flask.logging import default_handler
 from flask_cors import CORS
 from admin.views import *
-from config.loger import AppLogger
+from config_.loger import AppLogger
 import logging
 
 

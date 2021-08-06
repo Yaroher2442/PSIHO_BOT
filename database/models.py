@@ -1,5 +1,5 @@
 from peewee import *
-from config.conf import Configurator
+from config_.conf import Configurator
 
 conf = Configurator()
 pg_db = PostgresqlDatabase(host=conf.db_conf.host,

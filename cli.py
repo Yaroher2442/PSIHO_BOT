@@ -1,10 +1,9 @@
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp
-from config.conf import Configurator
-from config.loger import AppLogger
+from config_.conf import Configurator
+from config_.loger import AppLogger
 from database.migration import makemigrations
 import os
-import time
 
 conf = Configurator()
 app_logger = AppLogger("app", conf)
