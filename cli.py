@@ -1,12 +1,14 @@
+import os
+
+import sys
+
+sys.path.append(os.getcwd())
+
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp
 from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
-import os
-
-import sys
-sys.path.append(os.getcwd())
 
 conf = Configurator()
 app_logger = AppLogger("app", conf)
@@ -23,7 +25,9 @@ def change_dir(dir):
             os.chdir(retval)
             app_logger.debug("Current working directory %s" % os.getcwd())
             return ret
+
         return wrapper
+
     return actual_decorator
 
 
