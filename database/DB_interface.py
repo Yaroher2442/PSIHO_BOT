@@ -162,6 +162,7 @@ class AnswersStatisticApi(BaseDb):
         self.table = models.AnswersStatistic
 
 
+
 class DBInterface:
     def __init__(self):
         self.auth = Auth()

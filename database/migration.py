@@ -1,5 +1,6 @@
 from database import models
 import subprocess
+from database.DB_interface import DBInterface
 
 
 def makemigrations(logger=None):
@@ -18,11 +19,23 @@ def makemigrations(logger=None):
         logger.info("Migrations | " + res)
         res = subprocess.check_output(["pem", "migrate"]).decode().rstrip()
         logger.info("Migrations |" + res)
+        db = DBInterface()
+        try:
+            models.AdminUser.get(models.AdminUser.email == "admin@admin.admin")
+            logger.info("Migrations |" + "Admin user not set, try to create one")
+        except Exception as e:
+            try:
+                db.auth.registry_user(name="admin", email="admin@admin.admin", passwrd="admin")
+                logger.info("Migrations |" + "Admin user is set")
+            except Exception as e:
+                logger.info("Migrations |" + "Admin user setter not work finaly")
+                raise e
+        except:
+            pass
         return True
     except Exception as e:
         logger.error(f"Migrations | {e}")
-        return False
-
+    return False
 
 if __name__ == '__main__':
     makemigrations()

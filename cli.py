@@ -3,6 +3,7 @@ import os
 import sys
 
 sys.path.append(os.getcwd())
+print(sys.path)
 
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp

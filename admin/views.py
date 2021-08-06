@@ -53,7 +53,7 @@ class Login(BaseView):
     def post(self):
         token = self.db.auth.login_user(request.form.get('email'), request.form.get('password'))
         if token:
-            res = make_response(redirect('/index'))
+            res = make_response(redirect('/statistic'))
             res.set_cookie('auth_token', token, max_age=60 * 60 * 24)
             return res
         else:
@@ -76,10 +76,7 @@ class Index(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        if self.check_token(request):
-            return render_template('index.html')
-        else:
-            return redirect('/login')
+        return redirect('/statistic')
 
 
 class Bots(BaseView):
