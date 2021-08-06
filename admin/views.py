@@ -105,7 +105,7 @@ class Menus(BaseView):
                 else:
                     self.set_notices(Notice.danger, 'Не удалось обновить меню, попробуйте ещё раз')
                 return redirect('/menus')
-            elif form['flag'] == "insert":
+            elif flag[0] == "insert":
                 new_status = self.db.Statuses.set_row(descr="new_status")
                 if new_status:
                     if self.db.Menu.set_row(**request.form.to_dict(), status_id=new_status.id):
