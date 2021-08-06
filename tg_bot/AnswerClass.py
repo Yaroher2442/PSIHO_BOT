@@ -113,7 +113,7 @@ class Answer:
             keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
             for btn in splitter(btns, 2):
                 row = []
-                for r in reversed(btn):
+                for r in btn:
                     row.append(types.KeyboardButton(text=r.text))
                 keyboard.row(*row)
             self.reply_markup = keyboard
