@@ -3,7 +3,7 @@ from admin.fl_app import AdminApp
 from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
-
+import os
 
 conf = Configurator()
 app_logger = AppLogger("app", conf)
