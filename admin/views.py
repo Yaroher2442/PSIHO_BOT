@@ -295,3 +295,5 @@ class Statistic(BaseView):
             return self.render_with_notices('pages/statistic.html',
                                             statistic=self.db.AnswersStatistic.get_all(
                                                 order=self.db.AnswersStatistic.table.id))
+        else:
+            return redirect('/login')
