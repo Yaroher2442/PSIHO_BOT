@@ -131,10 +131,13 @@ class Answer:
             return ["Извините, не смог понять вас", "Попробуйте ещё раз"]
 
     def send_message(self, bot: telebot.telebot):
-        self.statistic.answer = self.returns_answr
         for msg in self.str_processor():
             bot.send_message(self.message.from_user.id,
                              text=msg,
                              reply_markup=self.reply_markup,
                              parse_mode="html")
-        self.statistic.save()
+        if self.command or self.button:
+            pass
+        else:
+            self.statistic.answer = self.returns_answr
+            self.statistic.save()

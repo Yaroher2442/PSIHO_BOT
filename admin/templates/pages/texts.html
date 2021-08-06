@@ -84,12 +84,12 @@
             <div class="modal-body">
                 <form id="addButtonForm" method="post" action="/texts">
                     <div class="form-group">
-                        <label class="col-form-label" for="description">Текст запроса пользователя</label>
-                        <input class="form-control" id="text" type="text" name="question" placeholder="">
+                        <label class="col-form-label" for="kk">Текст запроса пользователя</label>
+                        <textarea class="form-control" id="kk" name="question" rows="4" placeholder=""></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label" for="description">Текст ответа бота</label>
-                        <input class="form-control" id="description" type="text" name="answer" placeholder="">
+                        <label class="col-form-label" for="ab">Текст ответа бота</label>
+                        <textarea class="form-control" id="ab" name="answer" rows="4" placeholder=""></textarea>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="hidden" name="flag" value="insert">
@@ -118,12 +118,12 @@
             <div class="modal-body">
                 <form id="addButtonForm" method="post" action="/texts">
                     <div class="form-group">
-                        <label class="col-form-label" for="description">Новый текст запроса пользователя</label>
-                        <input class="form-control" id="text" type="text" name="question" placeholder="">
+                        <label class="col-form-label" for="qq">Новый текст запроса пользователя</label>
+                        <textarea class="form-control" id="qq" name="question" rows="4" placeholder="">{{item.question}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label" for="description">Новый текст ответа бота</label>
-                        <input class="form-control" id="description" type="text" name="answer" placeholder="">
+                        <label class="col-form-label" for="kk">Новый текст ответа бота</label>
+                        <textarea class="form-control" id="kk" name="answer" rows="4" placeholder="">{{item.answer}}</textarea>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="hidden" name="flag" value="update_{{item.id}}">

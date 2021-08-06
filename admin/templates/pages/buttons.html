@@ -91,11 +91,11 @@
                 <form id="addButtonForm" method="post" action="/buttons">
                     <div class="form-group">
                         <label class="col-form-label" for="description">Текст кнопки</label>
-                        <input class="form-control" id="text" type="text" name="text" placeholder="">
+                        <textarea class="form-control" id="text" name="text" rows="4" placeholder=""></textarea>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="description">Ответ по кнопке</label>
-                        <input class="form-control" id="description" type="text" name="answer" placeholder="">
+                        <textarea class="form-control" id="text" name="answer" rows="4" placeholder=""></textarea>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="select1">Привязка к меню</label>
@@ -148,11 +148,11 @@
                 <form id="addButtonForm" method="post" action="/buttons">
                     <div class="form-group">
                         <label class="col-form-label" for="description">Новый текст кнопки</label>
-                        <input class="form-control" id="text" type="text" name="text" placeholder="">
+                        <textarea class="form-control" id="text" name="text" rows="4" placeholder="">{{item.btn.text}}</textarea>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="description">Новый ответ по кнопке</label>
-                        <input class="form-control" id="description" type="text" name="answer" placeholder="">
+                        <textarea class="form-control" id="description" name="answer" rows="4" placeholder="">{{item.btn.answer}}</textarea>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="select1">Новая привязка к меню</label>
