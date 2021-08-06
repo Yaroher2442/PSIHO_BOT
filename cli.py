@@ -4,6 +4,7 @@ from config.conf import Configurator
 from config.loger import AppLogger
 from database.migration import makemigrations
 import os
+import time
 
 conf = Configurator()
 app_logger = AppLogger("app", conf)
@@ -38,8 +39,13 @@ if __name__ == '__main__':
             wrkr.start()
             app_logger.info(f"Thread {wrkr} start")
             threads.append(wrkr)
-        for th in threads:
-            th.join()
+        while True:
+            for w in workers:
+                if not w.is_alive():
+                    w.start()
+                    app_logger.info(f"Thread {w} reload")
+                else:
+                    continue
     else:
         app_logger.critical("Migrations not set, exit")
         exit(-1)

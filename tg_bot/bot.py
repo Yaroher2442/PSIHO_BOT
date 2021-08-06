@@ -4,6 +4,7 @@ import telebot
 from tg_bot.AnswerClass import Answer
 from config.loger import AppLogger
 
+
 class TGBot(threading.Thread):
     def __init__(self, conf):
         threading.Thread.__init__(self)
@@ -19,5 +20,3 @@ class TGBot(threading.Thread):
     def run(self):
         self.logger.debug("Bot started")
         self.bot.infinity_polling(True)
-
-
