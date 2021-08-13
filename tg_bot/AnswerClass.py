@@ -59,7 +59,7 @@ class Answer:
                 self.status = Statuses.get(Statuses.id == self.user_obj.status)
                 self.action = self.status.action
             except Exception as e:
-                self.logger.error("Can't create user")
+                self.logger.error(f"Can't create user : {e}")
 
     def is_command(self):
         if "/" in self.message.text:

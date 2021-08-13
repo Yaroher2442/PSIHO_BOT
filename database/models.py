@@ -21,9 +21,9 @@ class Statuses(Model):
 class TgClient(Model):
     tg_id = IntegerField()
     status = ForeignKeyField(Statuses)
-    first_name = CharField()
-    last_name = CharField()
-    username = CharField()
+    first_name = CharField(null=True)
+    last_name = CharField(null=True)
+    username = CharField(null=True)
 
     class Meta:
         database = pg_db
@@ -38,8 +38,8 @@ class Menu(Model):
 
 
 class TextAnswers(Model):
-    question = CharField()
-    answer = CharField()
+    question = TextField()
+    answer = TextField()
 
     class Meta:
         database = pg_db
@@ -48,7 +48,7 @@ class TextAnswers(Model):
 class MenuButton(Model):
     menu_id = ForeignKeyField(Menu, on_delete="CASCADE", null=True)
     text = CharField()
-    answer = CharField()
+    answer = TextField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     set_action = CharField(null=True)
 
@@ -58,7 +58,7 @@ class MenuButton(Model):
 
 class Commands(Model):
     text = CharField()
-    answer = CharField()
+    answer = TextField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
     class Meta:
@@ -85,6 +85,3 @@ class AnswersStatistic(Model):
         database = pg_db
 
 
-if __name__ == '__main__':
-    print(Menu.set_menu("qwrqwr"))
-    print(Menu.select()[-1].descr)

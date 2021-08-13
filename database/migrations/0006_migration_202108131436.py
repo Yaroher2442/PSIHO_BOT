@@ -2,7 +2,7 @@
 from peewee import *
 import datetime
 import peewee
-from peewee_migrations.migrator import Snapshot
+
 
 snapshot = Snapshot()
 
@@ -22,7 +22,7 @@ class AnswersStatistic(peewee.Model):
     tg_user_id = IntegerField()
     datetime = DateTimeField()
     question = CharField(max_length=255)
-    answer = CharField(max_length=255)
+    answer = CharField(max_length=255, null=True)
     class Meta:
         table_name = "answersstatistic"
 
@@ -54,9 +54,9 @@ class Menu(peewee.Model):
 
 @snapshot.append
 class MenuButton(peewee.Model):
-    menu_id = snapshot.ForeignKeyField(index=True, model='menu', on_delete='CASCADE')
+    menu_id = snapshot.ForeignKeyField(index=True, model='menu', null=True, on_delete='CASCADE')
     text = CharField(max_length=255)
-    answer = CharField(max_length=255)
+    answer = TextField()
     to_status = snapshot.ForeignKeyField(index=True, model='statuses', null=True, on_delete='CASCADE')
     set_action = CharField(max_length=255, null=True)
     class Meta:
@@ -66,7 +66,7 @@ class MenuButton(peewee.Model):
 @snapshot.append
 class TextAnswers(peewee.Model):
     question = CharField(max_length=255)
-    answer = CharField(max_length=255)
+    answer = TextField()
     class Meta:
         table_name = "textanswers"
 
@@ -75,10 +75,26 @@ class TextAnswers(peewee.Model):
 class TgClient(peewee.Model):
     tg_id = IntegerField()
     status = snapshot.ForeignKeyField(index=True, model='statuses')
-    first_name = CharField(max_length=255)
-    last_name = CharField(max_length=255)
-    username = CharField(max_length=255)
+    first_name = CharField(max_length=255, null=True)
+    last_name = CharField(max_length=255, null=True)
+    username = CharField(max_length=255, null=True)
     class Meta:
         table_name = "tgclient"
 
 
+def forward(old_orm, new_orm):
+    old_textanswers = old_orm['textanswers']
+    textanswers = new_orm['textanswers']
+    return [
+        # Don't know how to do the conversion correctly, use the naive
+        textanswers.update({textanswers.answer: old_textanswers.answer}).where(old_textanswers.answer.is_null(False)),
+    ]
+
+
+def backward(old_orm, new_orm):
+    old_textanswers = old_orm['textanswers']
+    textanswers = new_orm['textanswers']
+    return [
+        # Convert datatype of the field textanswers.answer: TEXT -> VARCHAR(255)
+        textanswers.update({textanswers.answer: old_textanswers.answer.cast('VARCHAR')}).where(old_textanswers.answer.is_null(False)),
+    ]

@@ -17,18 +17,21 @@ def makemigrations(logger=None):
                 logger.info(f"Migrations | models.{m.__name__} already in the watch list")
         res = subprocess.check_output(["pem", "watch"]).decode().rstrip()
         logger.info("Migrations | " + res)
-        res = subprocess.check_output(["pem", "migrate"]).decode().rstrip()
-        logger.info("Migrations |" + res)
-        db = DBInterface()
+        try:
+            res = subprocess.check_output(["pem", "migrate"]).decode().rstrip()
+            logger.info("Migrations |" + res)
+        except Exception as e:
+            logger.error("Migrations |" + f"Can't migrate : {res}")
+            db = DBInterface()
         try:
             models.AdminUser.get(models.AdminUser.email == "admin@admin.admin")
-            logger.info("Migrations |" + "Admin user not set, try to create one")
         except Exception as e:
+            logger.info("Migrations |" + "Admin user not set, try to create one")
             try:
                 db.auth.registry_user(name="admin", email="admin@admin.admin", passwrd="admin")
                 logger.info("Migrations |" + "Admin user is set")
             except Exception as e:
-                logger.info("Migrations |" + "Admin user setter not work finaly")
+                logger.info("Migrations |" + f"Admin user setter not work finally : {e}")
                 raise e
         except:
             pass
@@ -36,6 +39,7 @@ def makemigrations(logger=None):
     except Exception as e:
         logger.error(f"Migrations | {e}")
     return False
+
 
 if __name__ == '__main__':
     makemigrations()

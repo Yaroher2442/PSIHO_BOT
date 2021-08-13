@@ -116,3 +116,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 config_/config.json
+/dump/

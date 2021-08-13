@@ -2,7 +2,7 @@
 from peewee import *
 import datetime
 import peewee
-from peewee_migrations.migrator import Snapshot
+
 
 snapshot = Snapshot()
 
@@ -22,7 +22,7 @@ class AnswersStatistic(peewee.Model):
     tg_user_id = IntegerField()
     datetime = DateTimeField()
     question = CharField(max_length=255)
-    answer = CharField(max_length=255)
+    answer = CharField(max_length=255, null=True)
     class Meta:
         table_name = "answersstatistic"
 
@@ -54,9 +54,9 @@ class Menu(peewee.Model):
 
 @snapshot.append
 class MenuButton(peewee.Model):
-    menu_id = snapshot.ForeignKeyField(index=True, model='menu', on_delete='CASCADE')
+    menu_id = snapshot.ForeignKeyField(index=True, model='menu', null=True, on_delete='CASCADE')
     text = CharField(max_length=255)
-    answer = CharField(max_length=255)
+    answer = TextField()
     to_status = snapshot.ForeignKeyField(index=True, model='statuses', null=True, on_delete='CASCADE')
     set_action = CharField(max_length=255, null=True)
     class Meta:
@@ -75,10 +75,26 @@ class TextAnswers(peewee.Model):
 class TgClient(peewee.Model):
     tg_id = IntegerField()
     status = snapshot.ForeignKeyField(index=True, model='statuses')
-    first_name = CharField(max_length=255)
-    last_name = CharField(max_length=255)
-    username = CharField(max_length=255)
+    first_name = CharField(max_length=255, null=True)
+    last_name = CharField(max_length=255, null=True)
+    username = CharField(max_length=255, null=True)
     class Meta:
         table_name = "tgclient"
 
 
+def forward(old_orm, new_orm):
+    old_menubutton = old_orm['menubutton']
+    menubutton = new_orm['menubutton']
+    return [
+        # Don't know how to do the conversion correctly, use the naive
+        menubutton.update({menubutton.answer: old_menubutton.answer}).where(old_menubutton.answer.is_null(False)),
+    ]
+
+
+def backward(old_orm, new_orm):
+    old_menubutton = old_orm['menubutton']
+    menubutton = new_orm['menubutton']
+    return [
+        # Convert datatype of the field menubutton.answer: TEXT -> VARCHAR(255)
+        menubutton.update({menubutton.answer: old_menubutton.answer.cast('VARCHAR')}).where(old_menubutton.answer.is_null(False)),
+    ]
