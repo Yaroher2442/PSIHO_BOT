@@ -9,14 +9,15 @@ from admin.views import *
 from config_.loger import AppLogger
 import logging
 
+from gunicorn.app.base import BaseApplication
 
-class AdminApp(threading.Thread):
+
+class AdminApp():
     app = Flask(__name__, static_url_path=''
                 , static_folder="static")
     CORS(app)
 
     def __init__(self, conf: config_.conf.Configurator):
-        threading.Thread.__init__(self)
         self.config = conf
         self.logger = AppLogger("admin", self.config)
         self.log = logging.getLogger('werkzeug')
@@ -49,6 +50,25 @@ class AdminApp(threading.Thread):
         self.app.add_url_rule('/delete/<table>/<item_id>', view_func=Delete.as_view('delete'))
         self.app.add_url_rule('/statistic', view_func=Statistic.as_view('statistic'))
 
-    def run(self):
-        self.app.run(host=self.config.server_conf.host, port=self.config.server_conf.port,
-                     debug=self.config.server_conf.debug)
+    # def run(self):
+    #     self.app.run(host=self.config.server_conf.host, port=self.config.server_conf.port,
+    #                  debug=self.config.server_conf.debug, reloader_interval=50)
+
+
+class GunicornApp(BaseApplication):
+    def __init__(self, app, options=None):
+        self.options = options or {}
+        self.application = app
+        super(GunicornApp, self).__init__()
+
+    def load_config(self):
+        config = {
+            key: value for key, value in self.options.items()
+            if key in self.cfg.settings and value is not None
+        }
+        for key, value in config.items():
+            self.cfg.set(key.lower(), value)
+
+    def load(self):
+        return self.application
+

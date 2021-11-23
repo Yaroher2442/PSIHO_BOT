@@ -84,4 +84,3 @@ class AnswersStatistic(Model):
     class Meta:
         database = pg_db
 
-

@@ -1,20 +1,25 @@
+from typing import List, Union
+
 from fuzzywuzzy import fuzz
-from telebot import types
+from loguru import logger
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
+
 from database.models import *
 from config_.loger import AppLogger
-import telebot
 import json
 import builtins
 from datetime import datetime
+from telegram.ext import Updater, CallbackContext
+from telegram.message import Message
 import re
 
 
 class Answer:
-    def __init__(self, message, logger: AppLogger):
+    def __init__(self, message: Message, logger: AppLogger):
         self.logger = logger
-        self.message = message
+        self.message: Message = message
 
-        self.statistic = AnswersStatistic(tg_user_id=self.message.from_user.id, datetime=datetime.now(),
+        self.statistic = AnswersStatistic(tg_user_id=self.message.chat_id, datetime=datetime.now(),
                                           question=self.message.text)
         self.user_obj = None
 
@@ -45,21 +50,24 @@ class Answer:
         self.rerender()
 
     def validate_user(self):
-        try:
-            self.user_obj = TgClient.get(tg_id=self.message.from_user.id)
-            self.status = Statuses.get(Statuses.id == self.user_obj.status)
-            self.action = self.status.action
-        except Exception as e:
-            self.logger.debug("User not found, try to create")
+        with pg_db.atomic() as transaction:
             try:
-                self.user_obj = TgClient.create(tg_id=self.message.from_user.id, status=1,
-                                                first_name=self.message.from_user.first_name,
-                                                last_name=self.message.from_user.last_name,
-                                                username=self.message.from_user.username)
+                self.user_obj = TgClient.get(tg_id=self.message.from_user.id)
                 self.status = Statuses.get(Statuses.id == self.user_obj.status)
                 self.action = self.status.action
             except Exception as e:
-                self.logger.error(f"Can't create user : {e}")
+                self.logger.warning(f"User not found, try to create {e}")
+                try:
+                    self.user_obj = TgClient.create(tg_id=self.message.chat.id,
+                                                    status=Statuses.select().where(Statuses.action == None).order_by(Statuses.id).get(),
+                                                    first_name=self.message.chat.first_name,
+                                                    last_name=self.message.chat.last_name,
+                                                    username=self.message.chat.username)
+                    self.status = Statuses.get(Statuses.id == self.user_obj.status)
+                    self.action = self.status.action
+                except Exception as e:
+                    transaction.rollback()
+                    self.logger.error(f"Can't create user : {e}")
 
     def is_command(self):
         if "/" in self.message.text:
@@ -69,7 +77,7 @@ class Answer:
                 self.returns_answr = self.command.answer
                 return True
             except Exception as e:
-                self.logger.debug("Can't found command")
+                self.logger.debug(f"Can't found command {e}")
                 return False
         else:
             return False
@@ -83,7 +91,7 @@ class Answer:
             self.returns_answr = self.button.answer
             return True
         except Exception as e:
-            self.logger.debug(" button False")
+            self.logger.debug(f"Button False {e}")
             return False
 
     def change_status(self):
@@ -91,7 +99,7 @@ class Answer:
             self.user_obj.status = self.new_status
             self.user_obj.save()
         except Exception as e:
-            self.logger.error("Can't set new status")
+            self.logger.error(f"Can't set new status {e}")
 
     def set_action(self):
         status = Statuses.get(Statuses.id == self.new_status)
@@ -106,19 +114,23 @@ class Answer:
         except Exception as e:
             return None
 
+    def build_menu(self,
+                   buttons: List[KeyboardButton],
+                   n_cols: int,
+                   ) -> List[List[KeyboardButton]]:
+        return [buttons[i:i + n_cols] for i in range(0, len(buttons), n_cols)]
+
     def rerender(self):
         try:
+            logger.debug(vars(self))
             btns = MenuButton.select().where(MenuButton.menu_id == Menu.get(Menu.status == self.new_status.id).id)
-            splitter = lambda lst, sz: [lst[i:i + sz] for i in range(0, len(lst), sz)]
-            keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            for btn in splitter(btns, 2):
-                row = []
-                for r in btn:
-                    row.append(types.KeyboardButton(text=r.text))
-                keyboard.row(*row)
-            self.reply_markup = keyboard
+            # reply_markup = InlineKeyboardMarkup(self.build_menu(button_list, n_cols=2))
+            button_list = []
+            for btn in btns:
+                button_list.append(KeyboardButton(btn.text))
+            self.reply_markup = ReplyKeyboardMarkup(self.build_menu(button_list, n_cols=2))
         except Exception as e:
-            self.logger.debug("Can't found new menu render")
+            self.logger.debug(f"Can't found new menu render {e}")
             return False
 
     def str_processor(self) -> list:
@@ -130,12 +142,12 @@ class Answer:
         except:
             return ["Извините, не смог понять вас", "Попробуйте ещё раз"]
 
-    def send_message(self, bot: telebot.telebot):
+    def send_message(self, context: CallbackContext):
         for msg in self.str_processor():
-            bot.send_message(self.message.from_user.id,
-                             text=msg,
-                             reply_markup=self.reply_markup,
-                             parse_mode="html")
+            context.bot.send_message(self.message.from_user.id,
+                                     text=msg,
+                                     reply_markup=self.reply_markup,
+                                     parse_mode="html")
         if self.command or self.button:
             pass
         else:

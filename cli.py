@@ -2,11 +2,13 @@ import os
 
 import sys
 
+from loguru import logger
+
 sys.path.append(os.getcwd())
 print(sys.path)
 
 from tg_bot.bot import TGBot
-from admin.fl_app import AdminApp
+from admin.fl_app import AdminApp, GunicornApp
 from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
@@ -34,25 +36,37 @@ def change_dir(dir):
 
 @change_dir(dir='database')
 def migrate():
-    return makemigrations(logger=app_logger)
+    try:
+        return makemigrations(logger=app_logger)
+    except TypeError as te:
+        logger.debug(f"Migrations failed with {te} maby all data updated")
 
 
 if __name__ == '__main__':
     if migrate():
         threads = []
-        workers = [TGBot(conf), AdminApp(conf)]
+
+        gunicorn_options = {
+            'bind': f'{conf.server_conf.host}:5000',
+            'workers': 1
+        }
+        wsgi_app = AdminApp(conf).app.wsgi_app
+
+        workers = [TGBot(conf)]
         for wrkr in workers:
             wrkr.setDaemon(True)
             wrkr.start()
             app_logger.info(f"Thread {wrkr} start")
             threads.append(wrkr)
-        while True:
-            for w in workers:
-                if not w.is_alive():
-                    w.start()
-                    app_logger.info(f"Thread {w} reload")
-                else:
-                    continue
+
+        GunicornApp(wsgi_app, gunicorn_options).run()
+        # while True:
+        #     for w in workers:
+        #         if not w.is_alive():
+        #             w.start()
+        #             app_logger.info(f"Thread {w} reload")
+        #         else:
+        #             continue
     else:
         app_logger.critical("Migrations not set, exit")
         exit(-1)

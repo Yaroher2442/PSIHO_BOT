@@ -4,7 +4,7 @@ import binascii
 import uuid
 from database import models
 from peewee import JOIN
-
+from loguru import logger
 
 class BaseDb:
     def __init__(self):
@@ -15,7 +15,8 @@ class BaseDb:
         try:
             new_row = self.table.create(**kwargs)
             return new_row
-        except:
+        except Exception as e:
+            logger.error(f"Cant create {self.table} with error {e}")
             return False
 
     def delete_row(self, id):
@@ -34,21 +35,21 @@ class BaseDb:
             query.execute()
             return True
         except Exception as e:
-            print(e)
+            logger.warning(e)
             return False
 
     def get_by_element(self, col_name, value):
         try:
             return self.table.select().where(getattr(self.table, col_name) == value)
         except Exception as e:
-            print(e)
+            logger.warning(e)
             return False
 
     def get_by_id(self, id):
         try:
             return self.table.get(id=id)
         except Exception as e:
-            print(e)
+            logger.warning(e)
             return False
 
     def get_all(self, *args, order=None):
@@ -58,14 +59,14 @@ class BaseDb:
             else:
                 return self.table.select(*args)
         except Exception as e:
-            print(e)
+            logger.warning(e)
             return False
 
     def get_all_join(self, table_name, order, *args):
         try:
             return self.table.select(*args).join(getattr(models, table_name), JOIN.LEFT_OUTER).order_by(order)
         except Exception as e:
-            print(e)
+            logger.warning(e)
             return False
 
 
@@ -98,7 +99,7 @@ class Auth(BaseDb):
             except:
                 new_user = models.AdminUser.create(name=name, password=self.hash_password(passwrd), email=email,
                                                    token="")
-                print(new_user)
+                logger.warning(new_user)
                 return True
         except Exception as e:
             return False
@@ -107,7 +108,7 @@ class Auth(BaseDb):
         try:
             user = models.AdminUser.get(email=email)
         except:
-            print("User not found bby name")
+            logger.warning("User not found bby name")
             return False
         if self.verify_password(user.password, passwrd):
             user.token = str(uuid.uuid4())
@@ -119,10 +120,9 @@ class Auth(BaseDb):
     def verify_token(self, req_token):
         try:
             user = models.AdminUser.get(token=req_token)
-            print(user)
             return True
         except:
-            print("User not found by token")
+            logger.warning("User not found by token")
             return False
 
 

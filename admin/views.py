@@ -3,6 +3,9 @@ from flask import Response, request, jsonify, send_from_directory, \
     make_response, render_template, redirect, g
 import uuid
 import copy
+
+from loguru import logger
+
 from database.DB_interface import DBInterface
 from admin.helpers import *
 
@@ -171,6 +174,7 @@ class Buttons(BaseView):
             for i in btns:
                 for j in menus:
                     if i.menu_id == j:
+                        logger.debug(i.to_status)
                         q = OBJ(j, i, to_menu=self.db.Menu.get_by_id(i.to_status))
                         obj_lst.append(q)
             return self.render_with_notices('pages/buttons.html',
@@ -255,7 +259,6 @@ class Commands(BaseView):
                     if i.to_status == j.status:
                         q = OBJ(j, i)
                         obj_lst.append(q)
-            print(obj_lst)
             return self.render_with_notices('pages/commands.html',
                                             commands=obj_lst,
                                             menus=self.db.Menu.get_all())

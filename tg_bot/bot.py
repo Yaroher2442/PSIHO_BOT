@@ -1,22 +1,37 @@
 import threading
-import telebot
+from time import sleep
+
+from telegram import Update, Chat, ChatMember, ParseMode, ChatMemberUpdated
 # from tg_bot.BotLogic import Answer
-from tg_bot.AnswerClass import Answer
+from telegram.ext import MessageHandler, Updater, CallbackContext, BaseFilter
+
+# from tg_bot.AnswerClass import Answer
 from config_.loger import AppLogger
+from tg_bot.AnswerClass import Answer
 
 
 class TGBot(threading.Thread):
     def __init__(self, conf):
         threading.Thread.__init__(self)
-        self.bot = telebot.TeleBot(conf.tg_conf.token)
+        self.updater = Updater(conf.tg_conf.token)
+        self.dispatcher = self.updater.dispatcher
+        self.setup_handlers()
+
         self.logger = AppLogger("bot", conf)
 
-        @self.bot.message_handler()
-        def init(message):
-            answr = Answer(message, self.logger)
-            self.logger.info(answr.__dict__)
-            answr.send_message(self.bot)
+    def message_handle(self, update: Update, context: CallbackContext):
+        self.logger.debug(update.message)
+        answr = Answer(update.message, self.logger)
+        answr.send_message(context)
+        # context.bot.send_message(update.message.chat_id,"привет")
 
-    def run(self):
+    def setup_handlers(self):
+        self.dispatcher.add_handler(MessageHandler(None, callback=self.message_handle))
+
+    def run(self) -> None:
         self.logger.debug("Bot started")
-        self.bot.infinity_polling(True)
+        while True:
+            if not self.is_alive():
+                self.start()
+            self.updater.start_polling(drop_pending_updates=True)
+            sleep(0.4)

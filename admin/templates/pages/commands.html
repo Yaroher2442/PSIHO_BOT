@@ -98,7 +98,7 @@
                         <label class="col-form-label" for="select1">Переход к меню</label>
                         <select class="form-control" id="select1" name="to_status">
                             {%for item in menus%}
-                            <option value="{{item.id}}">{{item.descr}}</option>
+                            <option value="{{item.status}}">{{item.descr}}</option>
                             {% endfor %}
                         </select>
                     </div>
