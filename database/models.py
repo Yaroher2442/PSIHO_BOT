@@ -51,6 +51,7 @@ class MenuButton(Model):
     answer = TextField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     set_action = CharField(null=True)
+    new_filed =CharField(null=True)
 
     class Meta:
         database = pg_db

@@ -47,7 +47,7 @@ if __name__ == '__main__':
         threads = []
 
         gunicorn_options = {
-            'bind': f'{conf.server_conf.host}:5000',
+            'bind': f'{conf.server_conf.host}:{conf.server_conf.port}',
             'workers': 1
         }
         wsgi_app = AdminApp(conf).app.wsgi_app
