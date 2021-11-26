@@ -30,6 +30,7 @@
                                     <th>#</th>
                                     <th>Текст запроса пользователя</th>
                                     <th>Текст ответа бота</th>
+                                    <th>Автор</th>>
                                     <th>Согласовано</th>
                                     <th>Изменить</th>
                                     <th>Согласовать</th>
@@ -42,7 +43,9 @@
                                     <td>{{item.id}}</td>
                                     <td>{{item.question}}</td>
                                     <td>{{item.answer}}</td>
+                                    <td>{{item.author}}</td>
                                     <td>{{item.accepted}}</td>
+
                                     <td>
                                         <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
                                            data-target="#ChangeTextModal_{{item.id}}">Изменить</a>
@@ -56,7 +59,7 @@
                                     {% else %}
                                     <td>
                                         <button class=" btn btn-pill btn-dark btn" disabled>Согласовано</button>
-                                        </td>
+                                    </td>
                                     {% endif %}
                                     <td>
                                         <a class="btn btn-pill btn-danger"
@@ -135,6 +138,7 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
 
 
 </script>

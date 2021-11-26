@@ -90,6 +90,7 @@ class Moderation(Model):
     answer = TextField()
     accepted = BooleanField()
     deleted = BooleanField()
+    author = TextField()
 
     class Meta:
         database = pg_db

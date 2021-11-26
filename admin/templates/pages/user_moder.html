@@ -33,6 +33,10 @@
                         <label class="col-form-label" for="ab">Текст ответа бота</label>
                         <textarea class="form-control" id="ab" name="answer" rows="4" placeholder=""></textarea>
                     </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="ab">Автор</label>
+                        <textarea class="form-control" id="ab" name="author" rows="4" placeholder=""></textarea>
+                    </div>
                     {% for notify in notifys %}
                     <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
                     {% endfor %}
