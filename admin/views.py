@@ -2,6 +2,7 @@ from flask.views import MethodView
 from flask import Response, request, jsonify, send_from_directory, \
     make_response, render_template, redirect, g
 import uuid
+from playhouse.shortcuts import model_to_dict
 import copy
 
 from loguru import logger
@@ -270,7 +271,8 @@ class Delete(BaseView):
     redirect_data = {"TextAnswers": '/texts',
                      "Menu": '/menus',
                      "MenuButton": "/buttons",
-                     "Commands": "/commands"}
+                     "Commands": "/commands",
+                     "UserModer": "/moderations"}
 
     def __init__(self):
         BaseView.__init__(self)
@@ -280,7 +282,7 @@ class Delete(BaseView):
             self.set_notices(Notice.success, 'Успешно удалено')
             return redirect(self.redirect_data[table])
         else:
-            self.set_notices(Notice.success, 'Не удалось удалить объект')
+            self.set_notices(Notice.danger, 'Не удалось удалить объект')
             return redirect(self.redirect_data[table])
 
 
@@ -300,3 +302,69 @@ class Statistic(BaseView):
                                                 order=self.db.AnswersStatistic.table.id))
         else:
             return redirect('/login')
+
+
+class Moderation(BaseView):
+    redirect_data = {"TextAnswers": '/texts',
+                     "Menu": '/menus',
+                     "MenuButton": "/buttons",
+                     "Commands": "/commands",
+                     "Moderation": "/moderations"}
+
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        if self.check_token(request):
+            return self.render_with_notices('pages/moderations.html',
+                                            moder_data=self.db.UserModer.get_all(order=self.db.UserModer.table.id))
+        else:
+            return redirect('/login')
+
+    def post(self):
+        up_req = request.form.to_dict()
+        flag = up_req['flag'].split('_')
+        up_req.pop('flag')
+        if flag[0] == "update":
+            logger.debug(up_req)
+            if self.db.UserModer.update(flag[1], **up_req):
+                self.set_notices(Notice.success, 'Ответ успешно обновлен')
+            else:
+                self.set_notices(Notice.danger, 'Не удалось обновить ответ, попробуйте ещё раз')
+            return redirect('/moderations')
+
+
+class AproveModeration(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def post(self, item_id):
+        # if self.db.TextAnswers.set_row()
+        to_table = self.db.UserModer.get_by_id(item_id)
+        if self.db.TextAnswers.set_row(question = to_table.question, answer=to_table.answer):
+            to_table.accepted = True
+            to_table.save()
+            self.set_notices(Notice.success ,"Успешно согласовано")
+        else:
+            self.set_notices(Notice.success, "Успешно согласовано")
+        return redirect("/moderations")
+
+
+class UserModerPage(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        return self.render_with_notices('pages/user_moder.html',
+                                        statistic=self.db.AnswersStatistic.get_all(
+                                            order=self.db.AnswersStatistic.table.id))
+
+    def post(self):
+        form = request.form.to_dict()
+        if self.db.UserModer.set_row(**form, accepted=False, deleted=False):
+            self.set_notices(Notice.success, "Успешно отправлено на модерацию")
+        else:
+            self.set_notices(Notice.danger, "Не удалось согласовать объект объект")
+        return redirect('/request_answer')
+        # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
+        # self.set_notices()

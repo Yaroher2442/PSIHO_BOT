@@ -46,8 +46,10 @@ class AdminApp():
         self.app.add_url_rule('/buttons', view_func=Buttons.as_view('buttons'))
         self.app.add_url_rule('/texts', view_func=Texts.as_view('texts'))
         self.app.add_url_rule('/commands', view_func=Commands.as_view('commands'))
-
+        self.app.add_url_rule('/moderations', view_func=Moderation.as_view('moderations'))
+        self.app.add_url_rule('/request_answer', view_func=UserModerPage.as_view('usermoder'))
         self.app.add_url_rule('/delete/<table>/<item_id>', view_func=Delete.as_view('delete'))
+        self.app.add_url_rule('/aprove_moderation/<item_id>', view_func=AproveModeration.as_view("aprove"))
         self.app.add_url_rule('/statistic', view_func=Statistic.as_view('statistic'))
 
     # def run(self):

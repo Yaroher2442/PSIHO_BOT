@@ -6,6 +6,7 @@ from database import models
 from peewee import JOIN
 from loguru import logger
 
+
 class BaseDb:
     def __init__(self):
         self.database = models.pg_db
@@ -126,6 +127,12 @@ class Auth(BaseDb):
             return False
 
 
+class UserModerationApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+        self.table = models.Moderation
+
+
 class StatusesApi(BaseDb):
     def __init__(self):
         BaseDb.__init__(self)
@@ -162,7 +169,6 @@ class AnswersStatisticApi(BaseDb):
         self.table = models.AnswersStatistic
 
 
-
 class DBInterface:
     def __init__(self):
         self.auth = Auth()
@@ -172,3 +178,4 @@ class DBInterface:
         self.TextAnswers = TextAnswersApi()
         self.Commands = CommandsApi()
         self.AnswersStatistic = AnswersStatisticApi()
+        self.UserModer = UserModerationApi()

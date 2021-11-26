@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Pro Bootstrap Admin Template</title>
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="" id="addButtonModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addButtonModal">Форма для добавления ответа для бота</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addButtonForm" method="post" action="/request_answer">
+                    <div class="form-group">
+                        <label class="col-form-label" for="kk">Текст запроса пользователя</label>
+                        <textarea class="form-control" id="kk" name="question" rows="4" placeholder=""></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="ab">Текст ответа бота</label>
+                        <textarea class="form-control" id="ab" name="answer" rows="4" placeholder=""></textarea>
+                    </div>
+                    {% for notify in notifys %}
+                    <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

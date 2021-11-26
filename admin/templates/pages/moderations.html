@@ -23,11 +23,6 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#addButtonModal">Добавить
-                                    текстовый ответ</a>
-                            </div>
-
                             <hr/>
                             <table class="table">
                                 <thead>
@@ -35,22 +30,37 @@
                                     <th>#</th>
                                     <th>Текст запроса пользователя</th>
                                     <th>Текст ответа бота</th>
+                                    <th>Согласовано</th>
                                     <th>Изменить</th>
+                                    <th>Согласовать</th>
                                     <th>Удалить</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {%for item in texts%}
+                                {%for item in moder_data%}
                                 <tr>
                                     <td>{{item.id}}</td>
                                     <td>{{item.question}}</td>
                                     <td>{{item.answer}}</td>
+                                    <td>{{item.accepted}}</td>
                                     <td>
                                         <a href="#" class=" btn btn-pill btn-dark btn" data-toggle="modal"
                                            data-target="#ChangeTextModal_{{item.id}}">Изменить</a>
                                     </td>
+                                    {% if not item.accepted%}
                                     <td>
-                                        <a class="btn btn-pill btn-danger" href="/delete/TextAnswers/{{item.id}}">Удалить</a>
+                                        <form action="/aprove_moderation/{{item.id}}" method="post">
+                                            <button class="btn btn-pill btn-success" type="submit">Согласовать</button>
+                                        </form>
+                                    </td>
+                                    {% else %}
+                                    <td>
+                                        <button class=" btn btn-pill btn-dark btn" disabled>Согласовано</button>
+                                        </td>
+                                    {% endif %}
+                                    <td>
+                                        <a class="btn btn-pill btn-danger"
+                                           href="/delete/UserModer/{{item.id}}">Удалить</a>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -70,60 +80,28 @@
     </footer>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="addButtonModal" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addButtonModal">Добавить кнопку</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/texts">
-                    <div class="form-group">
-                        <label class="col-form-label" for="kk">Текст запроса пользователя</label>
-                        <textarea class="form-control" id="kk" name="question" rows="4" placeholder=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="ab">Текст ответа бота</label>
-                        <textarea class="form-control" id="ab" name="answer" rows="4" placeholder=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="hidden" name="flag" value="insert">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Добавить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-{%for item in texts%}
+{%for item in moder_data%}
 <div class="modal fade" id="ChangeTextModal_{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ChangeMenuModal">Обновление команды "{{item.text}}" </h5>
+                <h5 class="modal-title" id="ChangeMenuModal">Обновление ответа "{{item.question}}" </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/texts">
+                <form id="addButtonForm" method="post" action="/moderations">
                     <div class="form-group">
                         <label class="col-form-label" for="qq">Новый текст запроса пользователя</label>
-                        <textarea class="form-control" id="qq" name="question" rows="4" placeholder="">{{item.question}}</textarea>
+                        <textarea class="form-control" id="qq" name="question" rows="4"
+                                  placeholder="">{{item.question}}</textarea>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="kk">Новый текст ответа бота</label>
-                        <textarea class="form-control" id="kk" name="answer" rows="4" placeholder="">{{item.answer}}</textarea>
+                        <textarea class="form-control" id="kk" name="answer" rows="4"
+                                  placeholder="">{{item.answer}}</textarea>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="hidden" name="flag" value="update_{{item.id}}">
@@ -137,6 +115,7 @@
     </div>
 </div>
 {%endfor%}
+
 
 <!-- CoreUI and necessary plugins-->
 <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
@@ -156,6 +135,7 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
 
 </script>
 </body>
