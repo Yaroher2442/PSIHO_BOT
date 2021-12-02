@@ -53,7 +53,7 @@
                                            data-target="#ChangeCommandModal_{{item.commands.id}}">Изменить</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-pill btn-danger" href="{%base_url%}/delete/Commands/{{item.commands.id}}">Удалить</a>
+                                        <a class="btn btn-pill btn-danger" href="{{ base_url }}/delete/Commands/{{item.commands.id}}">Удалить</a>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -85,7 +85,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addButtonForm" method="post" action="{%base_url%}/commands">
+                <form id="addButtonForm" method="post" action="{{ base_url }}/commands">
                     <div class="form-group">
                         <label class="col-form-label" for="description">Текст команды пользователя</label>
                         <input class="form-control" id="text" type="text" name="text" placeholder="">
@@ -127,7 +127,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="ChangeMenuForm" method="post" action="{%base_url%}/commands">
+                <form id="ChangeMenuForm" method="post" action="{{ base_url }}/commands">
                     <div class="form-group">
                         <label class="col-form-label" for="wr">Новый текст команды пользователя</label>
                         <input class="form-control" id="wr" type="text" name="text" value="{{item.commands.text}}" placeholder="">

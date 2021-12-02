@@ -52,7 +52,7 @@
                                     </td>
                                     {% if not item.accepted%}
                                     <td>
-                                        <form action="{%base_url%}/aprove_moderation/{{item.id}}" method="post">
+                                        <form action="{{ base_url }}/aprove_moderation/{{item.id}}" method="post">
                                             <button class="btn btn-pill btn-success" type="submit">Согласовать</button>
                                         </form>
                                     </td>
@@ -63,7 +63,7 @@
                                     {% endif %}
                                     <td>
                                         <a class="btn btn-pill btn-danger"
-                                           href="{%base_url%}/delete/UserModer/{{item.id}}">Удалить</a>
+                                           href="{{ base_url }}/delete/UserModer/{{item.id}}">Удалить</a>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -95,7 +95,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addButtonForm" method="post" action="{%base_url%}/moderations">
+                <form id="addButtonForm" method="post" action="{{ base_url }}/moderations">
                     <div class="form-group">
                         <label class="col-form-label" for="qq">Новый текст запроса пользователя</label>
                         <textarea class="form-control" id="qq" name="question" rows="4"
