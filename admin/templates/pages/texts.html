@@ -50,7 +50,7 @@
                                            data-target="#ChangeTextModal_{{item.id}}">Изменить</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-pill btn-danger" href="/delete/TextAnswers/{{item.id}}">Удалить</a>
+                                        <a class="btn btn-pill btn-danger" href="{%base_url%}/delete/TextAnswers/{{item.id}}">Удалить</a>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -82,7 +82,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/texts">
+                <form id="addButtonForm" method="post" action="{%base_url%}/texts">
                     <div class="form-group">
                         <label class="col-form-label" for="kk">Текст запроса пользователя</label>
                         <textarea class="form-control" id="kk" name="question" rows="4" placeholder=""></textarea>
@@ -116,7 +116,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addButtonForm" method="post" action="/texts">
+                <form id="addButtonForm" method="post" action="{%base_url%}/texts">
                     <div class="form-group">
                         <label class="col-form-label" for="qq">Новый текст запроса пользователя</label>
                         <textarea class="form-control" id="qq" name="question" rows="4" placeholder="">{{item.question}}</textarea>

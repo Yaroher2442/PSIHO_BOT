@@ -57,7 +57,7 @@
                                            data-target="#ChangeMenuModal_{{item.id}}">Изменить</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-pill btn-danger" href="/delete/Menu/{{item.id}}">Удалить</a>
+                                        <a class="btn btn-pill btn-danger" href="{%base_url%}/delete/Menu/{{item.id}}">Удалить</a>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -88,7 +88,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addMenuForm" method="post" action="/menus">
+                <form id="addMenuForm" method="post" action="{%base_url%}/menus">
                     <div class="form-group">
                         <label class="col-form-label" for="description">Описание меню</label>
                         <textarea class="form-control" id="description" name="descr" rows="4" placeholder="Описание..."></textarea>
@@ -118,7 +118,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="ChangeMenuForm" method="post" action="/menus">
+                <form id="ChangeMenuForm" method="post" action="{%base_url%}/menus">
                     <div class="form-group">
                         <label class="col-form-label" for="description">Новое описание меню</label>
                         <textarea class="form-control" id="description" name="descr" rows="4" placeholder="Описание...">{{item.descr}}</textarea>
