@@ -43,30 +43,36 @@ def migrate():
 
 
 if __name__ == '__main__':
-    if migrate():
-        threads = []
+    import argparse
 
-        gunicorn_options = {
-            'bind': f'{conf.server_conf.host}:{conf.server_conf.port}',
-            'workers': 1
-        }
-        wsgi_app = AdminApp(conf).app.wsgi_app
+    parser = argparse.ArgumentParser(description='Get args')
+    parser.add_argument('-c', dest="create_db", default=False,
+                        help='To create database', type=bool)
+    parser.add_argument('-m', dest="migrate", default=False,
+                        help='To create database', type=bool)
+    args = parser.parse_args()
+    print(args)
+    if args.create_db:
+        from database.models import pg_db, Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, \
+            AnswersStatistic, Moderation
+        pg_db.create_tables(
+            [Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, AnswersStatistic,
+             Moderation])
+    if args.migrate:
+        if not migrate():
+            app_logger.critical("Migrations not set, exit")
+            exit(-1)
+    threads = []
+    gunicorn_options = {
+        'bind': f'{conf.server_conf.host}:{conf.server_conf.port}',
+        'workers': 1
+    }
+    wsgi_app = AdminApp(conf).app.wsgi_app
+    workers = [TGBot(conf)]
+    for wrkr in workers:
+        wrkr.setDaemon(True)
+        wrkr.start()
+        app_logger.info(f"Thread {wrkr} start")
+        threads.append(wrkr)
 
-        workers = [TGBot(conf)]
-        for wrkr in workers:
-            wrkr.setDaemon(True)
-            wrkr.start()
-            app_logger.info(f"Thread {wrkr} start")
-            threads.append(wrkr)
-
-        GunicornApp(wsgi_app, gunicorn_options).run()
-        # while True:
-        #     for w in workers:
-        #         if not w.is_alive():
-        #             w.start()
-        #             app_logger.info(f"Thread {w} reload")
-        #         else:
-        #             continue
-    else:
-        app_logger.critical("Migrations not set, exit")
-        exit(-1)
+    GunicornApp(wsgi_app, gunicorn_options).run()
