@@ -58,10 +58,14 @@ if __name__ == '__main__':
         pg_db.create_tables(
             [Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, AnswersStatistic,
              Moderation])
+        logger.debug("Models in database created")
+        exit()
     if args.migrate:
         if not migrate():
             app_logger.critical("Migrations not set, exit")
             exit(-1)
+        else:
+            logger.debug("migrations aply")
     threads = []
     gunicorn_options = {
         'bind': f'{conf.server_conf.host}:{conf.server_conf.port}',
