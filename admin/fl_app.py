@@ -3,6 +3,7 @@ import threading
 from flask import Flask
 from flask.logging import default_handler
 from flask_cors import CORS
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 import config_.conf
 from admin.views import *
@@ -15,9 +16,15 @@ from gunicorn.app.base import BaseApplication
 class AdminApp():
     app = Flask(__name__, static_url_path=''
                 , static_folder="static")
+
     CORS(app)
 
     def __init__(self, conf: config_.conf.Configurator):
+        # self.app.config["APPLICATION_ROOT"] = conf.server_conf.base_url
+        self.app.wsgi_app = DispatcherMiddleware(
+            Response('Not Found', status=404),
+            {conf.server_conf.base_url: self.app.wsgi_app}
+        )
         self.config = conf
         self.logger = AppLogger("admin", self.config)
         self.log = logging.getLogger('werkzeug')
@@ -73,4 +80,3 @@ class GunicornApp(BaseApplication):
 
     def load(self):
         return self.application
-

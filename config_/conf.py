@@ -48,9 +48,10 @@ class Server_config:
         self.host = None
         self.port = None
         self.debug = None
+        self.base_url = None
         for k, v in kwargs.items():
             setattr(self, k, v)
 
-
+conf = Configurator()
 if __name__ == '__main__':
     conf = Configurator()

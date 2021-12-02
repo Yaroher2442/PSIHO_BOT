@@ -1,0 +1,16 @@
+{
+  "prerun": "# some code here",
+  "directory": "migrations",
+  "history": "migratehistory",
+  "models": [
+    "models.Statuses",
+    "models.TgClient",
+    "models.Menu",
+    "models.TextAnswers",
+    "models.MenuButton",
+    "models.Commands",
+    "models.AdminUser",
+    "models.AnswersStatistic",
+    "models.Moderation"
+  ]
+}

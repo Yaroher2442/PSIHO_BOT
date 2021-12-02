@@ -12,8 +12,7 @@ from admin.fl_app import AdminApp, GunicornApp
 from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
-
-conf = Configurator()
+from config_.conf import conf
 app_logger = AppLogger("app", conf)
 
 
@@ -41,7 +40,7 @@ def migrate():
     except TypeError as te:
         logger.debug(f"Migrations failed with {te} maby all data updated")
 
-
+# migrate()
 if __name__ == '__main__':
     import argparse
 

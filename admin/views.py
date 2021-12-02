@@ -4,7 +4,7 @@ from flask import Response, request, jsonify, send_from_directory, \
 import uuid
 from playhouse.shortcuts import model_to_dict
 import copy
-
+from config_.conf import conf
 from loguru import logger
 
 from database.DB_interface import DBInterface
@@ -22,7 +22,7 @@ class BaseView(MethodView):
     def render_with_notices(self, template, **kwargs):
         curent_notifys = copy.copy(self.store.notices)
         self.store.notices.clear()
-        return render_template(template, notifys=curent_notifys, **kwargs)
+        return render_template(template, notifys=curent_notifys, base_url=conf.server_conf.base_url, **kwargs)
 
     def check_token(self, request):
         req_token = request.cookies.get('auth_token')
@@ -37,14 +37,14 @@ class Register(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        return render_template('register.html')
+        return self.render_with_notices('register.html')
 
     def post(self):
         if self.db.auth.registry_user(request.form.get('name'), request.form.get('email'),
                                       request.form.get('password')):
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
         else:
-            return render_template('register.html')
+            return self.render_with_notices('register.html')
 
 
 class Login(BaseView):
@@ -57,12 +57,12 @@ class Login(BaseView):
     def post(self):
         token = self.db.auth.login_user(request.form.get('email'), request.form.get('password'))
         if token:
-            res = make_response(redirect('/statistic'))
+            res = make_response(redirect(f'{conf.server_conf.base_url}/statistic'))
             res.set_cookie('auth_token', token, max_age=60 * 60 * 24)
             return res
         else:
             self.set_notices(Notice.danger, 'User not found')
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Logout(BaseView):
@@ -70,7 +70,7 @@ class Logout(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        res = make_response(redirect('/login'))
+        res = make_response(redirect(f'{conf.server_conf.base_url}/login'))
         res.set_cookie('auth_token', "token", max_age=60 * 60 * 24)
         return res
 
@@ -80,7 +80,7 @@ class Index(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        return redirect('/statistic')
+        return redirect(f'{conf.server_conf.base_url}/statistic')
 
 
 class Bots(BaseView):
@@ -89,9 +89,9 @@ class Bots(BaseView):
 
     def get(self):
         if self.check_token(request):
-            return render_template('pages/bots.html')
+            return self.render_with_notices('pages/bots.html')
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Menus(BaseView):
@@ -108,7 +108,7 @@ class Menus(BaseView):
                     self.set_notices(Notice.success, 'Меню успешно обновлено')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось обновить меню, попробуйте ещё раз')
-                return redirect('/menus')
+                return redirect(f'{conf.server_conf.base_url}/menus')
             elif flag[0] == "insert":
                 new_status = self.db.Statuses.set_row(descr="new_status")
                 if new_status:
@@ -118,16 +118,16 @@ class Menus(BaseView):
                         self.set_notices(Notice.danger, 'Не удалось создать меню, попробуйте ещё раз')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось создать меню, попробуйте ещё раз')
-                return redirect('/menus')
+                return redirect(f'{conf.server_conf.base_url}/menus')
         else:
             self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
-            return redirect('/menus')
+            return redirect(f'{conf.server_conf.base_url}/menus')
 
     def get(self):
         if self.check_token(request):
             return self.render_with_notices('pages/menus.html', menus=self.db.Menu.get_all(order=self.db.Menu.table.id))
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Buttons(BaseView):
@@ -149,17 +149,17 @@ class Buttons(BaseView):
                     self.set_notices(Notice.success, 'Кнопка успешно обновлена')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось обновить кнопку, попробуйте ещё раз')
-                return redirect('/buttons')
+                return redirect(f'{conf.server_conf.base_url}/buttons')
             elif flag[0] == "insert":
                 if self.db.MenuButton.set_row(**up_req):
                     self.set_notices(Notice.success, 'Кнопка добавлена')
-                    return redirect('/buttons')
+                    return redirect(f'{conf.server_conf.base_url}/buttons')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось создать кнопку, попробуйте ещё раз')
-                    return redirect('/buttons')
+                    return redirect(f'{conf.server_conf.base_url}/buttons')
         else:
             self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
-            return redirect('/buttons')
+            return redirect(f'{conf.server_conf.base_url}/buttons')
 
     def get(self):
         if self.check_token(request):
@@ -182,7 +182,7 @@ class Buttons(BaseView):
                                             buttons=obj_lst,
                                             menus=self.db.Menu.get_all())
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Texts(BaseView):
@@ -199,24 +199,24 @@ class Texts(BaseView):
                     self.set_notices(Notice.success, 'Текст успешно обновлен')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось обновить текст, попробуйте ещё раз')
-                return redirect('/texts')
+                return redirect(f'{conf.server_conf.base_url}/texts')
             elif flag[0] == "insert":
                 if self.db.TextAnswers.set_row(**up_req):
                     self.set_notices(Notice.success, 'Текстовый ответ добавлен')
-                    return redirect('/texts')
+                    return redirect(f'{conf.server_conf.base_url}/texts')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось создать текстовый ответ, попробуйте ещё раз')
-                    return redirect('/texts')
+                    return redirect(f'{conf.server_conf.base_url}/texts')
         else:
             self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
-            return redirect('/texts')
+            return redirect(f'{conf.server_conf.base_url}/texts')
 
     def get(self):
         if self.check_token(request):
             return self.render_with_notices('pages/texts.html',
                                             texts=self.db.TextAnswers.get_all(order=self.db.TextAnswers.table.id))
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Commands(BaseView):
@@ -233,17 +233,17 @@ class Commands(BaseView):
                     self.set_notices(Notice.success, 'Команда успешно обновленa')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось обновить команду, попробуйте ещё раз')
-                return redirect('/commands')
+                return redirect(f'{conf.server_conf.base_url}/commands')
             elif flag[0] == "insert":
                 if self.db.Commands.set_row(**up_req):
                     self.set_notices(Notice.success, 'Команда успешно добавлена')
-                    return redirect('/commands')
+                    return redirect(f'{conf.server_conf.base_url}/commands')
                 else:
                     self.set_notices(Notice.danger, 'Не удалось создать комманду, попробуйте ещё раз')
-                    return redirect('/commands')
+                    return redirect(f'{conf.server_conf.base_url}/commands')
         else:
             self.set_notices(Notice.danger, 'Не все поля заполнены проверьте ещё раз')
-            return redirect('/commands')
+            return redirect(f'{conf.server_conf.base_url}/commands')
 
     def get(self):
         if self.check_token(request):
@@ -264,15 +264,15 @@ class Commands(BaseView):
                                             commands=obj_lst,
                                             menus=self.db.Menu.get_all())
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Delete(BaseView):
-    redirect_data = {"TextAnswers": '/texts',
-                     "Menu": '/menus',
-                     "MenuButton": "/buttons",
-                     "Commands": "/commands",
-                     "UserModer": "/moderations"}
+    redirect_data = {"TextAnswers": f'{conf.server_conf.base_url}/texts',
+                     "Menu": f'{conf.server_conf.base_url}/menus',
+                     "MenuButton": "/ru/buttons",
+                     "Commands": "/ru/commands",
+                     "UserModer": "/ru/moderations"}
 
     def __init__(self):
         BaseView.__init__(self)
@@ -287,10 +287,11 @@ class Delete(BaseView):
 
 
 class Statistic(BaseView):
-    redirect_data = {"TextAnswers": '/texts',
-                     "Menu": '/menus',
-                     "MenuButton": "/buttons",
-                     "Commands": "/commands"}
+    redirect_data = {"TextAnswers": f'{conf.server_conf.base_url}/texts',
+                     "Menu": f'{conf.server_conf.base_url}/menus',
+                     "MenuButton": "/ru/buttons",
+                     "Commands": "/ru/commands",
+                     "UserModer": "/ru/moderations"}
 
     def __init__(self):
         BaseView.__init__(self)
@@ -301,15 +302,15 @@ class Statistic(BaseView):
                                             statistic=self.db.AnswersStatistic.get_all(
                                                 order=self.db.AnswersStatistic.table.id))
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
 
 class Moderation(BaseView):
-    redirect_data = {"TextAnswers": '/texts',
-                     "Menu": '/menus',
-                     "MenuButton": "/buttons",
-                     "Commands": "/commands",
-                     "Moderation": "/moderations"}
+    redirect_data = {"TextAnswers": f'{conf.server_conf.base_url}/texts',
+                     "Menu": f'{conf.server_conf.base_url}/menus',
+                     "MenuButton": "/ru/buttons",
+                     "Commands": "/ru/commands",
+                     "UserModer": "/ru/moderations"}
 
     def __init__(self):
         BaseView.__init__(self)
@@ -319,7 +320,7 @@ class Moderation(BaseView):
             return self.render_with_notices('pages/moderations.html',
                                             moder_data=self.db.UserModer.get_all(order=self.db.UserModer.table.id))
         else:
-            return redirect('/login')
+            return redirect(f'{conf.server_conf.base_url}/login')
 
     def post(self):
         up_req = request.form.to_dict()
@@ -331,7 +332,7 @@ class Moderation(BaseView):
                 self.set_notices(Notice.success, 'Ответ успешно обновлен')
             else:
                 self.set_notices(Notice.danger, 'Не удалось обновить ответ, попробуйте ещё раз')
-            return redirect('/moderations')
+            return redirect(f'{conf.server_conf.base_url}/moderations')
 
 
 class AproveModeration(BaseView):
@@ -341,13 +342,13 @@ class AproveModeration(BaseView):
     def post(self, item_id):
         # if self.db.TextAnswers.set_row()
         to_table = self.db.UserModer.get_by_id(item_id)
-        if self.db.TextAnswers.set_row(question = to_table.question, answer=to_table.answer):
+        if self.db.TextAnswers.set_row(question=to_table.question, answer=to_table.answer):
             to_table.accepted = True
             to_table.save()
-            self.set_notices(Notice.success ,"Успешно согласовано")
+            self.set_notices(Notice.success, "Успешно согласовано")
         else:
             self.set_notices(Notice.success, "Успешно согласовано")
-        return redirect("/moderations")
+        return redirect("/ru/moderations")
 
 
 class UserModerPage(BaseView):
@@ -365,6 +366,6 @@ class UserModerPage(BaseView):
             self.set_notices(Notice.success, "Успешно отправлено на модерацию")
         else:
             self.set_notices(Notice.danger, "Не удалось согласовать объект объект")
-        return redirect('/request_answer')
+        return redirect(f'{conf.server_conf.base_url}/request_answer')
         # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
         # self.set_notices()
