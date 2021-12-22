@@ -50,16 +50,18 @@ class Answer:
         self.rerender()
 
     def validate_user(self):
-        with pg_db.atomic() as transaction:
-            try:
-                self.user_obj = TgClient.get(tg_id=self.message.from_user.id)
+        try:
+            with pg_db.atomic() as transaction:
+                self.user_obj = TgClient.get(tg_id=self.message.chat.id)
                 self.status = Statuses.get(Statuses.id == self.user_obj.status)
                 self.action = self.status.action
-            except Exception as e:
-                self.logger.warning(f"User not found, try to create {e}")
+        except Exception as e:
+            self.logger.warning(f"User not found, try to create {e}")
+            with pg_db.atomic() as transaction:
                 try:
                     self.user_obj = TgClient.create(tg_id=self.message.chat.id,
-                                                    status=Statuses.select().where(Statuses.action == None).order_by(Statuses.id).get(),
+                                                    status=Statuses.select().where(
+                                                        Statuses.action == None).order_by(Statuses.id).get(),
                                                     first_name=self.message.chat.first_name,
                                                     last_name=self.message.chat.last_name,
                                                     username=self.message.chat.username)

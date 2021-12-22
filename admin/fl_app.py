@@ -3,6 +3,7 @@ import threading
 from flask import Flask
 from flask.logging import default_handler
 from flask_cors import CORS
+from telegram.ext import ExtBot
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 import config_.conf
@@ -19,12 +20,13 @@ class AdminApp():
 
     CORS(app)
 
-    def __init__(self, conf: config_.conf.Configurator):
+    def __init__(self, conf: config_.conf.Configurator, bot: ExtBot):
         # self.app.config["APPLICATION_ROOT"] = conf.server_conf.base_url
         self.app.wsgi_app = DispatcherMiddleware(
             Response('Not Found', status=404),
             {conf.server_conf.base_url: self.app.wsgi_app}
         )
+        self.bot = bot
         self.config = conf
         self.logger = AppLogger("admin", self.config)
         self.log = logging.getLogger('werkzeug')
@@ -58,6 +60,10 @@ class AdminApp():
         self.app.add_url_rule('/delete/<table>/<item_id>', view_func=Delete.as_view('delete'))
         self.app.add_url_rule('/aprove_moderation/<item_id>', view_func=AproveModeration.as_view("aprove"))
         self.app.add_url_rule('/statistic', view_func=Statistic.as_view('statistic'))
+
+        NotificationsPage.tg_bot = self.bot
+
+        self.app.add_url_rule('/notifications', view_func=NotificationsPage.as_view('notifications'))
 
     # def run(self):
     #     self.app.run(host=self.config.server_conf.host, port=self.config.server_conf.port,

@@ -4,6 +4,9 @@ from flask import Response, request, jsonify, send_from_directory, \
 import uuid
 from playhouse.shortcuts import model_to_dict
 import copy
+
+from telegram.ext import ExtBot
+
 from config_.conf import conf
 from loguru import logger
 
@@ -367,5 +370,23 @@ class UserModerPage(BaseView):
         else:
             self.set_notices(Notice.danger, "Не удалось согласовать объект объект")
         return redirect(f'{conf.server_conf.base_url}/request_answer')
+        # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
+        # self.set_notices()
+
+
+class NotificationsPage(BaseView):
+    tg_bot: ExtBot = None
+
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        return self.render_with_notices('pages/notifications.html')
+
+    def post(self):
+        notification_text = request.form.to_dict()["notification"]
+        for user in self.db.get_users():
+            self.tg_bot.send_message(user.tg_id, notification_text)
+        return redirect(f'{conf.server_conf.base_url}/notifications')
         # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
         # self.set_notices()

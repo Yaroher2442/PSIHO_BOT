@@ -179,3 +179,6 @@ class DBInterface:
         self.Commands = CommandsApi()
         self.AnswersStatistic = AnswersStatisticApi()
         self.UserModer = UserModerationApi()
+
+    def get_users(self):
+        return models.TgClient.select()

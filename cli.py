@@ -13,6 +13,7 @@ from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
 from config_.conf import conf
+
 app_logger = AppLogger("app", conf)
 
 
@@ -40,6 +41,7 @@ def migrate():
     except TypeError as te:
         logger.debug(f"Migrations failed with {te} maby all data updated")
 
+
 # migrate()
 if __name__ == '__main__':
     import argparse
@@ -54,6 +56,7 @@ if __name__ == '__main__':
     if args.create_db:
         from database.models import pg_db, Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, \
             AnswersStatistic, Moderation
+
         pg_db.create_tables(
             [Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, AnswersStatistic,
              Moderation])
@@ -70,8 +73,9 @@ if __name__ == '__main__':
         'bind': f'{conf.server_conf.host}:{conf.server_conf.port}',
         'workers': 1
     }
-    wsgi_app = AdminApp(conf).app.wsgi_app
-    workers = [TGBot(conf)]
+    tg_bot = TGBot(conf)
+    wsgi_app = AdminApp(conf,tg_bot.bot).app.wsgi_app
+    workers = [tg_bot]
     for wrkr in workers:
         wrkr.setDaemon(True)
         wrkr.start()

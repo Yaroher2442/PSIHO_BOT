@@ -1,9 +1,10 @@
 import threading
 from time import sleep
 
+from loguru import logger
 from telegram import Update, Chat, ChatMember, ParseMode, ChatMemberUpdated
 # from tg_bot.BotLogic import Answer
-from telegram.ext import MessageHandler, Updater, CallbackContext, BaseFilter
+from telegram.ext import MessageHandler, Updater, CallbackContext, BaseFilter, Dispatcher, ExtBot
 
 # from tg_bot.AnswerClass import Answer
 from config_.loger import AppLogger
@@ -13,12 +14,16 @@ from tg_bot.AnswerClass import Answer
 class TGBot(threading.Thread):
     def __init__(self, conf):
         threading.Thread.__init__(self)
-        self.updater = Updater(conf.tg_conf.token)
-        self.dispatcher = self.updater.dispatcher
+        self.updater: Updater = Updater(conf.tg_conf.token)
+        self.bot: ExtBot = self.updater.bot
+
+        self.dispatcher: Dispatcher = self.updater.dispatcher
         self.setup_handlers()
 
         self.logger = AppLogger("bot", conf)
 
+    # def send_notifys(self):
+    #     self.updater.bot.se
     def message_handle(self, update: Update, context: CallbackContext):
         self.logger.debug(update.message)
         answr = Answer(update.message, self.logger)
