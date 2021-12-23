@@ -1,15 +1,11 @@
 import os
-
 import sys
 
 from loguru import logger
 
 sys.path.append(os.getcwd())
-print(sys.path)
-
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp, GunicornApp
-from config_.conf import Configurator
 from config_.loger import AppLogger
 from database.migration import makemigrations
 from config_.conf import conf
@@ -74,7 +70,7 @@ if __name__ == '__main__':
         'workers': 1
     }
     tg_bot = TGBot(conf)
-    wsgi_app = AdminApp(conf,tg_bot.bot).app.wsgi_app
+    wsgi_app = AdminApp(conf, tg_bot.bot).app.wsgi_app
     workers = [tg_bot]
     for wrkr in workers:
         wrkr.setDaemon(True)

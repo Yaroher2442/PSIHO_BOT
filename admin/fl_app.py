@@ -50,7 +50,7 @@ class AdminApp():
         self.app.add_url_rule('/register', view_func=Register.as_view('register'))
         self.app.add_url_rule('/login', view_func=Login.as_view('login'))
         self.app.add_url_rule('/logout', view_func=Logout.as_view('logout'))
-
+        self.app.add_url_rule('/users', view_func=TgUsers.as_view('users'))
         self.app.add_url_rule('/menus', view_func=Menus.as_view('menus'))
         self.app.add_url_rule('/buttons', view_func=Buttons.as_view('buttons'))
         self.app.add_url_rule('/texts', view_func=Texts.as_view('texts'))

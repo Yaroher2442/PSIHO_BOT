@@ -181,4 +181,4 @@ class DBInterface:
         self.UserModer = UserModerationApi()
 
     def get_users(self):
-        return models.TgClient.select()
+        return models.TgClient.select().order_by(models.TgClient.id)

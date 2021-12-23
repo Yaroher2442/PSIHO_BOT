@@ -97,6 +97,14 @@ class Bots(BaseView):
             return redirect(f'{conf.server_conf.base_url}/login')
 
 
+class TgUsers(BaseView):
+    def __init__(self):
+        BaseView.__init__(self)
+
+    def get(self):
+        return self.render_with_notices('pages/users.html', users=self.db.get_users())
+
+
 class Menus(BaseView):
     def __init__(self):
         BaseView.__init__(self)
@@ -385,8 +393,21 @@ class NotificationsPage(BaseView):
 
     def post(self):
         notification_text = request.form.to_dict()["notification"]
-        for user in self.db.get_users():
-            self.tg_bot.send_message(user.tg_id, notification_text)
+        if not notification_text:
+            self.set_notices(Notice.warning, "Пустая строка отправки сообщения")
+        users = self.db.get_users()
+        exceptions = 0
+        for user in users:
+            try:
+                self.tg_bot.send_message(user.tg_id, notification_text)
+            except Exception as e:
+                logger.warning(f"Can't send notify to {user.username}, cause: {e}")
+                exceptions += 1
+        if exceptions != 0:
+            self.set_notices(Notice.warning,
+                             f"{len(users) - exceptions} из {len(users)} ваших пользователей получили ваше сообщение, остальные закрыли диалог с ботом ")
+        else:
+            self.set_notices(Notice.success, f"{len(users)} пользователей получили ваше сообщение ")
         return redirect(f'{conf.server_conf.base_url}/notifications')
         # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
         # self.set_notices()
