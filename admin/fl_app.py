@@ -62,7 +62,8 @@ class AdminApp():
         self.app.add_url_rule('/statistic', view_func=Statistic.as_view('statistic'))
 
         NotificationsPage.tg_bot = self.bot
-
+        self.app.add_url_rule("/notifications/cancel/<id_>",
+                              view_func=NotificationsCancel.as_view("cancel_notification"))
         self.app.add_url_rule('/notifications', view_func=NotificationsPage.as_view('notifications'))
 
     # def run(self):

@@ -21,29 +21,43 @@
             <div class="container-fluid">
                 <div class="fade-in">
 
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="addButtonModal">Форма для отправки рассылки</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#sendNotify">Отправить
+                                    сообщение</a>
                             </div>
-                            <div class="modal-body">
-                                <form id="addButtonForm" method="post" action="{{ base_url }}/notifications">
-                                    <div class="form-group">
-                                        <label class="col-form-label" for="kk">Текст рассылки</label>
-                                        <textarea class="form-control" id="kk" name="notification" rows="4"
-                                                  placeholder=""></textarea>
-                                    </div>
-                                    {% for notify in notifys %}
-                                    <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
-                                    {% endfor %}
-                                    <div class="form-group">
-                                        <button class="btn btn-primary" type="submit">Отправить сообщения</button>
-                                    </div>
-                                </form>
-                            </div>
+                            <hr/>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Соообщение</th>
+                                    <th>Время исполнения</th>
+                                    <th>Статус</th>
+                                    <th>Системное сообщение</th>
+                                    <th>Отмена</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {%for item in tasks%}
+                                <tr>
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.notify}}</td>
+                                    <td>{{item.deferre_time}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>{{item.message}}</td>
+                                    <td>
+                                        <a href="{{base_url}}/notifications/cancel/{{item.id}}" class=" btn btn-pill btn-danger" data-toggle="modal">Отменить</a>
+                                    </td>
+                                </tr>
+                                {%endfor%}
+                                </tbody>
+                                {% for notify in notifys %}
+                                <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
+                                {% endfor %}
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -54,6 +68,38 @@
         <div>© 2021</div>
     </footer>
 </div>
+
+<div class="modal fade" id="sendNotify" tabindex="-1" role="dialog" aria-labelledby="addMenuModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addButtonModal">Форма для отправки рассылки</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addButtonForm" method="post" action="{{ base_url }}/notifications">
+                    <div class="form-group">
+                        <label class="col-form-label" for="kk">Текст рассылки</label>
+                        <textarea class="form-control" id="kk" name="notification" rows="4"
+                                  placeholder=""></textarea>
+                        <label class="col-form-label" for="kk">Время отправки</label>
+                        <input class="form-control" type="datetime-local" name="datetime">
+                    </div>
+                    {% for notify in notifys %}
+                    <div class="{{notify.html_class}}" role="alert">{{notify.message}}</div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Отправить сообщения</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- CoreUI and necessary plugins-->
 <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
@@ -73,6 +119,11 @@
              document.body.classList.remove('c-no-layout-transition')
            }, 2000);
          });
+
+
+
+
+
 
 
 

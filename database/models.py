@@ -10,87 +10,72 @@ pg_db = PostgresqlDatabase(host=conf.db_conf.host,
                            )
 
 
-class Statuses(Model):
-    descr = CharField()
-    action = CharField(null=True)
-
+class BaseDbModel(Model):
     class Meta:
         database = pg_db
 
 
-class TgClient(Model):
+class Statuses(BaseDbModel):
+    descr = CharField()
+    action = CharField(null=True)
+
+
+class TgClient(BaseDbModel):
     tg_id = IntegerField()
     status = ForeignKeyField(Statuses)
     first_name = CharField(null=True)
     last_name = CharField(null=True)
     username = CharField(null=True)
 
-    class Meta:
-        database = pg_db
 
-
-class Menu(Model):
+class Menu(BaseDbModel):
     descr = CharField()
     status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
-    class Meta:
-        database = pg_db
 
-
-class TextAnswers(Model):
+class TextAnswers(BaseDbModel):
     question = TextField()
     answer = TextField()
 
-    class Meta:
-        database = pg_db
 
-
-class MenuButton(Model):
+class MenuButton(BaseDbModel):
     menu_id = ForeignKeyField(Menu, on_delete="CASCADE", null=True)
     text = CharField()
     answer = TextField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
     set_action = CharField(null=True)
 
-    class Meta:
-        database = pg_db
 
-
-class Commands(Model):
+class Commands(BaseDbModel):
     text = CharField()
     answer = TextField()
     to_status = ForeignKeyField(Statuses, on_delete="CASCADE", null=True)
 
-    class Meta:
-        database = pg_db
 
-
-class AdminUser(Model):
+class AdminUser(BaseDbModel):
     name = CharField()
     email = CharField()
     password = CharField()
     token = CharField()
 
-    class Meta:
-        database = pg_db
 
-
-class AnswersStatistic(Model):
+class AnswersStatistic(BaseDbModel):
     tg_user_id = IntegerField()
     datetime = DateTimeField()
     question = CharField()
     answer = CharField(null=True)
 
-    class Meta:
-        database = pg_db
 
-
-class Moderation(Model):
+class Moderation(BaseDbModel):
     question = TextField()
     answer = TextField()
     accepted = BooleanField()
     deleted = BooleanField()
     author = TextField()
 
-    class Meta:
-        database = pg_db
+
+class NotifyTask(BaseDbModel):
+    notify = TextField()
+    deferre_time = DateTimeField()
+    status = TextField(default="pending")
+    message = TextField(default="Пока тут пусто")

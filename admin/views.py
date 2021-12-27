@@ -1,3 +1,5 @@
+import datetime
+
 from flask.views import MethodView
 from flask import Response, request, jsonify, send_from_directory, \
     make_response, render_template, redirect, g
@@ -15,9 +17,11 @@ from admin.helpers import *
 
 
 class BaseView(MethodView):
+    db = DBInterface()
+    store = store
+
     def __init__(self):
-        self.db = DBInterface()
-        self.store = store
+        pass
 
     def set_notices(self, type, message):
         self.store.notices.append(Notice(type, message))
@@ -382,6 +386,17 @@ class UserModerPage(BaseView):
         # self.set_notices()
 
 
+class NotificationsCancel(BaseView):
+    def get(self, id_):
+        try:
+            self.db.NotifyTasks.update(id_, status="canceled")
+            self.set_notices(Notice.success, "Отменено")
+        except Exception as e:
+            logger.debug(e)
+            self.set_notices(Notice.warning, "Не удалось отменить")
+        return redirect(f'{conf.server_conf.base_url}/notifications')
+
+
 class NotificationsPage(BaseView):
     tg_bot: ExtBot = None
 
@@ -389,25 +404,45 @@ class NotificationsPage(BaseView):
         BaseView.__init__(self)
 
     def get(self):
-        return self.render_with_notices('pages/notifications.html')
+        return self.render_with_notices('pages/notifications.html',
+                                        tasks=self.db.NotifyTasks.get_all(order=self.db.NotifyTasks.table.id,
+                                                                          desc=True))
 
     def post(self):
-        notification_text = request.form.to_dict()["notification"]
+        data = request.form.to_dict()
+        notification_text = data["notification"]
         if not notification_text:
-            self.set_notices(Notice.warning, "Пустая строка отправки сообщения")
-        users = self.db.get_users()
-        exceptions = 0
-        for user in users:
-            try:
-                self.tg_bot.send_message(user.tg_id, notification_text)
-            except Exception as e:
-                logger.warning(f"Can't send notify to {user.username}, cause: {e}")
-                exceptions += 1
-        if exceptions != 0:
-            self.set_notices(Notice.warning,
-                             f"{len(users) - exceptions} из {len(users)} ваших пользователей получили ваше сообщение, остальные закрыли диалог с ботом ")
+            self.set_notices(Notice.danger, "Не удалось отправить задачу, пустое поле сообщения")
+            return redirect(f'{conf.server_conf.base_url}/notifications')
+        times = data["datetime"].strip()
+        if times == "":
+            deferre_time = datetime.datetime.now()
         else:
-            self.set_notices(Notice.success, f"{len(users)} пользователей получили ваше сообщение ")
+            deferre_time = datetime.datetime.strptime(times, "%Y-%m-%dT%H:%M")
+
+        logger.debug(deferre_time)
+        try:
+            self.db.NotifyTasks.set_row(notify=notification_text, deferre_time=deferre_time)
+            self.set_notices(Notice.success, "Задача на отправку создана")
+        except Exception as e:
+            logger.debug(e)
+            self.set_notices(Notice.warning, "Не удалось создать задачу на отправку")
         return redirect(f'{conf.server_conf.base_url}/notifications')
-        # self.db.UserModer.get_all(order=self.db.UserModer.table.id)
-        # self.set_notices()
+
+        # if not notification_text:
+        #     self.set_notices(Notice.warning, "Пустая строка отправки сообщения")
+        #     return redirect(f'{conf.server_conf.base_url}/notifications')
+        # users = self.db.get_users()
+        # exceptions = 0
+        # for user in users:
+        #     try:
+        #         self.tg_bot.send_message(user.tg_id, notification_text)
+        #     except Exception as e:
+        #         logger.warning(f"Can't send notify to {user.username}, cause: {e}")
+        #         exceptions += 1
+        # if exceptions != 0:
+        #     self.set_notices(Notice.warning,
+        #                      f"{len(users) - exceptions} из {len(users)} ваших пользователей получили ваше сообщение, остальные закрыли диалог с ботом ")
+        # else:
+        #     self.set_notices(Notice.success, f"{len(users)} пользователей получили ваше сообщение ")
+        # return redirect(f'{conf.server_conf.base_url}/notifications')

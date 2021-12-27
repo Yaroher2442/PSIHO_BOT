@@ -3,7 +3,7 @@ from logging.handlers import TimedRotatingFileHandler
 from config_.conf import Configurator
 import os
 from colorlog import ColoredFormatter
-
+from config_.conf import conf
 
 class AppLogger(logging.Logger):
     def __init__(self, loger_name, conf):
@@ -18,3 +18,6 @@ class AppLogger(logging.Logger):
 
         self.handlers.append(self.stream_handler)
         self.handlers.append(self.rotate)
+
+
+app_logger = AppLogger("app", conf)

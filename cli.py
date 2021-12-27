@@ -3,14 +3,14 @@ import sys
 
 from loguru import logger
 
+from TimeEvents.manager import Manager
+
 sys.path.append(os.getcwd())
 from tg_bot.bot import TGBot
 from admin.fl_app import AdminApp, GunicornApp
-from config_.loger import AppLogger
+from config_.loger import AppLogger, app_logger
 from database.migration import makemigrations
 from config_.conf import conf
-
-app_logger = AppLogger("app", conf)
 
 
 def change_dir(dir):
@@ -50,12 +50,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print(args)
     if args.create_db:
-        from database.models import pg_db, Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, \
-            AnswersStatistic, Moderation
-
-        pg_db.create_tables(
-            [Statuses, TgClient, Menu, TextAnswers, MenuButton, Commands, AdminUser, AnswersStatistic,
-             Moderation])
+        from database.models import pg_db, BaseDbModel
+        pg_db.create_tables(BaseDbModel.__subclasses__())
         logger.debug("Models in database created")
         exit()
     if args.migrate:
@@ -71,7 +67,8 @@ if __name__ == '__main__':
     }
     tg_bot = TGBot(conf)
     wsgi_app = AdminApp(conf, tg_bot.bot).app.wsgi_app
-    workers = [tg_bot]
+    timer = Manager(tg_bot.bot)
+    workers = [tg_bot,timer]
     for wrkr in workers:
         wrkr.setDaemon(True)
         wrkr.start()

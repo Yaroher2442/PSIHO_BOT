@@ -1,6 +1,3 @@
+import datetime
 
-q={'qwr':"wrqwr", "update":'qwr'}
-if "update" in q:
-    q.pop("qwr")
-
-print(q)
+print(datetime.datetime.now()<datetime.datetime.strptime("2021-12-30 10:00","%Y-%m-%d %H:%M"))

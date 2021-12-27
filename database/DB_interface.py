@@ -53,10 +53,13 @@ class BaseDb:
             logger.warning(e)
             return False
 
-    def get_all(self, *args, order=None):
+    def get_all(self, *args, order=None, desc=False):
         try:
             if order:
-                return self.table.select(*args).order_by(order)
+                if desc:
+                    return self.table.select(*args).order_by(order.desc())
+                else:
+                    return self.table.select(*args).order_by(order)
             else:
                 return self.table.select(*args)
         except Exception as e:
@@ -169,6 +172,12 @@ class AnswersStatisticApi(BaseDb):
         self.table = models.AnswersStatistic
 
 
+class NotifyTasksApi(BaseDb):
+    def __init__(self):
+        BaseDb.__init__(self)
+        self.table = models.NotifyTask
+
+
 class DBInterface:
     def __init__(self):
         self.auth = Auth()
@@ -179,6 +188,7 @@ class DBInterface:
         self.Commands = CommandsApi()
         self.AnswersStatistic = AnswersStatisticApi()
         self.UserModer = UserModerationApi()
+        self.NotifyTasks = NotifyTasksApi()
 
     def get_users(self):
         return models.TgClient.select().order_by(models.TgClient.id)
