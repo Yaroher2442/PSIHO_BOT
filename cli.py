@@ -68,7 +68,7 @@ if __name__ == '__main__':
     }
     tg_bot = TGBot(conf)
     wsgi_app = AdminApp(conf, tg_bot.bot).app.wsgi_app
-    timer = Manager(tg_bot.bot)
+    timer = Manager(conf,tg_bot.bot)
     workers = [tg_bot, timer]
     for wrkr in workers:
         wrkr.setDaemon(True)

@@ -15,8 +15,9 @@ from database.models import NotifyTask
 
 
 class Manager(threading.Thread):
-    def __init__(self, bot: ExtBot):
+    def __init__(self,conf:Configurator, bot: ExtBot):
         super().__init__()
+        self.conf=conf
         self.bot = bot
         self.db = DBInterface()
         self.ioloop = asyncio.get_event_loop()
@@ -59,7 +60,7 @@ class Manager(threading.Thread):
             for worker in self.task_in_run:
                 asyncio.ensure_future(worker.action(users))
                 self.run_task_db(worker.id_)
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.conf.timer_conf.timeout)
 
     def run(self):
         self.ioloop.run_until_complete(self.looper())
