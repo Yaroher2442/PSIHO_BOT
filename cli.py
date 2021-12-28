@@ -51,6 +51,7 @@ if __name__ == '__main__':
     print(args)
     if args.create_db:
         from database.models import pg_db, BaseDbModel
+
         pg_db.create_tables(BaseDbModel.__subclasses__())
         logger.debug("Models in database created")
         exit()
@@ -68,7 +69,7 @@ if __name__ == '__main__':
     tg_bot = TGBot(conf)
     wsgi_app = AdminApp(conf, tg_bot.bot).app.wsgi_app
     timer = Manager(tg_bot.bot)
-    workers = [tg_bot,timer]
+    workers = [tg_bot, timer]
     for wrkr in workers:
         wrkr.setDaemon(True)
         wrkr.start()
