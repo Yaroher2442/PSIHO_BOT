@@ -32,7 +32,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Соообщение</th>
+                                    <th>Сообщение</th>
                                     <th>Время исполнения</th>
                                     <th>Статус</th>
                                     <th>Системное сообщение</th>
@@ -49,7 +49,9 @@
                                     <td>{{item.status}}</td>
                                     <td>{{item.message}}</td>
                                     <td>
+                                        {% if item.status != "done" and item.status != "canceled" and item.status != "running" %}
                                         <a href="{{base_url}}/notifications/cancel/{{item.id}}" class=" btn btn-pill btn-danger" data-toggle="modal">Отменить</a>
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 {%endfor%}
