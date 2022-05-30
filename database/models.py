@@ -62,8 +62,8 @@ class AdminUser(BaseDbModel):
 class AnswersStatistic(BaseDbModel):
     tg_user_id = IntegerField()
     datetime = DateTimeField()
-    question = CharField()
-    answer = CharField(null=True)
+    question = TextField()
+    answer = TextField(null=True)
 
 
 class Moderation(BaseDbModel):

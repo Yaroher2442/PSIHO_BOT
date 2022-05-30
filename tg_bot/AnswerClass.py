@@ -37,16 +37,16 @@ class Answer:
 
     def process(self):
         self.validate_user()
-        if self.action == "listen":
-            self.text_finder()
         if self.is_command():
             self.change_status()
             self.set_action()
             self.mode = "command"
-        if self.is_button():
+        elif self.is_button():
             self.change_status()
             self.set_action()
             self.mode = "button"
+        else:
+            self.text_finder()
         self.rerender()
 
     def validate_user(self):
