@@ -12,6 +12,8 @@
     "models.AdminUser",
     "models.AnswersStatistic",
     "models.Commands",
-    "models.Moderation"
+    "models.Moderation",
+    "models.BaseDbModel",
+    "models.NotifyTask"
   ]
 }
